@@ -123,9 +123,9 @@ CREATE TABLE planNutricional(
 	idUsuario int NOT NULL REFERENCES usuario(idUsuario),			-- Usuario del Plan
 	fecha datetime NOT NULL,										-- Fecha de Plan
 	carbos char(1) CHECK (carbos IN ('A','M','B','N')) NOT NULL,	-- Cantidad Carbohidratos: A= Alta, M= Media, B= Baja, N= Nula
-	proteinas char(1) CHECK (carbos IN ('A','M','B','N')) NOT NULL,	-- Cantidad Proteínas: A= Alta, M= Media, B= Baja, N= Nula
-	grasas char(1) CHECK (carbos IN ('A','M','B','N')) NOT NULL,	-- Cantidad Grasas: A= Alta, M= Media, B= Baja, N= Nula
-	azucares char(1) CHECK (carbos IN ('A','M','B','N')) NOT NULL,	-- Cantidad Azúcares: A= Alta, M= Media, B= Baja, N= Nula
+	proteinas char(1) CHECK (proteinas IN ('A','M','B','N')) NOT NULL,	-- Cantidad Proteínas: A= Alta, M= Media, B= Baja, N= Nula
+	grasas char(1) CHECK (grasas IN ('A','M','B','N')) NOT NULL,	-- Cantidad Grasas: A= Alta, M= Media, B= Baja, N= Nula
+	azucares char(1) CHECK (azucares IN ('A','M','B','N')) NOT NULL,	-- Cantidad Azúcares: A= Alta, M= Media, B= Baja, N= Nula
 	cantComidas int NOT NULL,										-- Cantidad de Comidas a distribuir
 	calorias int													-- Cantidad de Calorías a consumir diariamente
 )
@@ -137,6 +137,6 @@ CREATE TABLE planNutricional(
 CREATE TABLE comida(
 	idComida int PRIMARY KEY IDENTITY(1,1),											-- Id de Comida
 	idPlan int NOT NULL REFERENCES planNutricional(idPlan),							-- Plan Ligado
-	tiempoComida char(1) CHECK (carbos IN ('D','MM','A','MT','C','MN')) NOT NULL,	-- Tiempo de Comida: D= Desayuno, MM= Merienda Mañana, A= Almuerzo
+	tiempoComida char(1) CHECK (tiempoComida IN ('D','MM','A','MT','C','MN')) NOT NULL,	-- Tiempo de Comida: D= Desayuno, MM= Merienda Mañana, A= Almuerzo
 	idReceta int NOT NULL REFERENCES receta(idReceta)								-- 					 MT= Merienda Tarde, C= Cena, MN= Merienda Noche
 )
