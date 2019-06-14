@@ -93,7 +93,7 @@ CREATE TABLE medicion(
 CREATE TABLE receta(
 	idReceta int PRIMARY KEY IDENTITY(1,1),							-- Id de Receta
 	foto image,														-- Imagen de la Receta
-	dificultad char(1) CHECK (carbos IN ('F','M','D')) NOT NULL,	-- Dificultad de la receta: F= Fácil, M= Media, D= Difícil
+	dificultad char(1) CHECK (dificultad IN ('F','M','D')) NOT NULL,	-- Dificultad de la receta: F= Fácil, M= Media, D= Difícil
 	tiempo int NOT NULL,											-- Duración de la receta (en minutos)
 	carbos real NOT NULL,											-- Cantidad Carbohidratos por cada 100g
 	proteinas real NOT NULL,										-- Cantidad Proteínas por cada 100g
