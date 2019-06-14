@@ -1,5 +1,5 @@
-nutritionApp/bin/
-packages/
+app/nutritionApp/bin/
+app/packages/
 .vs/config/applicationhost.config
 .vs/nutritionApp/v15/.suo
 .vs/nutritionApp/v15/Server/sqlite3/storage.ide-wal
