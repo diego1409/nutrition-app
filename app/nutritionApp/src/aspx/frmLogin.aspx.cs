@@ -9,6 +9,7 @@ namespace nutritionApp.src.aspx
 {
     public partial class frmLogin : System.Web.UI.Page
     {
+        SaladEntities modeloBD = new SaladEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,7 +19,13 @@ namespace nutritionApp.src.aspx
         {
             if (this.Page.IsValid)
             {
+                // invocar aquí el sp de retornaUsuarioPass
 
+                if (resultado_sp != null)
+                {
+                    this.Session.Add();
+
+                }
             }
         }
     }

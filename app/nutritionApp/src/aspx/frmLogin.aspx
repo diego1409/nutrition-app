@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -47,7 +47,7 @@
 						
                         <asp:Button ID="btnIngresar" runat="server" Text="Entrar" class="btn float-right login_btn" OnClick="btnIngresar_onClick"/>
 					</div>
-				</form>
+
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
