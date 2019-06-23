@@ -9,6 +9,6 @@ Create PROCEDURE [dbo].[RetornaUsuarioPass]
 @usuario [nvarchar](20),
 @contrasena [nvarchar](50)
 AS	
-SELECT [idUsuario],[usuario],[contrasena]
+SELECT [idUsuario],[usuario],[contrasena],cedula,tipoUsuario
 FROM [dbo].[usuario]
 WHERE   [usuario]=@usuario and [contrasena]=@contrasena

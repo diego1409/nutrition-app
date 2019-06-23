@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="saladModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'salad.dbo.alergia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="alergia">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+      <PropertyRef Name="idIngrediente" />
+    </Key>
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="idIngrediente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="comida">
+    <Key>
+      <PropertyRef Name="idComida" />
+    </Key>
+    <Property Name="idComida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPlan" Type="int" Nullable="false" />
+    <Property Name="tiempoComida" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idReceta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="imc">
+    <Key>
+      <PropertyRef Name="idIMC" />
+    </Key>
+    <Property Name="idIMC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="estatura" Type="tinyint" Nullable="false" />
+    <Property Name="peso" Type="real" Nullable="false" />
+    <Property Name="resultado" Type="real" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ingrediente">
+    <Key>
+      <PropertyRef Name="idIngrediente" />
+    </Key>
+    <Property Name="idIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'salad.dbo.ingrediente_receta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ingrediente_receta">
+    <Key>
+      <PropertyRef Name="idReceta" />
+      <PropertyRef Name="idIngrediente" />
+      <PropertyRef Name="cantidad" />
+      <PropertyRef Name="medida" />
+    </Key>
+    <Property Name="idReceta" Type="int" Nullable="false" />
+    <Property Name="idIngrediente" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="real" Nullable="false" />
+    <Property Name="medida" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="medicion">
+    <Key>
+      <PropertyRef Name="idMedicion" />
+    </Key>
+    <Property Name="idMedicion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="peso" Type="real" Nullable="false" />
+    <Property Name="grasa" Type="real" Nullable="false" />
+    <Property Name="musculo" Type="real" Nullable="false" />
+    <Property Name="agua" Type="real" Nullable="false" />
+    <Property Name="hueso" Type="real" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="planNutricional">
+    <Key>
+      <PropertyRef Name="idPlan" />
+    </Key>
+    <Property Name="idPlan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="carbos" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="proteinas" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="grasas" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="azucares" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="cantComidas" Type="int" Nullable="false" />
+    <Property Name="calorias" Type="int" />
+  </EntityType>
+  <EntityType Name="receta">
+    <Key>
+      <PropertyRef Name="idReceta" />
+    </Key>
+    <Property Name="idReceta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="foto" Type="image" />
+    <Property Name="dificultad" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="tiempo" Type="int" Nullable="false" />
+    <Property Name="carbos" Type="real" Nullable="false" />
+    <Property Name="proteinas" Type="real" Nullable="false" />
+    <Property Name="grasas" Type="real" Nullable="false" />
+    <Property Name="azucares" Type="real" Nullable="false" />
+    <Property Name="calorias" Type="int" />
+    <Property Name="pasos" Type="varchar" MaxLength="8000" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="foto" Type="image" />
+    <Property Name="cedula" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="genero" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="fechaNac" Type="date" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellido1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apellido2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="telefono1" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="estatura" Type="tinyint" Nullable="false" />
+    <Property Name="peso" Type="real" Nullable="false" />
+    <Property Name="proposito" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="contrasena" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipoUsuario" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__alergia__idIngre__3E52440B">
+    <End Role="ingrediente" Type="Self.ingrediente" Multiplicity="1" />
+    <End Role="alergia" Type="Self.alergia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ingrediente">
+        <PropertyRef Name="idIngrediente" />
+      </Principal>
+      <Dependent Role="alergia">
+        <PropertyRef Name="idIngrediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__alergia__idUsuar__3D5E1FD2">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="alergia" Type="Self.alergia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="alergia">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__comida__idPlan__534D60F1">
+    <End Role="planNutricional" Type="Self.planNutricional" Multiplicity="1" />
+    <End Role="comida" Type="Self.comida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="planNutricional">
+        <PropertyRef Name="idPlan" />
+      </Principal>
+      <Dependent Role="comida">
+        <PropertyRef Name="idPlan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__comida__idReceta__5535A963">
+    <End Role="receta" Type="Self.receta" Multiplicity="1" />
+    <End Role="comida" Type="Self.comida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="receta">
+        <PropertyRef Name="idReceta" />
+      </Principal>
+      <Dependent Role="comida">
+        <PropertyRef Name="idReceta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__imc__idUsuario__412EB0B6">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="imc" Type="Self.imc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="imc">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ingredien__idIng__49C3F6B7">
+    <End Role="ingrediente" Type="Self.ingrediente" Multiplicity="1" />
+    <End Role="ingrediente_receta" Type="Self.ingrediente_receta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ingrediente">
+        <PropertyRef Name="idIngrediente" />
+      </Principal>
+      <Dependent Role="ingrediente_receta">
+        <PropertyRef Name="idIngrediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ingredien__idRec__48CFD27E">
+    <End Role="receta" Type="Self.receta" Multiplicity="1" />
+    <End Role="ingrediente_receta" Type="Self.ingrediente_receta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="receta">
+        <PropertyRef Name="idReceta" />
+      </Principal>
+      <Dependent Role="ingrediente_receta">
+        <PropertyRef Name="idReceta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__medicion__idUsua__440B1D61">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="medicion" Type="Self.medicion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="medicion">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__planNutri__idUsu__4CA06362">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="planNutricional" Type="Self.planNutricional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="planNutricional">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="RetornaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idUsuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RetornaUsuarioPass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="contrasena" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="saladModelStoreContainer">
+    <EntitySet Name="comida" EntityType="Self.comida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="imc" EntityType="Self.imc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ingrediente" EntityType="Self.ingrediente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="medicion" EntityType="Self.medicion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="planNutricional" EntityType="Self.planNutricional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="receta" EntityType="Self.receta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="alergia" EntityType="Self.alergia" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [alergia].[idUsuario] AS [idUsuario], 
+    [alergia].[idIngrediente] AS [idIngrediente]
+    FROM [dbo].[alergia] AS [alergia]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ingrediente_receta" EntityType="Self.ingrediente_receta" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ingrediente_receta].[idReceta] AS [idReceta], 
+    [ingrediente_receta].[idIngrediente] AS [idIngrediente], 
+    [ingrediente_receta].[cantidad] AS [cantidad], 
+    [ingrediente_receta].[medida] AS [medida], 
+    [ingrediente_receta].[observaciones] AS [observaciones]
+    FROM [dbo].[ingrediente_receta] AS [ingrediente_receta]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__alergia__idIngre__3E52440B" Association="Self.FK__alergia__idIngre__3E52440B">
+      <End Role="ingrediente" EntitySet="ingrediente" />
+      <End Role="alergia" EntitySet="alergia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__alergia__idUsuar__3D5E1FD2" Association="Self.FK__alergia__idUsuar__3D5E1FD2">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="alergia" EntitySet="alergia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__comida__idPlan__534D60F1" Association="Self.FK__comida__idPlan__534D60F1">
+      <End Role="planNutricional" EntitySet="planNutricional" />
+      <End Role="comida" EntitySet="comida" />
+    </AssociationSet>
+    <AssociationSet Name="FK__comida__idReceta__5535A963" Association="Self.FK__comida__idReceta__5535A963">
+      <End Role="receta" EntitySet="receta" />
+      <End Role="comida" EntitySet="comida" />
+    </AssociationSet>
+    <AssociationSet Name="FK__imc__idUsuario__412EB0B6" Association="Self.FK__imc__idUsuario__412EB0B6">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="imc" EntitySet="imc" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ingredien__idIng__49C3F6B7" Association="Self.FK__ingredien__idIng__49C3F6B7">
+      <End Role="ingrediente" EntitySet="ingrediente" />
+      <End Role="ingrediente_receta" EntitySet="ingrediente_receta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ingredien__idRec__48CFD27E" Association="Self.FK__ingredien__idRec__48CFD27E">
+      <End Role="receta" EntitySet="receta" />
+      <End Role="ingrediente_receta" EntitySet="ingrediente_receta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__medicion__idUsua__440B1D61" Association="Self.FK__medicion__idUsua__440B1D61">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="medicion" EntitySet="medicion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__planNutri__idUsu__4CA06362" Association="Self.FK__planNutri__idUsu__4CA06362">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="planNutricional" EntitySet="planNutricional" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

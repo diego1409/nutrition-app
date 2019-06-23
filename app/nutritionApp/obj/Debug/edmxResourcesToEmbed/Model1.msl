@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="saladModelStoreContainer" CdmEntityContainer="saladEntities">
+    <EntitySetMapping Name="comidas">
+      <EntityTypeMapping TypeName="saladModel.comida">
+        <MappingFragment StoreEntitySet="comida">
+          <ScalarProperty Name="idComida" ColumnName="idComida" />
+          <ScalarProperty Name="idPlan" ColumnName="idPlan" />
+          <ScalarProperty Name="tiempoComida" ColumnName="tiempoComida" />
+          <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="imcs">
+      <EntityTypeMapping TypeName="saladModel.imc">
+        <MappingFragment StoreEntitySet="imc">
+          <ScalarProperty Name="idIMC" ColumnName="idIMC" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="estatura" ColumnName="estatura" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ingredientes">
+      <EntityTypeMapping TypeName="saladModel.ingrediente">
+        <MappingFragment StoreEntitySet="ingrediente">
+          <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medicions">
+      <EntityTypeMapping TypeName="saladModel.medicion">
+        <MappingFragment StoreEntitySet="medicion">
+          <ScalarProperty Name="idMedicion" ColumnName="idMedicion" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="grasa" ColumnName="grasa" />
+          <ScalarProperty Name="musculo" ColumnName="musculo" />
+          <ScalarProperty Name="agua" ColumnName="agua" />
+          <ScalarProperty Name="hueso" ColumnName="hueso" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="planNutricionals">
+      <EntityTypeMapping TypeName="saladModel.planNutricional">
+        <MappingFragment StoreEntitySet="planNutricional">
+          <ScalarProperty Name="idPlan" ColumnName="idPlan" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="carbos" ColumnName="carbos" />
+          <ScalarProperty Name="proteinas" ColumnName="proteinas" />
+          <ScalarProperty Name="grasas" ColumnName="grasas" />
+          <ScalarProperty Name="azucares" ColumnName="azucares" />
+          <ScalarProperty Name="cantComidas" ColumnName="cantComidas" />
+          <ScalarProperty Name="calorias" ColumnName="calorias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="recetas">
+      <EntityTypeMapping TypeName="saladModel.receta">
+        <MappingFragment StoreEntitySet="receta">
+          <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="dificultad" ColumnName="dificultad" />
+          <ScalarProperty Name="tiempo" ColumnName="tiempo" />
+          <ScalarProperty Name="carbos" ColumnName="carbos" />
+          <ScalarProperty Name="proteinas" ColumnName="proteinas" />
+          <ScalarProperty Name="grasas" ColumnName="grasas" />
+          <ScalarProperty Name="azucares" ColumnName="azucares" />
+          <ScalarProperty Name="calorias" ColumnName="calorias" />
+          <ScalarProperty Name="pasos" ColumnName="pasos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="saladModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="saladModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="fechaNac" ColumnName="fechaNac" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+          <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono1" ColumnName="telefono1" />
+          <ScalarProperty Name="estatura" ColumnName="estatura" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="proposito" ColumnName="proposito" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="tipoUsuario" ColumnName="tipoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ingrediente_receta">
+      <EntityTypeMapping TypeName="saladModel.ingrediente_receta">
+        <MappingFragment StoreEntitySet="ingrediente_receta">
+          <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+          <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="medida" ColumnName="medida" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="alergia" TypeName="saladModel.alergia" StoreEntitySet="alergia">
+      <EndProperty Name="ingrediente">
+        <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
+      </EndProperty>
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

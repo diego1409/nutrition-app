@@ -22,6 +22,24 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// txtUsuarioLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUsuarioLogin;
+        
+        /// <summary>
+        /// txtPasswordUsuarioLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPasswordUsuarioLogin;
+        
+        /// <summary>
         /// btnIngresar control.
         /// </summary>
         /// <remarks>

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="saladModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="comida">
+    <Key>
+      <PropertyRef Name="idComida" />
+    </Key>
+    <Property Name="idComida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPlan" Type="Int32" Nullable="false" />
+    <Property Name="tiempoComida" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="idReceta" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="planNutricional" Relationship="Self.FK__comida__idPlan__534D60F1" FromRole="comida" ToRole="planNutricional" />
+    <NavigationProperty Name="receta" Relationship="Self.FK__comida__idReceta__5535A963" FromRole="comida" ToRole="receta" />
+  </EntityType>
+  <EntityType Name="imc">
+    <Key>
+      <PropertyRef Name="idIMC" />
+    </Key>
+    <Property Name="idIMC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="estatura" Type="Byte" Nullable="false" />
+    <Property Name="peso" Type="Single" Nullable="false" />
+    <Property Name="resultado" Type="Single" Nullable="false" />
+    <Property Name="observaciones" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__imc__idUsuario__412EB0B6" FromRole="imc" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="ingrediente">
+    <Key>
+      <PropertyRef Name="idIngrediente" />
+    </Key>
+    <Property Name="idIngrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ingrediente_receta" Relationship="Self.FK__ingredien__idIng__49C3F6B7" FromRole="ingrediente" ToRole="ingrediente_receta" />
+    <NavigationProperty Name="usuarios" Relationship="Self.alergia" FromRole="ingrediente" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="medicion">
+    <Key>
+      <PropertyRef Name="idMedicion" />
+    </Key>
+    <Property Name="idMedicion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="peso" Type="Single" Nullable="false" />
+    <Property Name="grasa" Type="Single" Nullable="false" />
+    <Property Name="musculo" Type="Single" Nullable="false" />
+    <Property Name="agua" Type="Single" Nullable="false" />
+    <Property Name="hueso" Type="Single" Nullable="false" />
+    <Property Name="observaciones" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__medicion__idUsua__440B1D61" FromRole="medicion" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="planNutricional">
+    <Key>
+      <PropertyRef Name="idPlan" />
+    </Key>
+    <Property Name="idPlan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" />
+    <Property Name="carbos" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="proteinas" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="grasas" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="azucares" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cantComidas" Type="Int32" Nullable="false" />
+    <Property Name="calorias" Type="Int32" />
+    <NavigationProperty Name="comidas" Relationship="Self.FK__comida__idPlan__534D60F1" FromRole="planNutricional" ToRole="comida" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__planNutri__idUsu__4CA06362" FromRole="planNutricional" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="receta">
+    <Key>
+      <PropertyRef Name="idReceta" />
+    </Key>
+    <Property Name="idReceta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="dificultad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tiempo" Type="Int32" Nullable="false" />
+    <Property Name="carbos" Type="Single" Nullable="false" />
+    <Property Name="proteinas" Type="Single" Nullable="false" />
+    <Property Name="grasas" Type="Single" Nullable="false" />
+    <Property Name="azucares" Type="Single" Nullable="false" />
+    <Property Name="calorias" Type="Int32" />
+    <Property Name="pasos" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="comidas" Relationship="Self.FK__comida__idReceta__5535A963" FromRole="receta" ToRole="comida" />
+    <NavigationProperty Name="ingrediente_receta" Relationship="Self.FK__ingredien__idRec__48CFD27E" FromRole="receta" ToRole="ingrediente_receta" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="cedula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fechaNac" Type="DateTime" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estatura" Type="Byte" Nullable="false" />
+    <Property Name="peso" Type="Single" Nullable="false" />
+    <Property Name="proposito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usuario1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tipoUsuario" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="imcs" Relationship="Self.FK__imc__idUsuario__412EB0B6" FromRole="usuario" ToRole="imc" />
+    <NavigationProperty Name="medicions" Relationship="Self.FK__medicion__idUsua__440B1D61" FromRole="usuario" ToRole="medicion" />
+    <NavigationProperty Name="planNutricionals" Relationship="Self.FK__planNutri__idUsu__4CA06362" FromRole="usuario" ToRole="planNutricional" />
+    <NavigationProperty Name="ingredientes" Relationship="Self.alergia" FromRole="usuario" ToRole="ingrediente" />
+  </EntityType>
+  <EntityType Name="ingrediente_receta">
+    <Key>
+      <PropertyRef Name="idReceta" />
+      <PropertyRef Name="idIngrediente" />
+      <PropertyRef Name="cantidad" />
+      <PropertyRef Name="medida" />
+    </Key>
+    <Property Name="idReceta" Type="Int32" Nullable="false" />
+    <Property Name="idIngrediente" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Single" Nullable="false" />
+    <Property Name="medida" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="observaciones" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ingrediente" Relationship="Self.FK__ingredien__idIng__49C3F6B7" FromRole="ingrediente_receta" ToRole="ingrediente" />
+    <NavigationProperty Name="receta" Relationship="Self.FK__ingredien__idRec__48CFD27E" FromRole="ingrediente_receta" ToRole="receta" />
+  </EntityType>
+  <Association Name="FK__comida__idPlan__534D60F1">
+    <End Role="planNutricional" Type="Self.planNutricional" Multiplicity="1" />
+    <End Role="comida" Type="Self.comida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="planNutricional">
+        <PropertyRef Name="idPlan" />
+      </Principal>
+      <Dependent Role="comida">
+        <PropertyRef Name="idPlan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__comida__idReceta__5535A963">
+    <End Role="receta" Type="Self.receta" Multiplicity="1" />
+    <End Role="comida" Type="Self.comida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="receta">
+        <PropertyRef Name="idReceta" />
+      </Principal>
+      <Dependent Role="comida">
+        <PropertyRef Name="idReceta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__imc__idUsuario__412EB0B6">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="imc" Type="Self.imc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="imc">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ingredien__idIng__49C3F6B7">
+    <End Role="ingrediente" Type="Self.ingrediente" Multiplicity="1" />
+    <End Role="ingrediente_receta" Type="Self.ingrediente_receta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ingrediente">
+        <PropertyRef Name="idIngrediente" />
+      </Principal>
+      <Dependent Role="ingrediente_receta">
+        <PropertyRef Name="idIngrediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__medicion__idUsua__440B1D61">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="medicion" Type="Self.medicion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="medicion">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__planNutri__idUsu__4CA06362">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="planNutricional" Type="Self.planNutricional" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="planNutricional">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ingredien__idRec__48CFD27E">
+    <End Role="receta" Type="Self.receta" Multiplicity="1" />
+    <End Role="ingrediente_receta" Type="Self.ingrediente_receta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="receta">
+        <PropertyRef Name="idReceta" />
+      </Principal>
+      <Dependent Role="ingrediente_receta">
+        <PropertyRef Name="idReceta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="alergia">
+    <End Role="ingrediente" Type="Self.ingrediente" Multiplicity="*" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="saladEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="comidas" EntityType="Self.comida" />
+    <EntitySet Name="imcs" EntityType="Self.imc" />
+    <EntitySet Name="ingredientes" EntityType="Self.ingrediente" />
+    <EntitySet Name="medicions" EntityType="Self.medicion" />
+    <EntitySet Name="planNutricionals" EntityType="Self.planNutricional" />
+    <EntitySet Name="recetas" EntityType="Self.receta" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="usuarios" EntityType="Self.usuario" />
+    <EntitySet Name="ingrediente_receta" EntityType="Self.ingrediente_receta" />
+    <AssociationSet Name="FK__comida__idPlan__534D60F1" Association="Self.FK__comida__idPlan__534D60F1">
+      <End Role="planNutricional" EntitySet="planNutricionals" />
+      <End Role="comida" EntitySet="comidas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__comida__idReceta__5535A963" Association="Self.FK__comida__idReceta__5535A963">
+      <End Role="receta" EntitySet="recetas" />
+      <End Role="comida" EntitySet="comidas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__imc__idUsuario__412EB0B6" Association="Self.FK__imc__idUsuario__412EB0B6">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="imc" EntitySet="imcs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ingredien__idIng__49C3F6B7" Association="Self.FK__ingredien__idIng__49C3F6B7">
+      <End Role="ingrediente" EntitySet="ingredientes" />
+      <End Role="ingrediente_receta" EntitySet="ingrediente_receta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__medicion__idUsua__440B1D61" Association="Self.FK__medicion__idUsua__440B1D61">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="medicion" EntitySet="medicions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__planNutri__idUsu__4CA06362" Association="Self.FK__planNutri__idUsu__4CA06362">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="planNutricional" EntitySet="planNutricionals" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ingredien__idRec__48CFD27E" Association="Self.FK__ingredien__idRec__48CFD27E">
+      <End Role="receta" EntitySet="recetas" />
+      <End Role="ingrediente_receta" EntitySet="ingrediente_receta" />
+    </AssociationSet>
+    <AssociationSet Name="alergia" Association="Self.alergia">
+      <End Role="ingrediente" EntitySet="ingredientes" />
+      <End Role="usuario" EntitySet="usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
