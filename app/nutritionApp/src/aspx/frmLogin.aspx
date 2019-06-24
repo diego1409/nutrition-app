@@ -7,7 +7,7 @@
    <title>Ingresar</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
-    <
+    
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 	
@@ -20,10 +20,10 @@
 		<div class="card">
 			<div class="card-header">
 				<h3>Ingresar</h3>
-				<div class="d-flex justify-content-end social_icon">
+				<!--<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-instagram"></i></span>
-				</div>
+				</div> -->
 			</div>
 			<div class="card-body">
 				
@@ -42,9 +42,6 @@
                          <asp:TextBox ID="txtPasswordUsuarioLogin" runat="server" class="form-control" placeholder="Contraseña" type="Password"></asp:TextBox>
 						
 					</div>
-				<!--	<div class="row align-items-center remember">
-						<input type="checkbox">Recordarme
-					</div>-->
 					<div class="form-group">
 						
                         <asp:Button ID="btnIngresar" runat="server" Text="Entrar" class="btn float-right login_btn" OnClick="btnIngresar_onClick"/>

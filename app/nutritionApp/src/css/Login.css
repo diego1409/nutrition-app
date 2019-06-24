@@ -1,9 +1,12 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Numans');
 
 html, body {
-    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    /*background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    background: #22c1c3; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #fdbb2d, #22c1c3); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100%;
     font-family: 'Numans', sans-serif;
 }

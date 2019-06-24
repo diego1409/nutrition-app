@@ -13,7 +13,7 @@ namespace nutritionApp.src.aspx
         saladEntities2 modeloBD = new saladEntities2();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+           /* if (!IsPostBack)
             {
                 Boolean usuario = Convert.ToBoolean(this.Session["UsuarioLogueado"]);
                 if (usuario)
@@ -22,7 +22,7 @@ namespace nutritionApp.src.aspx
                          
                 }
 
-            }
+            }*/
         }
     }
 }

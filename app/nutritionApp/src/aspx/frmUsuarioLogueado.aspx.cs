@@ -13,17 +13,17 @@ namespace nutritionApp.src.aspx
 {
     public partial class frmUsuarioLogueado : System.Web.UI.Page
     {
-        saladEntities2 modeloBD = new saladEntities2();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack){
+          /*  if (!IsPostBack){
                 Boolean usuario = Convert.ToBoolean(this.Session["UsuarioLogueado"]);
                 if (usuario)
                 {
                     MessageBox.Show("Ingreso como " + this.Session["Nombre"] + this.Session["Apellido1"] + this.Session["Apellido2"]);
                 }
 
-            }
+            }*/
         }
     }
 }

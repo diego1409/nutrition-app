@@ -49,3 +49,5 @@ C:\Users\jasom\Desktop\Github\nutritionApp\app\nutritionApp\bin\roslyn\vbc.exe.c
 C:\Users\jasom\Desktop\Github\nutritionApp\app\nutritionApp\bin\roslyn\vbc.rsp
 C:\Users\jasom\Desktop\Github\nutritionApp\app\nutritionApp\bin\roslyn\VBCSCompiler.exe
 C:\Users\jasom\Desktop\Github\nutritionApp\app\nutritionApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\jasom\Desktop\Github\nutritionApp\app\nutritionApp\bin\EntityFramework.dll
+C:\Users\jasom\Desktop\Github\nutritionApp\app\nutritionApp\bin\EntityFramework.xml

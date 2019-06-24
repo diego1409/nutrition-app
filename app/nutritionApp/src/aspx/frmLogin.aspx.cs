@@ -9,7 +9,7 @@ namespace nutritionApp.src.aspx
 {
     public partial class frmLogin : System.Web.UI.Page
     {
-        saladEntities2 modeloBD = new saladEntities2();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -17,7 +17,7 @@ namespace nutritionApp.src.aspx
 
         protected void btnIngresar_onClick(object sender, EventArgs e)
         {
-            if (this.Page.IsValid)
+           /* if (this.Page.IsValid)
             {
                 RetornaUsuarioPass_Result resultado_sp = this.modeloBD.RetornaUsuarioPass(this.txtUsuarioLogin.Text,this.txtPasswordUsuarioLogin.Text).FirstOrDefault();
                 // invocar aquí el sp de retornaUsuarioPass
@@ -52,7 +52,7 @@ namespace nutritionApp.src.aspx
                     this.Response.Redirect("~src/aspx/frmLogin.aspx");
                   
                 }
-            }
+            }*/
         }
     }
 
