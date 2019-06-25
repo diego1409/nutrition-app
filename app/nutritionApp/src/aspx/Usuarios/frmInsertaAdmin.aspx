@@ -152,7 +152,7 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <asp:Button ID="btnRegistrar" runat="server" Text="Registrar Administrador" Height="52px" Width="143px"  BackColor="White" BorderColor="#660033" BorderStyle="Dotted" BorderWidth="3px" OnClick="btnRegistrar_Click"  />
+            <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" Height="52px" Width="143px"  BackColor="White" BorderColor="Black" BorderWidth="3px" OnClick="btnRegistrar_Click"  />
                
             <br />
             <br />
