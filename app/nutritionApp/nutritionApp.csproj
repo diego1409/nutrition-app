@@ -182,6 +182,9 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="src\aspx\frmLogin.aspx" />
+    <Content Include="src\aspx\Usuarios\frmModificaUsuario.aspx" />
+    <Content Include="src\aspx\Usuarios\frmInsertaUsuario.aspx" />
+    <Content Include="src\aspx\Usuarios\frmInsertaAdmin.aspx" />
     <Content Include="src\css\Login.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -236,6 +239,27 @@
     </Compile>
     <Compile Include="src\aspx\frmLogin.aspx.designer.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\Usuarios\frmModificaUsuario.aspx.cs">
+      <DependentUpon>frmModificaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\Usuarios\frmModificaUsuario.aspx.designer.cs">
+      <DependentUpon>frmModificaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\Usuarios\frmInsertaUsuario.aspx.cs">
+      <DependentUpon>frmInsertaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\Usuarios\frmInsertaUsuario.aspx.designer.cs">
+      <DependentUpon>frmInsertaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\Usuarios\frmInsertaAdmin.aspx.cs">
+      <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\Usuarios\frmInsertaAdmin.aspx.designer.cs">
+      <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
