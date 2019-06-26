@@ -103,6 +103,24 @@ namespace nutritionApp.src.aspx.Usuarios {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revtxtNumIdentificacion;
         
         /// <summary>
+        /// ddlGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGenero;
+        
+        /// <summary>
+        /// rqvDdlGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlGenero;
+        
+        /// <summary>
         /// txtFechaNac control.
         /// </summary>
         /// <remarks>

@@ -104,3 +104,7 @@ C:\Users\Leo Aguilar\Downloads\nutritionApp-HU3-Registro-Usuarios\app\nutritionA
 C:\Users\Leo Aguilar\Downloads\nutritionApp-HU3-Registro-Usuarios\app\nutritionApp\bin\Antlr3.Runtime.pdb
 C:\Users\Leo Aguilar\Downloads\nutritionApp-HU3-Registro-Usuarios\app\nutritionApp\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\Leo Aguilar\Downloads\nutritionApp-HU3-Registro-Usuarios\app\nutritionApp\obj\Debug\nutritionApp.csproj.CopyComplete
+C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\obj\Debug\nutritionApp.csprojAssemblyReference.cache
+C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\obj\Debug\nutritionApp.csproj.CoreCompileInputs.cache
+C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\obj\Debug\nutritionApp.dll
+C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\obj\Debug\nutritionApp.pdb

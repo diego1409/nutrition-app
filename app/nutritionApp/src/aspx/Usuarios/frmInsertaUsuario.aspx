@@ -74,6 +74,21 @@
                     </td>
                 </tr>
 
+                <!-- Tipo de Usuario -->
+                <tr>
+                    <td>Genero:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlGenero" runat="server" Height="37px" Width="258px" Enabled="False">
+                            <asp:ListItem Value="" Selected="True">Seleccione su genero</asp:ListItem>
+                            <asp:ListItem Value="M">Masculino</asp:ListItem>
+                            <asp:ListItem Value="F">Femenino</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvDdlGenero" runat="server" ControlToValidate="ddlGenero" ErrorMessage="Debe seleccionar un genero" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
                 <!-- Fecha de Nacimiento -->
                 <tr>
                     <td>Fecha de Nacimiento:</td>
