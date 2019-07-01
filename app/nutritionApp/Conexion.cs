@@ -20,7 +20,7 @@ namespace nutritionApp
 
         public void parametro(String bd, String ip, String nom_usuario, String clave)
         {
-            strconexion = "Server=CMLAGUILAR\\SQLEXPRESS;Database=Salad;Trusted_Connection=yes";
+            strconexion = "Provider=SQLOLEDB;Server=CMLAGUILAR\\SQLEXPRESS;Database=Salad;Trusted_Connection=yes";
         }
 
 

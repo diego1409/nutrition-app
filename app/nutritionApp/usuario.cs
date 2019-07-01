@@ -17,7 +17,7 @@ namespace nutritionApp
         private string direccion;
         private string telefono1;
         private int estatura;
-        private int peso;
+        private decimal peso;
         private string proposito;
         private string correo;
         private string nomUsuario;
@@ -35,9 +35,9 @@ namespace nutritionApp
         public string _Direccion { get => direccion; set => direccion = value; }
         public string _Telefono1 { get => telefono1; set => telefono1 = value; }
         public int _Estatura { get => estatura; set => estatura = value; }
-        public int _Peso { get => peso; set => peso = value; }
-        public string Proposito { get => proposito; set => proposito = value; }
-        public string Correo { get => correo; set => correo = value; }
+        public decimal _Peso { get => peso; set => peso = value; }
+        public string _Proposito { get => proposito; set => proposito = value; }
+        public string _Correo { get => correo; set => correo = value; }
         public string _NomUsuario { get => nomUsuario; set => nomUsuario = value; }
         public string _Contrasena { get => contrasena; set => contrasena = value; }
         public string _TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }

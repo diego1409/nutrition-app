@@ -32,24 +32,24 @@ namespace nutritionApp
             conect_local.inicializa();
             String consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "EXEC InsertaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+            consulta = "EXEC InsertaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
             conect_local.annadir_consulta(consulta);
-            conect_local.annadir_parametro(insertar._Foto, 2);
             conect_local.annadir_parametro(insertar._Cedula, 2);
             conect_local.annadir_parametro(insertar._Genero, 2);
-            conect_local.annadir_parametro(insertar._FechaNac, 2);
+            conect_local.annadir_parametro(insertar._FechaNac, 4);
             conect_local.annadir_parametro(insertar._Nombre, 2);
-            conect_local.annadir_parametro(insertar._Apellido1, 1);
-            conect_local.annadir_parametro(insertar._Apellido2, 5);
-            conect_local.annadir_parametro(insertar._Direccion, 1);
-            conect_local.annadir_parametro(insertar._Telefono1, 1);
-            conect_local.annadir_parametro(insertar._Estatura, 2);
-            conect_local.annadir_parametro(insertar._Peso, 1);
-            conect_local.annadir_parametro(insertar.Proposito, 5);
-            conect_local.annadir_parametro(insertar.Correo, 1);
-            conect_local.annadir_parametro(insertar._NomUsuario, 1);
-            conect_local.annadir_parametro(insertar._Contrasena, 1);
-            conect_local.annadir_parametro(insertar._TipoUsuario, 1);
+            conect_local.annadir_parametro(insertar._Apellido1, 2);
+            conect_local.annadir_parametro(insertar._Apellido2, 2);
+            conect_local.annadir_parametro(insertar._Direccion, 2);
+            conect_local.annadir_parametro(insertar._Telefono1, 2);
+            conect_local.annadir_parametro(insertar._Estatura, 1);
+            conect_local.annadir_parametro(insertar._Peso, 3);
+            conect_local.annadir_parametro(insertar._Proposito, 2);
+            conect_local.annadir_parametro(insertar._Correo, 2);
+            conect_local.annadir_parametro(insertar._NomUsuario, 2);
+            conect_local.annadir_parametro(insertar._Contrasena, 2);
+            conect_local.annadir_parametro(insertar._TipoUsuario, 2);
+
             contenedor = conect_local.busca();
             while (contenedor.Read())
             {
