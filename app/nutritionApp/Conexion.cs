@@ -83,7 +83,7 @@ namespace nutritionApp
                     break;
                 case 5:
 
-                    parametro = comando.Parameters.Add("@InputParm", OleDbType.Boolean);
+                    parametro = comando.Parameters.Add("@InputParm", OleDbType.LongVarBinary);
                     parametro.Value = _PARAMETRO;
                     break;
             }

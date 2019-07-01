@@ -16,7 +16,7 @@
 <body>
     <form id="frmModificaUsuario" runat="server">
         <div id="top-add" style="text-align: center">
-            <h1>Registrar Usuario</h1>     
+            <h1>Modificar Usuario</h1>     
         </div>
 
         <div class="form-group">
@@ -25,20 +25,6 @@
                 
             <br />
             <br />
-
-            <!-- Número de Cédula -->
-                <tr>
-                    <td><h2>Número de Cédula:</h2></td>
-                    <td>
-                        <asp:TextBox ID="txtNumIdentificacion" Text="122223333" Enabled="false" class="form-control" runat="server" Width="250px"></asp:TextBox>
-                    </td> 
-                    <td>
-                        <asp:RequiredFieldValidator ID="rqvTxtNumIdentificacion" class="form-control" runat="server" ControlToValidate="txtNumIdentificacion" ErrorMessage="Debe ingresar la cédula del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                    <td>
-                        <asp:RegularExpressionValidator ID="revtxtNumIdentificacion" class="form-control" runat="server" ErrorMessage="Debe ingresar sólo números para la cédula" ForeColor="Red" ValidationExpression="^[0-9]*" ControlToValidate="txtNumIdentificacion"></asp:RegularExpressionValidator>
-                    </td>
-                </tr>
 
             <table>
                 <!-- Nombre -->
@@ -74,6 +60,42 @@
                     </td>
                 </tr>
                     
+                <!-- Número de Cédula -->
+                <tr>
+                    <td>Número de Cédula:</td>
+                    <td>
+                        <asp:TextBox ID="txtNumIdentificacion" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtNumIdentificacion" class="form-control" runat="server" ControlToValidate="txtNumIdentificacion" ErrorMessage="Debe ingresar la cédula del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                    <td>
+                        <asp:RegularExpressionValidator ID="revtxtNumIdentificacion" class="form-control" runat="server" ErrorMessage="Debe ingresar sólo números para la cédula" ForeColor="Red" ValidationExpression="^[0-9]*" ControlToValidate="txtNumIdentificacion"></asp:RegularExpressionValidator>
+                    </td>
+                </tr>
+
+                <!-- Foto de perfil -->
+                <tr>
+                    <td>Foto:</td>
+                    <td>
+                        <asp:FileUpload ID="fuFotoPerfil" runat="server" />
+                    </td> 
+                </tr>
+
+                <!-- Tipo de Usuario -->
+                <tr>
+                    <td>Genero:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlGenero" runat="server" Height="37px" Width="258px" Enabled="True">
+                            <asp:ListItem Value="" Selected="True">Seleccione su genero</asp:ListItem>
+                            <asp:ListItem Value="M">Masculino</asp:ListItem>
+                            <asp:ListItem Value="F">Femenino</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvDdlGenero" runat="server" ControlToValidate="ddlGenero" ErrorMessage="Debe seleccionar un genero" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
 
                 <!-- Fecha de Nacimiento -->
                 <tr>
@@ -108,6 +130,61 @@
                     </td>
                 </tr>
                 
+                <!-- Telefono -->
+                <tr>
+                    <td>Telefono:</td>
+                    <td>
+                        <asp:TextBox ID="txtTelefono" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtTelefono" class="form-control" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Debe ingresar el telefono" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
+                <!-- Estatura -->
+                <tr>
+                    <td>Estatura:</td>
+                    <td>
+                        <asp:TextBox ID="txtEstatura" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtEstatura" class="form-control" runat="server" ControlToValidate="txtEstatura" ErrorMessage="Debe ingresar su estatura" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
+                <!-- Peso -->
+                <tr>
+                    <td>Peso:</td>
+                    <td>
+                        <asp:TextBox ID="txtPeso" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtPeso" class="form-control" runat="server" ControlToValidate="txtPeso" ErrorMessage="Debe ingresar su peso" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
+                <!-- Proposito -->
+                <tr>
+                    <td>Proposito:</td>
+                    <td>
+                        <asp:TextBox ID="txtProposito" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtProposito" class="form-control" runat="server" ControlToValidate="txtProposito" ErrorMessage="Debe ingresar el propósito del uso de la aplicación" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
+                <!-- Nombre de usuario -->
+                <tr>
+                    <td>Nombre de usuario:</td>
+                    <td>
+                        <asp:TextBox ID="txtNomUsuario" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvNomUsuario" class="form-control" runat="server" ControlToValidate="txtNomUsuario" ErrorMessage="Debe ingresar su nombre de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
 
                 <!-- Contraseña -->
                 <tr>
@@ -146,7 +223,7 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <asp:Button ID="btnModificar" class="btn btn-primary" runat="server" Text="Modificar usuario" OnClick="btnModificar_Click"  />
+            <asp:Button ID="btnRegistrar" class="btn btn-primary" runat="server" Text="Registrar usuario" OnClick="btnRegistrar_Click"  />
                
             <br />
             <br />
@@ -156,20 +233,5 @@
         </div>
     </form>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var dp = $('#<%=txtFechaNac.ClientID%>');
-            dp.datepicker({
-                changeMonth: true,  
-                changeYear: true,
-                format: "dd/mm/yyyy",
-                language: "es"
-                //todayHighlight: true
-            }).on('changeDate', function (ev) {
-                $(this).blur();
-                $(this).datepicker('hide');
-            });
-        });
-    </script>
 </body>
 </html>

@@ -11,7 +11,7 @@ namespace nutritionApp
 {
 
 
-    public partial class Contact
+    public partial class Index
     {
     }
 }

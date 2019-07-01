@@ -46,7 +46,7 @@ namespace nutritionApp.src.aspx.Usuarios
                 ManejoDatos insertar_usuario = new ManejoDatos();
                     insertar_usuario.insertar_usuario(nuevo_usuario);
                     Session["ClaseUsuario"] = nuevo_usuario;
-                    Response.Redirect("Menu.aspx");
+                    Response.Redirect("../Menu.aspx");
                 }
                 else
                 {

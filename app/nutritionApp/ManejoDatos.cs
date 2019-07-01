@@ -58,6 +58,41 @@ namespace nutritionApp
             return true;
         }
 
+
+        public bool modificar_usuario(Usuario modificar)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC ModificaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(modificar._Cedula, 2);
+            conect_local.annadir_parametro(modificar._Foto, 5);
+            conect_local.annadir_parametro(modificar._Genero, 2);
+            conect_local.annadir_parametro(modificar._FechaNac, 4);
+            conect_local.annadir_parametro(modificar._Nombre, 2);
+            conect_local.annadir_parametro(modificar._Apellido1, 2);
+            conect_local.annadir_parametro(modificar._Apellido2, 2);
+            conect_local.annadir_parametro(modificar._Direccion, 2);
+            conect_local.annadir_parametro(modificar._Telefono1, 2);
+            conect_local.annadir_parametro(modificar._Estatura, 1);
+            conect_local.annadir_parametro(modificar._Peso, 3);
+            conect_local.annadir_parametro(modificar._Proposito, 2);
+            conect_local.annadir_parametro(modificar._Correo, 2);
+            conect_local.annadir_parametro(modificar._NomUsuario, 2);
+            conect_local.annadir_parametro(modificar._Contrasena, 2);
+            conect_local.annadir_parametro(modificar._TipoUsuario, 2);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
+        }
+
         ///* == Funcion que inserta un administrador == */
         //public bool insertar_administrador(Administrador insertar)
         //{
