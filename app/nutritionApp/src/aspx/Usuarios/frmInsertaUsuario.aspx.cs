@@ -24,54 +24,36 @@ namespace nutritionApp.src.aspx.Usuarios
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             ///Verificar que todas las validaciones hayan sido satisfactorias.
-            if (this.IsValid)
-            {
-                /*
-                //Este bloque de código va a verificar que el correo no se repita en la base de datos
-                //Variable que almacena el objeto que retorna el procedimiento
-                sp_RetornarUsuariosCorreo_Result registroCorreo = new sp_RetornarUsuariosCorreo_Result();
-
-                //Invocar el procedimiento
-                //Es necesario el First Or Default por si hay valores nulos
-                registroCorreo = this.modelo.sp_RetornarUsuariosCorreo(this.txtCorreo.Text).FirstOrDefault();
-
-                //Validar si el objeto es nulo
-                if (registroCorreo != null)
+                if (txtPass.Text == txtConfirmarPass.Text)
                 {
-                    this.lblResultado.Text = "El correo electrónico del administrador ya está registrado. Por favor, ingresa un correo diferente.";
+                    Usuario nuevo_usuario = new Usuario();
+                    nuevo_usuario._Cedula = txtNumIdentificacion.Text;
+                    nuevo_usuario._Genero = ddlGenero.SelectedValue;
+                    nuevo_usuario._FechaNac = Convert.ToDateTime(txtFechaNac.Text);
+                    nuevo_usuario._Nombre = txtNombre.Text;
+                    nuevo_usuario._Apellido1 = txtPrimerApellido.Text;
+                    nuevo_usuario._Apellido2 = txtSegundoApellido.Text;
+                    nuevo_usuario._Direccion = txtDireccion.Text;
+                    nuevo_usuario._Telefono1 = txtTelefono.Text;
+                    nuevo_usuario._Estatura = Convert.ToInt32(txtEstatura.Text);
+                    nuevo_usuario._Peso = Convert.ToDecimal(txtPeso.Text);
+                    nuevo_usuario._Proposito = txtProposito.Text;
+                    nuevo_usuario._Correo = txtCorreo.Text;
+                    nuevo_usuario._NomUsuario = txtNomUsuario.Text;
+                    nuevo_usuario._Contrasena = txtPass.Text;
+                    nuevo_usuario._TipoUsuario = "C";
+
+                ManejoDatos insertar_usuario = new ManejoDatos();
+                    insertar_usuario.insertar_usuario(nuevo_usuario);
+                    Session["ClaseUsuario"] = nuevo_usuario;
+                    Response.Redirect("../Menu.aspx");
                 }
                 else
                 {
-                    try
-                    {
-
-                        //// Invocar al procedimiento de la base de datos.
-                        // Procedimiento para agregar en la tabla Usuarios
-                        // para credenciales de correo y password.
-                        this.modelo.sp_InsertarUsuarios(
-                            this.txtCorreo.Text,
-                            this.txtPass.Text,
-                            this.txtNumIdentificacion.Text,
-                            this.txtNombre.Text,
-                            this.txtPrimerApellido.Text,
-                            this.txtSegundoApellido.Text,
-                            "Usuario Regular"
-                            );
-
-                        ///Mostrar el mensaje resultado
-                        this.lblResultado.Text = "Datos del usuario registrados correctamente.";
-
-
-                    }
-                    catch (Exception error)
-                    {
-
-                        this.lblResultado.Text = "No se logró registrar los datos del usuario en la base de datos.";
-
-                    }
+                    Response.Write("<script>window.alert('Contraseñas no coinciden porfavor verificar');</script>");
+                    txtPass.Text = "";
+                    txtConfirmarPass.Text = "";
                 }
-                */
-            }
         }
     }
 }
