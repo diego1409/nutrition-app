@@ -7,7 +7,7 @@ namespace nutritionApp
 {
     public class Usuario
     {
-        private byte foto;
+        private byte[] foto;
         private string cedula;
         private string genero;
         private DateTime fechaNac;
@@ -25,7 +25,7 @@ namespace nutritionApp
         private string tipoUsuario;
 
 
-        public byte _Foto { get => foto; set => foto = value; }
+        public byte[] _Foto { get => foto; set => foto = value; }
         public string _Cedula { get => cedula; set => cedula = value; }
         public string _Genero { get => genero; set => genero = value; }
         public DateTime _FechaNac { get => fechaNac; set => fechaNac = value; }

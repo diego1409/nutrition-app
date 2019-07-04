@@ -319,13 +319,13 @@ namespace nutritionApp.src.aspx.Usuarios {
         protected global::System.Web.UI.WebControls.CompareValidator cmvPass;
         
         /// <summary>
-        /// btnRegistrar control.
+        /// btnModificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
         
         /// <summary>
         /// lblResultado control.

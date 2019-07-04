@@ -27,13 +27,20 @@ namespace nutritionApp.src.aspx.Usuarios
             {
                 Usuario usuario_modificar = new Usuario();
                 usuario_modificar._Cedula = txtNumIdentificacion.Text;
-                if (fuFotoPerfil.HasFile)
-                {
-                    int length = fuFotoPerfil.PostedFile.ContentLength;
-                    byte[] pic = new byte[length];
-                    fuFotoPerfil.PostedFile.InputStream.Read(pic, 0, length);
-                    usuario_modificar._Foto = Convert.ToByte(pic);
-                }                
+                //if (fuFotoPerfil.HasFile)
+                //{
+                //    int fileLen;
+                //    string displayString = "";
+                //    fileLen = fuFotoPerfil.PostedFile.ContentLength;
+                //    byte[] input = new byte[fileLen - 1];
+                //    input = fuFotoPerfil.FileBytes;
+
+                //    usuario_modificar._Foto = input;
+                //}
+                //else
+                //{
+                //    usuario_modificar._Foto = null;
+                //}
                 usuario_modificar._Genero = ddlGenero.SelectedValue;
                 usuario_modificar._FechaNac = Convert.ToDateTime(txtFechaNac.Text);
                 usuario_modificar._Nombre = txtNombre.Text;

@@ -66,10 +66,10 @@ namespace nutritionApp
             conect_local.inicializa();
             String consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "EXEC ModificaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+            consulta = "EXEC ModificaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
             conect_local.annadir_consulta(consulta);
             conect_local.annadir_parametro(modificar._Cedula, 2);
-            conect_local.annadir_parametro(modificar._Foto, 5);
+            //conect_local.annadir_parametro(modificar._Foto, 5);
             conect_local.annadir_parametro(modificar._Genero, 2);
             conect_local.annadir_parametro(modificar._FechaNac, 4);
             conect_local.annadir_parametro(modificar._Nombre, 2);
