@@ -31,3 +31,7 @@ assignees: ''
 - [ ] Desarrollo
 - [ ] Testing
 - [ ] Hecho
+
+### Prototipo: 
+<Define los aspectos de diseño necesarios para la parte de front-end requeridos para esta historia.>
+<Se inserta una imagen del prototipo realizada en el software InVision Studio.>
