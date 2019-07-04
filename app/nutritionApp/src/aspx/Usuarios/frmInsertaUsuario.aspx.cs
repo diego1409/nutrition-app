@@ -43,8 +43,8 @@ namespace nutritionApp.src.aspx.Usuarios
                     nuevo_usuario._Contrasena = txtPass.Text;
                     nuevo_usuario._TipoUsuario = "C";
 
-                ManejoDatos insertar_usuario = new ManejoDatos();
-                    insertar_usuario.insertar_usuario(nuevo_usuario);
+                ManejoDatos md = new ManejoDatos();
+                    md.insertar_usuario(nuevo_usuario);
                     Session["ClaseUsuario"] = nuevo_usuario;
                     Response.Redirect("../Menu.aspx");
                 }
