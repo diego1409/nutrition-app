@@ -22,9 +22,9 @@ namespace nutritionApp.Clases
             clsConexion inserta = new clsConexion();
             //inserta.nuevoComandoSP("InsertaUsuario");
 
-            string consulta = "EXEC InsertaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
+            string consulta = "EXEC InsertaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?";
             inserta.comando = inserta.nuevoComando(consulta, inserta.conexion);
-            inserta.anadirParametroSP("@InputParm", usuario._Foto, 5);
+            //inserta.anadirParametroSP("@InputParm", usuario._Foto, 5);
             inserta.anadirParametroSP("@InputParm", usuario._Cedula, 2);
             inserta.anadirParametroSP("@InputParm", usuario._Genero, 2);
             inserta.anadirParametroSP("@InputParm", usuario._FechaNac, 4);
