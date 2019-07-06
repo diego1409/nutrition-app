@@ -199,13 +199,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Clases\clsConexion.cs" />
     <Compile Include="Clases\clsProcedimientosAlmacenados.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -223,7 +217,7 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManejoDatos.cs" />
+    <Compile Include="Clases\ManejoDatos.cs" />
     <Compile Include="src\aspx\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -274,7 +268,7 @@
     <Compile Include="src\aspx\Usuarios\frmInsertaAdmin.aspx.designer.cs">
       <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="usuario.cs" />
+    <Compile Include="Clases\usuario.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

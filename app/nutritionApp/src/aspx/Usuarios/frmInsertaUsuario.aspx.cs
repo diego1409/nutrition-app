@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+//Clases de conexion
+using nutritionApp.Clases;
+
 namespace nutritionApp.src.aspx.Usuarios
 {
     public partial class frmInsertaUsuario : System.Web.UI.Page
@@ -43,8 +46,8 @@ namespace nutritionApp.src.aspx.Usuarios
                     nuevo_usuario._Contrasena = txtPass.Text;
                     nuevo_usuario._TipoUsuario = "C";
 
-                ManejoDatos insertar_usuario = new ManejoDatos();
-                    insertar_usuario.insertar_usuario(nuevo_usuario);
+                    clsProcedimientosAlmacenados InsertaUsuario = new clsProcedimientosAlmacenados();
+                    InsertaUsuario.InsertaUsuario(nuevo_usuario);
                     Session["ClaseUsuario"] = nuevo_usuario;
                     Response.Redirect("../Menu.aspx");
                 }

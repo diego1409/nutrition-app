@@ -5,6 +5,7 @@ using System.Web;
 
 // Referencias a las librerías necesarias
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -14,9 +15,15 @@ namespace nutritionApp.Clases
     public class clsConexion
     {
     #region Atributos de la clase conexión
+        //Datos de conexión
         private string data_source;
         private string initial_catalog;
         private string security;
+
+        //Variables SQL
+        public SqlConnection conexion;
+        public SqlCommand comando;
+        private SqlTransaction transaccion;
     #endregion
 
         /// <summary>
@@ -24,9 +31,13 @@ namespace nutritionApp.Clases
         /// </summary>
         public clsConexion()
         {
+            //Datos de conexión
             this.data_source = "localhost"; //Nombre del servidor
             this.initial_catalog = "Salad"; //Nombre de la base de datos
             this.security = "True"; //Integrated Security
+
+            //Variables SQL
+            this.conexion = nuevaConexion();
         }
 
         /// <summary>
@@ -35,8 +46,7 @@ namespace nutritionApp.Clases
         /// <returns></returns>
         public SqlConnection nuevaConexion()
         {
-            SqlConnection conexion = new SqlConnection("Data Source=" + data_source + ";Initial Catalog=" + initial_catalog + ";Integrated Security=" + security);
-            return conexion;
+            return new SqlConnection("Data Source=" + data_source + ";Initial Catalog=" + initial_catalog + ";Integrated Security=" + security); 
         }
 
         /// <summary>
@@ -77,27 +87,48 @@ namespace nutritionApp.Clases
         /// </summary>
         /// <param name="comando">Comando a utilizar (INSERT, ALTER, DELETE)</param>
         /// <returns></returns>
-        public Boolean ejecutarComando(string comando)
+        public Boolean ejecutarComando(string script)
         {
-            using (SqlConnection conexion = nuevaConexion())
+
+            this.conexion.Open();
+            this.comando = nuevoComando(script, this.conexion);
+            
+            try
             {
-
-                conexion.Open();
-                SqlCommand com = nuevoComando(comando, conexion);
-
-                try
-                {
-                    com.ExecuteNonQuery();
-                    conexion.Close();
-                    return true;
-                }
-                catch (Exception)
-                {
-                    conexion.Close();
-                    return false;
-                }
-
+                this.transaccion = this.conexion.BeginTransaction();
+                this.comando.ExecuteNonQuery();
+                this.transaccion.Commit();
+                this.conexion.Close();
+                return true;
             }
+            catch (Exception)
+            {
+                this.transaccion.Rollback();
+                this.conexion.Close();
+                return false;
+            }
+  
+        }
+
+        /// <summary>
+        /// Buscar datos mediante un DataReader. SOLO con scripts SELECT
+        /// </summary>
+        /// <returns></returns>
+        public SqlDataReader buscarDatos()
+        {
+            SqlDataReader resultados;
+
+            this.conexion.Open();
+            this.comando.Prepare();
+
+            resultados = comando.ExecuteReader();
+            comando.CommandTimeout = 0;
+            
+            conexion.Close();
+            conexion.Dispose();
+
+            return resultados;
+
         }
 
         /// <summary>
@@ -106,42 +137,93 @@ namespace nutritionApp.Clases
         /// <param name="spNombre">Nombre de procedimiento almacenado</param>
         /// <param name="conexion">Variable de conexion</param>
         /// <returns></returns>
-        public SqlCommand nuevoComandoSP(String spNombre, SqlConnection conexion)
+        public void nuevoComandoSP(String spNombre)
         {
-            SqlCommand comando = new SqlCommand(spNombre,conexion);
+            this.comando = new SqlCommand(spNombre,this.conexion);
             comando.CommandType = CommandType.StoredProcedure;
-            return comando;
         }
 
+        /// <summary>
+        /// Se agrega un parametro al comando de procedimiento almacenado
+        /// </summary>
+        /// <param name="param">Valor del dato</param>
+        /// <param name="tipo">Tipo de dato: 1=Entero, 2=Varchar, 3=Decimal, 4=Fecha, 5=Imagen</param>
+        /// <returns></returns>
+        public void anadirParametroSP(string nombreParam, Object param, int tipo)
+        {
+            //Se declara y se coloca el nombre del parametro
+            SqlParameter parametro = new SqlParameter();
+            parametro.ParameterName = nombreParam;
+
+            switch (tipo)
+            {
+                case 1:
+                    parametro.SqlDbType = SqlDbType.BigInt; //Tipo de dato
+                    parametro.Direction = ParameterDirection.Input; //Direccion de parametro
+                    parametro.Value = param; //Valor de parametro
+                    this.comando.Parameters.Add(parametro); //Agregar parametro al comando
+                    break;
+                case 2:
+                    parametro.SqlDbType = SqlDbType.VarChar; //Tipo de dato
+                    parametro.Direction = ParameterDirection.Input; //Direccion de parametro
+                    parametro.Value = param; //Valor de parametro
+                    parametro.Size = 2500; //Tamano de parametro
+                    this.comando.Parameters.Add(parametro); //Agregar parametro al comando
+                    break;
+                case 3:
+                    parametro.SqlDbType = SqlDbType.Decimal; //Tipo de dato
+                    parametro.Direction = ParameterDirection.Input; //Direccion de parametro
+                    parametro.Value = param; //Valor de parametro
+                    parametro.Size = 10; //Tamano de parametro
+                    parametro.Precision = 10;
+                    parametro.Scale = 2;
+                    this.comando.Parameters.Add(parametro); //Agregar parametro al comando
+                    break;
+                case 4:
+                    parametro.SqlDbType = SqlDbType.Date; //Tipo de dato
+                    parametro.Direction = ParameterDirection.Input; //Direccion de parametro
+                    parametro.Value = param; //Valor de parametro
+                    this.comando.Parameters.Add(parametro); //Agregar parametro al comando
+                    break;
+                case 5:
+                    parametro.SqlDbType = SqlDbType.Image; //Tipo de dato
+                    parametro.Direction = ParameterDirection.Input; //Direccion de parametro
+                    parametro.Value = param; //Valor de parametro
+                    this.comando.Parameters.Add(parametro); //Agregar parametro al comando
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Se ejecuta un comando de procedimiento almacenado
+        /// </summary>
+        /// <returns></returns>
         public Boolean ejecutarSP()
         {
-            using (SqlConnection conexion = nuevaConexion())
+            
+            this.conexion.Open();
+
+            //Parametros que se usan dentro del procedimiento almacenado
+            /*
+            comando.Parameters.AddWithValue("Nombre", nombre);
+            comando.Parameters.AddWithValue("Direccion", direccion);
+            comando.Parameters.AddWithValue("FechaNacimiento", fechaNacimiento);
+            */
+
+            try
             {
-                conexion.Open();
-
-                SqlCommand comando = nuevoComandoSP("spNombre", conexion);
-
-                SqlParameter paramId = new SqlParameter("Id", SqlDbType.Int);
-                paramId.Direction = ParameterDirection.Output;
-                comando.Parameters.Add(paramId);
-
-                //Parametros que se usan dentro del procedimiento almacenado
-                /*
-                comando.Parameters.AddWithValue("Nombre", nombre);
-                comando.Parameters.AddWithValue("Direccion", direccion);
-                comando.Parameters.AddWithValue("FechaNacimiento", fechaNacimiento);
-                */
-                int rowsAffected = comando.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
-                {
-                    return true;
-                }
-                else
-                    return false;
-
+                this.transaccion = this.conexion.BeginTransaction();
+                this.comando.ExecuteNonQuery();
+                this.transaccion.Commit();
+                this.conexion.Close();
+                return true;
             }
-
+            catch (Exception)
+            {
+                this.transaccion.Rollback();
+                this.conexion.Close();
+                return false;
+            }
         }
 
         #region Imagenes en la Base de Datos
