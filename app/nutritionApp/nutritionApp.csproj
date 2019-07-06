@@ -63,8 +63,12 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
@@ -193,7 +197,9 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Conexion.cs" />
+    <Compile Include="Clases\clsConexion.cs" />
+    <Compile Include="Clases\clsProcedimientosAlmacenados.cs" />
+    <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,7 +217,7 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManejoDatos.cs" />
+    <Compile Include="Clases\ManejoDatos.cs" />
     <Compile Include="src\aspx\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -262,7 +268,7 @@
     <Compile Include="src\aspx\Usuarios\frmInsertaAdmin.aspx.designer.cs">
       <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="usuario.cs" />
+    <Compile Include="Clases\usuario.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,6 +306,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
