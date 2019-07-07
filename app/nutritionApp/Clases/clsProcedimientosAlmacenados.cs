@@ -24,6 +24,7 @@ namespace nutritionApp.Clases
 
             string consulta = "EXEC InsertaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?";
             inserta.comando = inserta.nuevoComando(consulta, inserta.conexion);
+            
             //inserta.anadirParametroSP("@InputParm", usuario._Foto, 5);
             inserta.anadirParametroSP("@InputParm", usuario._Cedula, 2);
             inserta.anadirParametroSP("@InputParm", usuario._Genero, 2);
@@ -113,11 +114,11 @@ namespace nutritionApp.Clases
             return true;
         }
 
-        public void MostrarUsuarios (/*object sender, EventArgs e*/ ){
+        public SqlDataReader MostrarUsuarios (/*object sender, EventArgs e*/ ){
 
             clsConexion consulta = new clsConexion();
             consulta.nuevoComandoSP("spRetornaTodosLosClientes");
-            consulta.ejecutarComando("spRetornaTodosLosClientes");
+            return consulta.buscarDatos();
             
         }
 

@@ -18,10 +18,9 @@ namespace nutritionApp.src.aspx
             if (!this.IsPostBack || this.IsPostBack)
             {
                 clsProcedimientosAlmacenados mostrar = new clsProcedimientosAlmacenados();
-                mostrar.MostrarUsuarios();
 
                 DataTable tabla = new DataTable();
-                tabla.Load(mostrar.ExcuteReader());
+                tabla.Load(mostrar.MostrarUsuarios());
                 grdMuestraUsuarios.DataSource = tabla;
             }
         }
