@@ -1,7 +1,16 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿/* Fuentes */
+@font-face {
+    font-family: navyBallad;
+    src: url('../fonts/Navy Ballad - Personal Use.otf');
+}
+
+@font-face {
+    font-family: hkGroteskMedium;
+    src: url('../fonts/HKGrotesk-Medium.otf');
+}
+
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    font-family: hkGroteskMedium;
 }
 
 /* Wrapping element */
@@ -29,10 +38,34 @@ textarea {
     }
 }
 
-.bg-white {
-    background-color: rgba(255, 255, 255,.4);
+/* Header */
+nav.navbar-light .navbar-nav .nav-link {
+    color: black !important;
+}
+
+/* Footer */
+#divFooter {
+    padding-left: 17%;
+    padding-right: 17%;
+}
+
+#footerLogo {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.menu-bg {
+    background-color: rgba(255, 255, 255,.9);
 }
 
 .float-right {
     float: right;
+}
+
+h1 {
+    font-family: navyBallad;
+}
+
+p {
+    font-family: hkGroteskMedium;
 }
