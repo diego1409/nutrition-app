@@ -15,7 +15,7 @@ namespace nutritionApp.Clases
     public class clsProcedimientosAlmacenados
     {
         public clsProcedimientosAlmacenados() { }
-        
+
         /* == Funcion para insertar un usuario comun y corriente == */
         public bool InsertaUsuario(Usuario usuario)
         {
@@ -24,6 +24,7 @@ namespace nutritionApp.Clases
 
             string consulta = "EXEC InsertaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?";
             inserta.comando = inserta.nuevoComando(consulta, inserta.conexion);
+            
             //inserta.anadirParametroSP("@InputParm", usuario._Foto, 5);
             inserta.anadirParametroSP("@InputParm", usuario._Cedula, 2);
             inserta.anadirParametroSP("@InputParm", usuario._Genero, 2);
@@ -74,6 +75,10 @@ namespace nutritionApp.Clases
             */
         }
 
+        internal IDataReader ExcuteReader()
+        {
+            throw new NotImplementedException();
+        }
 
         public bool modificar_usuario(Usuario modificar)
         {
@@ -109,6 +114,17 @@ namespace nutritionApp.Clases
             return true;
         }
 
+        public SqlDataReader MostrarUsuarios (/*object sender, EventArgs e*/ ){
+
+            clsConexion consulta = new clsConexion();
+            consulta.nuevoComandoSP("spRetornaTodosLosClientes");
+            return consulta.buscarDatos();
+            
+        }
+
+
+
+        //public List<Dia> lista_dia(Usuario buscar)
         ///* == Funcion que inserta un administrador == */
         //public bool insertar_administrador(Administrador insertar)
         //{
