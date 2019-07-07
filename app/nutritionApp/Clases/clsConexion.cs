@@ -32,7 +32,7 @@ namespace nutritionApp.Clases
         public clsConexion()
         {
             //Datos de conexión
-            this.data_source = "localhost"; //Nombre del servidor LAPTOP-0AMO7G43/SQLEXPRESS
+            this.data_source = "localhost"; //Nombre del servidor LAPTOP-0AMO7G43\SQLEXPRESS
             this.initial_catalog = "Salad"; //Nombre de la base de datos
             this.security = "True"; //Integrated Security
 
