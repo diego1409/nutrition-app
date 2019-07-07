@@ -32,12 +32,13 @@ namespace nutritionApp.Clases
         public clsConexion()
         {
             //Datos de conexión
-            this.data_source = "localhost"; //Nombre del servidor
+            this.data_source = "localhost"; //Nombre del servidor LAPTOP-0AMO7G43/SQLEXPRESS
             this.initial_catalog = "Salad"; //Nombre de la base de datos
             this.security = "True"; //Integrated Security
 
             //Variables SQL
             this.conexion = nuevaConexion();
+            
         }
 
         /// <summary>
@@ -225,6 +226,12 @@ namespace nutritionApp.Clases
                 return false;
             }
         }
+
+
+
+       
+            
+
 
         #region Imagenes en la Base de Datos
         /// <summary>

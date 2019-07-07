@@ -15,7 +15,7 @@ namespace nutritionApp.Clases
     public class clsProcedimientosAlmacenados
     {
         public clsProcedimientosAlmacenados() { }
-        
+
         /* == Funcion para insertar un usuario comun y corriente == */
         public bool InsertaUsuario(Usuario usuario)
         {
@@ -74,6 +74,10 @@ namespace nutritionApp.Clases
             */
         }
 
+        internal IDataReader ExcuteReader()
+        {
+            throw new NotImplementedException();
+        }
 
         public bool modificar_usuario(Usuario modificar)
         {
@@ -109,6 +113,17 @@ namespace nutritionApp.Clases
             return true;
         }
 
+        public void MostrarUsuarios (/*object sender, EventArgs e*/ ){
+
+            clsConexion consulta = new clsConexion();
+            consulta.nuevoComandoSP("spRetornaTodosLosClientes");
+            consulta.ejecutarComando("spRetornaTodosLosClientes");
+            
+        }
+
+
+
+        //public List<Dia> lista_dia(Usuario buscar)
         ///* == Funcion que inserta un administrador == */
         //public bool insertar_administrador(Administrador insertar)
         //{
