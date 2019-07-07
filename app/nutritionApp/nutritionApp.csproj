@@ -121,11 +121,11 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
+    <Content Include="src\aspx\Index.aspx" />
     <Content Include="src\aspx\Menu.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -189,6 +189,7 @@
     <Content Include="src\aspx\Usuarios\frmModificaUsuario.aspx" />
     <Content Include="src\aspx\Usuarios\frmInsertaUsuario.aspx" />
     <Content Include="src\aspx\Usuarios\frmInsertaAdmin.aspx" />
+    <Content Include="src\css\salad.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -218,6 +219,20 @@
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\ManejoDatos.cs" />
+    <Compile Include="src\aspx\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\masterPage.Master.cs">
+      <DependentUpon>masterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\masterPage.Master.designer.cs">
+      <DependentUpon>masterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="src\aspx\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,6 +308,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="src\aspx\masterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
