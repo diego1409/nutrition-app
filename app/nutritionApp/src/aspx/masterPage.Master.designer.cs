@@ -22,6 +22,15 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
+        /// Control frmMaster.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm frmMaster;
+        
+        /// <summary>
         /// Control body.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace nutritionApp.src.aspx {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder body;
-        
-        /// <summary>
-        /// Control frmScripts.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frmScripts;
         
         /// <summary>
         /// Control scmScripts.

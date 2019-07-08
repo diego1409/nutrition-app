@@ -1,20 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmLogin.aspx.cs" Inherits="nutritionApp.src.aspx.frmLogin" %>
+﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmLogin.aspx.cs" Inherits="nutritionApp.src.aspx.frmLogin" %>
 
-<!DOCTYPE html>
+<asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../css/Login.css" type="text/css" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-   <title>Ingresar</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-	
-	<link rel="stylesheet" type="text/css" href="../css/Login.css">
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="body" ContentPlaceHolderID="body" runat="server">
+    <div id="divLogin">
+        <div id="divLoginIzq">
+            <h1>Inicia Sesión</h1>
+            <p class="text">
+                ¡Hola! Bienvenido a Salad. Inicia sesión para acceder a tu historial de planes, mediciones, etc. ¿No tienes una cuenta? Regístrate
+            </p>
+            
+        </div>
+    </div>
         <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
@@ -61,6 +60,4 @@
 </div>
 
 
-    </form>
-</body>
-</html>
+</asp:Content>
