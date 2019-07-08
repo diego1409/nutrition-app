@@ -9,6 +9,17 @@
     src: url('../fonts/HKGrotesk-Medium.otf');
 }
 
+@font-face {
+    font-family: hkGroteskMediumItalic;
+    src: url('../fonts/HKGrotesk-MediumItalic.otf');
+}
+
+@font-face {
+    font-family: hkGroteskSemiBold;
+    src: url('../fonts/HKGrotesk-SemiBold.otf');
+}
+
+
 body {
     font-family: hkGroteskMedium;
 }
@@ -18,13 +29,6 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
-
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -64,6 +68,13 @@ nav.navbar-light .navbar-nav .nav-link {
 
 h1 {
     font-family: navyBallad;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: hkGroteskSemiBold !important;
 }
 
 p {

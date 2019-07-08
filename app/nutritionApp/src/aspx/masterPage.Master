@@ -76,7 +76,7 @@
             </nav>
         </header>
         
-        <div class="body-content">
+        <div>
             <asp:ContentPlaceHolder ID="body" runat="server">
             </asp:ContentPlaceHolder>
         </div>
