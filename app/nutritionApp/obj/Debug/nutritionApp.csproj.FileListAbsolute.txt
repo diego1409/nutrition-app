@@ -213,3 +213,4 @@ C:\Users\leonardo.aguilar\Documents\GitHub\nutritionApp\app\nutritionApp\obj\Deb
 C:\Users\leonardo.aguilar\Documents\GitHub\nutritionApp\app\nutritionApp\obj\Debug\nutritionApp.csproj.CopyComplete
 C:\Users\leonardo.aguilar\Documents\GitHub\nutritionApp\app\nutritionApp\obj\Debug\nutritionApp.dll
 C:\Users\leonardo.aguilar\Documents\GitHub\nutritionApp\app\nutritionApp\obj\Debug\nutritionApp.pdb
+C:\Users\diego\Source\Repos\diego1409\nutritionApp\app\nutritionApp\obj\Debug\nutritionApp.csprojAssemblyReference.cache

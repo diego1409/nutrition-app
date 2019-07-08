@@ -175,11 +175,9 @@
         <h1>Soporte</h1>
 
         <form id="soporteForm">
-            <div class="form-row">
-                <div class="form-group form-col">
-                    <label for="txtNombre">Nombre</label>
-                    <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre completo">
-                </div>
+            <div class="form-group form-col">
+                <label for="txtNombre">Nombre</label>
+                <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese su nombre completo">
             </div>
             <div class="form-row">
                 <div class="form-group col">
@@ -190,6 +188,13 @@
                     <label for="txtTelefono">Teléfono</label>
                     <input type="text" class="form-control" id="txtTelefono" placeholder="Ingrese su número telefónico">
                 </div>
+            </div>
+            <div class="form-group form-col">
+                <label for="txtMensaje">Mensaje</label>
+                <textarea class="form-control" id="txtMensaje" rows="4"></textarea>
+            </div>
+            <div class="form-col">
+                <button type="button" class="btn btn-success btn-lg btn-block">Enviar mensaje</button>
             </div>
         </form>
     </div>
