@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace nutritionApp
+namespace nutritionApp.src.aspx
 {
-    public partial class Menu : System.Web.UI.Page
+    public partial class masterPageUser : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -126,10 +126,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
+    <Content Include="src\aspx\frmCalcCalorias.aspx" />
+    <Content Include="src\aspx\frmIMC.aspx" />
     <Content Include="src\aspx\frmInsertaAdmin.aspx" />
     <Content Include="src\aspx\frmModificaUsuario.aspx" />
     <Content Include="src\aspx\Index.aspx" />
-    <Content Include="src\aspx\Menu.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -231,6 +232,20 @@
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\ManejoDatos.cs" />
+    <Compile Include="src\aspx\frmCalcCalorias.aspx.cs">
+      <DependentUpon>frmCalcCalorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmCalcCalorias.aspx.designer.cs">
+      <DependentUpon>frmCalcCalorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmIMC.aspx.cs">
+      <DependentUpon>frmIMC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmIMC.aspx.designer.cs">
+      <DependentUpon>frmIMC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="src\aspx\frmInsertaAdmin.aspx.cs">
       <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,19 +267,19 @@
     <Compile Include="src\aspx\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="src\aspx\masterPageUser.Master.cs">
+      <DependentUpon>masterPageUser.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\masterPageUser.Master.designer.cs">
+      <DependentUpon>masterPageUser.Master</DependentUpon>
+    </Compile>
     <Compile Include="src\aspx\masterPage.Master.cs">
       <DependentUpon>masterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="src\aspx\masterPage.Master.designer.cs">
       <DependentUpon>masterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="src\aspx\Menu.aspx.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="src\aspx\Menu.aspx.designer.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -342,6 +357,7 @@
     <Content Include="src\fonts\HKGrotesk-SemiBoldItalic.otf" />
     <Content Include="src\fonts\HKGrotesk-SemiBoldLegacy.otf" />
     <Content Include="src\fonts\HKGrotesk-SemiBoldLegacyItalic.otf" />
+    <Content Include="src\aspx\masterPageUser.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

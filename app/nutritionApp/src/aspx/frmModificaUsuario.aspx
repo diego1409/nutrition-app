@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Insertar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmModificaUsuario.aspx.cs" Inherits="nutritionApp.src.aspx.frmModificaUsuario" %>
+﻿<%@ Page Title="Modificar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmModificaUsuario.aspx.cs" Inherits="nutritionApp.src.aspx.frmModificaUsuario" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/Login.css" type="text/css" />

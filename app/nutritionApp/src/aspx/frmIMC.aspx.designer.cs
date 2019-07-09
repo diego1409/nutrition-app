@@ -10,6 +10,6 @@
 namespace nutritionApp.src.aspx {
     
     
-    public partial class frmIndex {
+    public partial class frmIMC {
     }
 }
