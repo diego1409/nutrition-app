@@ -3,15 +3,28 @@
 }
 
 #divLogin {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    width: 100%;
+    height: 1080px;
 }
 #divLoginIzq {
     width: 40%;
     height: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
     padding-left: 150px;
-    font-size: 30px !important;
+    padding-right: 150px;
+    float:left;
     /*background-image: url("../img/divBienvenida.jpg");
     background-size: 100% 1080px;
     background-repeat: no-repeat;*/
+}
+
+#loginIzqDescripcion p {
+    font-size: 30px !important;
+}
+#divLoginDer {
+    width: 60%;
+    height: 100%;
+    background-image: url("../img/divLoginDer.jpg");
+    background-repeat: no-repeat;
 }
