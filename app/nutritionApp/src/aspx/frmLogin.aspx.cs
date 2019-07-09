@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using nutritionApp.Clases;
 
 namespace nutritionApp.src.aspx
 {
@@ -12,7 +13,11 @@ namespace nutritionApp.src.aspx
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            clsConexion test = new clsConexion();
+            if(test.probarConexion())
+            {
+                Console.WriteLine("Conexion Exitosa");
+            }
         }
 
         protected void btnIngresar_onClick(object sender, EventArgs e)

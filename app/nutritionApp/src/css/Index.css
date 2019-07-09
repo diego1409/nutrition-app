@@ -1,0 +1,111 @@
+﻿#divBienvenida {
+    width: 100%;
+    height: 30%;
+    background-image:url("../img/divBienvenida.jpg");
+    background-size: 100% 1080px;
+    background-repeat:no-repeat;
+}
+
+#bienvenidaTexto {
+    padding-top: 33%;
+    padding-bottom:1%;
+    padding-right: 1%;
+    padding-left: 48%;
+}
+
+#bienvenidaTexto h1 {
+    font-size: 11rem;
+}
+
+#bienvenidaTexto p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#bienvenidaTexto p a {
+    color: #227314;
+    text-decoration: underline;
+}
+
+/*
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    #divBienvenida {
+        height: 600px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) 
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) 
+@media (min-width: 992px) {
+    
+}
+
+/* Extra large devices (large desktops, 1200px and up) 
+@media (min-width: 1200px) {
+
+}
+*/
+#divCaracteristicas,
+#divTestimonios,
+#divNosotros,
+#divSoporte{
+    width: 100%;
+    height: 30%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#divCaracteristicas h1,
+#divTestimonios h1,
+#divNosotros h1,
+#divSoporte h1{
+    font-size: 160px !important;
+    text-align: center;
+}
+
+#caracteristicasCards,
+#nosotrosCards {
+    padding-left: 15%;
+    padding-right:15%;
+    margin-top: 60px;
+}
+
+#testimonio1,
+#testimonio2 {
+    width:100%;
+    height: 40%;
+    margin-top: 20px;
+}
+
+#testimonio2 {
+    margin-top: 60px;
+}
+
+#testimonio1 #txt1 h2,
+#testimonio2 #txt2 h2 {
+    font-size: 80px;
+    text-align: right;
+}
+
+#testimonio1 #txt1 p,
+#testimonio2 #txt2 p {
+    font-style: italic;
+    font-size: 25px !important;
+    text-align: right;
+}
+
+#nosotrosDescripcion {
+    margin-left: 19%;
+    margin-right: 19%;
+    font-size: 35px !important;
+}
+
+#soporteForm {
+    margin-left: 19%;
+    margin-right: 19%;
+}
