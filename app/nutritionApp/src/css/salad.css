@@ -1,0 +1,87 @@
+﻿/* Fuentes */
+@font-face {
+    font-family: navyBallad;
+    src: url('../fonts/Navy Ballad - Personal Use.otf');
+}
+
+@font-face {
+    font-family: hkGroteskMedium;
+    src: url('../fonts/HKGrotesk-Medium.otf');
+}
+
+@font-face {
+    font-family: hkGroteskMediumItalic;
+    src: url('../fonts/HKGrotesk-MediumItalic.otf');
+}
+
+@font-face {
+    font-family: hkGroteskSemiBold;
+    src: url('../fonts/HKGrotesk-SemiBold.otf');
+}
+
+
+body {
+    font-family: hkGroteskMedium;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+/* Header */
+nav.navbar-light .navbar-nav .nav-link {
+    color: black !important;
+}
+
+/* Footer */
+#divFooter {
+    padding-left: 17%;
+    padding-right: 17%;
+}
+
+#footerLogo {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    float: left;
+}
+
+#footerMenu {
+    margin-left: 44%;
+    padding-top: 60px;
+}
+.menu-bg {
+    background-color: rgba(255, 255, 255,.9);
+}
+
+.float-right {
+    float: right;
+}
+
+h1 {
+    font-family: navyBallad;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: hkGroteskSemiBold !important;
+}
+
+p {
+    font-family: hkGroteskMedium;
+}

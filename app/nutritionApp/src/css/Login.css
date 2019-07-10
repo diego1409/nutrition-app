@@ -1,0 +1,17 @@
+﻿h1 {
+    font-size: 9rem;
+}
+
+#divLogin {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#divLoginIzq {
+    width: 40%;
+    height: 100%;
+    padding-left: 150px;
+    font-size: 30px !important;
+    /*background-image: url("../img/divBienvenida.jpg");
+    background-size: 100% 1080px;
+    background-repeat: no-repeat;*/
+}
