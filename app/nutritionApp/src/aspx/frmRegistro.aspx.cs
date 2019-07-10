@@ -10,7 +10,7 @@ using nutritionApp.Clases;
 
 namespace nutritionApp.src.aspx
 {
-    public partial class frmInsertaUsuario : System.Web.UI.Page
+    public partial class frmRegistro : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace nutritionApp.src.aspx
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             ///Verificar que todas las validaciones hayan sido satisfactorias.
-                if (txtPass.Text == txtConfirmarPass.Text)
+                if (this.IsValid)
                 {
                     Usuario nuevo_usuario = new Usuario();
                     nuevo_usuario._Cedula = txtNumIdentificacion.Text;
@@ -46,8 +46,8 @@ namespace nutritionApp.src.aspx
                     nuevo_usuario._Contrasena = txtPass.Text;
                     nuevo_usuario._TipoUsuario = "C";
 
-                    ManejoDatos InsertaUsuario = new ManejoDatos();
-                    InsertaUsuario.insertar_usuario(nuevo_usuario);
+                    ManejoDatos md = new ManejoDatos();
+                    md.insertar_usuario(nuevo_usuario);
                     Session["ClaseUsuario"] = nuevo_usuario;
                     Response.Redirect("frmIMC.aspx");
                 }

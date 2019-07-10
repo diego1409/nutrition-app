@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Insertar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmInsertaUsuario.aspx.cs" Inherits="nutritionApp.src.aspx.frmInsertaUsuario" %>
+﻿<%@ Page Title="Insertar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmRegistro.aspx.cs" Inherits="nutritionApp.src.aspx.frmRegistro" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/Login.css" type="text/css" />
@@ -15,7 +15,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h1>Registrar Usuario</h1>
+				<h1>Crear cuenta</h1>
 				<!--<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-instagram"></i></span>

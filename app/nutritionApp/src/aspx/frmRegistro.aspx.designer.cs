@@ -10,7 +10,7 @@
 namespace nutritionApp.src.aspx {
     
     
-    public partial class frmInsertaUsuario {
+    public partial class frmRegistro {
         
         /// <summary>
         /// btnRegresar control.
