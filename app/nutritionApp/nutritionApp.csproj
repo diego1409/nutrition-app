@@ -243,6 +243,7 @@
     </Compile>
     <Compile Include="src\aspx\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="src\aspx\frmCalcCalorias.aspx.cs">
       <DependentUpon>frmCalcCalorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
