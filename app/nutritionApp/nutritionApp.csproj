@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -126,7 +127,13 @@
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="src\aspx\Index.aspx" />
+    <Content Include="src\aspx\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\Menu.aspx" />
+    <Content Include="src\aspx\frmCalcCalorias.aspx" />
+    <Content Include="src\aspx\frmIMC.aspx" />
+    <Content Include="src\aspx\frmInsertaAdmin.aspx" />
+    <Content Include="src\aspx\frmModificaUsuario.aspx" />
+    <Content Include="src\aspx\Index.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -189,6 +196,7 @@
     <Content Include="src\aspx\Usuarios\frmModificaUsuario.aspx" />
     <Content Include="src\aspx\Usuarios\frmInsertaUsuario.aspx" />
     <Content Include="src\aspx\Usuarios\frmInsertaAdmin.aspx" />
+    <Content Include="src\aspx\frmInsertaUsuario.aspx" />
     <Content Include="src\css\Index.css" />
     <Content Include="src\css\Login.css" />
     <Content Include="src\css\salad.css" />
@@ -245,12 +253,64 @@
     <Compile Include="src\aspx\masterPage.Master.designer.cs">
       <DependentUpon>masterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="src\aspx\Menu.aspx.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
+    <Compile Include="src\aspx\frmListaUsuarios.aspx.cs">
+      <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="src\aspx\Menu.aspx.designer.cs">
+    <Compile Include="src\aspx\frmListaUsuarios.aspx.designer.cs">
+      <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmCalcCalorias.aspx.cs">
+      <DependentUpon>frmCalcCalorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmCalcCalorias.aspx.designer.cs">
+      <DependentUpon>frmCalcCalorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmIMC.aspx.cs">
+      <DependentUpon>frmIMC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmIMC.aspx.designer.cs">
+      <DependentUpon>frmIMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmInsertaAdmin.aspx.cs">
+      <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmInsertaAdmin.aspx.designer.cs">
+      <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmModificaUsuario.aspx.cs">
+      <DependentUpon>frmModificaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmModificaUsuario.aspx.designer.cs">
+      <DependentUpon>frmModificaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\masterPageUser.Master.cs">
+      <DependentUpon>masterPageUser.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\masterPageUser.Master.designer.cs">
+      <DependentUpon>masterPageUser.Master</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\masterPage.Master.cs">
+      <DependentUpon>masterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\masterPage.Master.designer.cs">
+      <DependentUpon>masterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -274,18 +334,11 @@
     <Compile Include="src\aspx\frmLogin.aspx.designer.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="src\aspx\Usuarios\frmModificaUsuario.aspx.cs">
-      <DependentUpon>frmModificaUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="src\aspx\Usuarios\frmModificaUsuario.aspx.designer.cs">
-      <DependentUpon>frmModificaUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="src\aspx\Usuarios\frmInsertaUsuario.aspx.cs">
+    <Compile Include="src\aspx\frmInsertaUsuario.aspx.cs">
       <DependentUpon>frmInsertaUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="src\aspx\Usuarios\frmInsertaUsuario.aspx.designer.cs">
+    <Compile Include="src\aspx\frmInsertaUsuario.aspx.designer.cs">
       <DependentUpon>frmInsertaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\Usuarios\frmInsertaAdmin.aspx.cs">
@@ -342,6 +395,7 @@
     <Content Include="src\fonts\HKGrotesk-SemiBoldItalic.otf" />
     <Content Include="src\fonts\HKGrotesk-SemiBoldLegacy.otf" />
     <Content Include="src\fonts\HKGrotesk-SemiBoldLegacyItalic.otf" />
+    <Content Include="src\aspx\masterPageUser.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -393,6 +447,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
