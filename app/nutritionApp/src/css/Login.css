@@ -5,23 +5,58 @@
 #divLogin {
     padding-top: 100px;
     padding-bottom: 100px;
+    padding-left: 0;
+    padding-right: 0;
 }
 #divLoginIzq {
-    width: 40%;
     height: 100%;
-    padding-left: 150px;
     font-size: 30px !important;
-    /*background-image: url("../img/divBienvenida.jpg");
-    background-size: 100% 1080px;
-    background-repeat: no-repeat;*/
 }
 
-#loginIzqDescripcion p {
-    font-size: 30px !important;
+h1 {
+    text-align: center;
 }
-#divLoginDer {
-    width: 60%;
-    height: 100%;
-    background-image: url("../img/divLoginDer.jpg");
-    background-repeat: no-repeat;
+
+#loginDescripcion p {
+    font-size: 25px !important;
 }
+
+#loginDescripcion p a {
+    color: #9F6828 !important;
+    text-decoration: underline;
+}
+
+#loginForm {
+    margin-top: 60px;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+#loginForm a {
+    color: #C81124;
+    text-decoration: underline;
+}
+
+/*
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    #divBienvenida {
+        height: 600px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) 
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) 
+@media (min-width: 992px) {
+    
+}
+
+/* Extra large devices (large desktops, 1200px and up) 
+@media (min-width: 1200px) {
+
+}
+*/
