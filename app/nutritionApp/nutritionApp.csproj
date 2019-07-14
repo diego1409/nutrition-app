@@ -196,7 +196,6 @@
     <Content Include="src\css\Login.css" />
     <Content Include="src\css\salad.css" />
     <Content Include="src\img\divBienvenida.jpg" />
-    <Content Include="src\img\divLogin.jpg" />
     <Content Include="src\img\imcIcon.jpg" />
     <Content Include="src\img\male-fill-circle-512.png" />
     <Content Include="src\img\medicionesIcon.jpg" />
