@@ -5,7 +5,7 @@
     </asp:Content>
 
     <asp:Content ID="body" ContentPlaceHolderID="body" runat="server">
-        <div id="divLogin" class="container-fluid">
+        <div id="divLogin" class="container">
             <div class="row justify-content-center">
                 <div class="col">
                     <div class="row">
