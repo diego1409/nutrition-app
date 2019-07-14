@@ -11,6 +11,10 @@
         </title>
         <webopt:BundleReference runat="server" Path="~/Content/css" />
         <link rel="stylesheet" href="~/src/css/salad.css" type="text/css" />
+        
+        <!-- Iconos para formularios -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         
         <!-- Contenedor para etiqutas head necesarias en cada pagina -->
@@ -66,7 +70,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="frmInsertaUsuario.aspx">
+                                    <a class="nav-link js-scroll-trigger" href="frmRegistro.aspx">
                                         Registrarse
                                     </a>
                                 </li>
@@ -83,21 +87,55 @@
         
             <footer>
                 <div id="divFooter">
-                    <div id="footerLogo">
-                        <img src="../img/Salad-Web.png" width="100" height="150" />
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div id="footerLogo">
+                                    <img src="../img/Salad-Web.png" width="100" height="150" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div id="footerMenu">
+                                    <h3>Menú Interno</h3>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="Index.aspx#divBienvenida">
+                                                Inicio
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="Index.aspx#divCaracteristicas">
+                                                Características
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="Index.aspx#divTestimonios">
+                                                Testimonios
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="Index.aspx#divNosotros">
+                                                Nosotros
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="Index.aspx#divSoporte">
+                                                Soporte
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="frmLogin.aspx">
+                                                Login
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
 
-                    <div id="footerMenu">
-                        <h3>Menú Interno</h3>
-                        <ul class="list-unstyled">
-                            <li>Inicio</li>
-                            <li>Características</li>
-                            <li>Testimonios</li>
-                            <li>Nosotros</li>
-                            <li>Soporte</li>
-                            <li>Login</li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </footer>
 

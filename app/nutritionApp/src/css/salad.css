@@ -49,8 +49,8 @@ nav.navbar-light .navbar-nav .nav-link {
 
 /* Footer */
 #divFooter {
-    padding-left: 17%;
-    padding-right: 17%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 #footerLogo {
@@ -60,11 +60,16 @@ nav.navbar-light .navbar-nav .nav-link {
 }
 
 #footerMenu {
-    margin-left: 44%;
+    margin-left: 71%;
     padding-top: 60px;
 }
+
+#footerMenu a {
+    color: black;
+    text-decoration: underline;
+}
 .menu-bg {
-    background-color: rgba(255, 255, 255,.9);
+    background-color: rgba(255, 255, 255,.8);
 }
 
 .float-right {
