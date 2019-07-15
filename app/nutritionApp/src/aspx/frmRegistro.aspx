@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Insertar Admin" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmInsertaAdmin.aspx.cs" Inherits="nutritionApp.src.aspx.frmInsertaAdmin" %>
+﻿<%@ Page Title="Insertar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmRegistro.aspx.cs" Inherits="nutritionApp.src.aspx.frmRegistro" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/Login.css" type="text/css" />
@@ -15,7 +15,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h1>Registrar Administrador</h1>
+				<h1>Crear cuenta</h1>
 				<!--<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-instagram"></i></span>
@@ -82,7 +82,7 @@
                     </td>
                 </tr>
 
-                <!-- Genero -->
+                <!-- Tipo de Usuario -->
                 <tr>
                     <td>Genero:</td>
                     <td>
@@ -141,6 +141,38 @@
                     </td>
                 </tr>
 
+                <!-- Estatura -->
+                <tr>
+                    <td>Estatura:</td>
+                    <td>
+                        <asp:TextBox ID="txtEstatura" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtEstatura" class="form-control" runat="server" ControlToValidate="txtEstatura" ErrorMessage="Debe ingresar su estatura" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
+                <!-- Peso -->
+                <tr>
+                    <td>Peso:</td>
+                    <td>
+                        <asp:TextBox ID="txtPeso" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtPeso" class="form-control" runat="server" ControlToValidate="txtPeso" ErrorMessage="Debe ingresar su peso" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+
+                <!-- Proposito -->
+                <tr>
+                    <td>Proposito:</td>
+                    <td>
+                        <asp:TextBox ID="txtProposito" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtProposito" class="form-control" runat="server" ControlToValidate="txtProposito" ErrorMessage="Debe ingresar el propósito del uso de la aplicación" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
 
                 <!-- Nombre de usuario -->
                 <tr>
@@ -183,21 +215,6 @@
                     <td>
                         <!-- CompareValidator para comparar contrasenas -->
                         <asp:CompareValidator ID="cmvPass" class="form-control" runat="server" ControlToCompare="txtConfirmarPass" ControlToValidate="txtPass" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
-                    </td>
-                </tr>
-
-                <!-- Tipo de usuario -->
-                <tr>
-                    <td>Tipo de usuario:</td>
-                    <td>
-                        <asp:DropDownList ID="ddlTipoUsuario" runat="server" Height="37px" Width="258px" Enabled="True">
-                            <asp:ListItem Value="" Selected="True">Seleccione el tipo de usuario</asp:ListItem>
-                            <asp:ListItem Value="A">Administrador</asp:ListItem>
-                            <asp:ListItem Value="C">Regular</asp:ListItem>
-                        </asp:DropDownList>
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rqvDdlTipoUsuario" runat="server" ControlToValidate="ddlTipoUsuario" ErrorMessage="Debe seleccionar un tipo de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
             </table>

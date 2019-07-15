@@ -58,7 +58,26 @@ namespace nutritionApp
             return true;
         }
 
-
+        //public Usuario rellenar_usuario(Usuario rellenar)
+        //{
+        //    Conexion conect_local = new Conexion();
+        //    conect_local.parametro("", "", "", "");
+        //    conect_local.inicializa();
+        //    String consulta;
+        //    System.Data.OleDb.OleDbDataReader contenedor;
+        //    consulta = "EXEC Select_Usuario ?";
+        //    conect_local.annadir_consulta(consulta);
+        //    conect_local.annadir_parametro(rellenar._correo, 2);
+        //    contenedor = conect_local.busca();
+        //    while (contenedor.Read())
+        //    {
+        //        rellenar._contrasenna = contenedor["CONTRASENNA"].ToString();
+        //        rellenar._apellido_1 = contenedor["APELLIDO_1"].ToString();
+        //        rellenar._nombre = contenedor["NOMBRE"].ToString();
+        //        rellenar._apellido_2 = contenedor["APELLIDO_2"].ToString();
+        //    }
+        //    contenedor.Close();
+        //    return rellenar;
         public bool modificar_usuario(Usuario modificar)
         {
             Conexion conect_local = new Conexion();
@@ -272,27 +291,39 @@ namespace nutritionApp
         //    return lista;
         //}
 
-        //public List<Publicacion> lista_publicacion(Usuario buscar)
-        //{
-        //    List<Publicacion> lista = new List<Publicacion>();
-        //    Conexion conec = new Conexion();
-        //    conec.parametro("", "", "", "");
-        //    conec.inicializa();
-        //    string consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC Select_Publicacion_Usuario ?";
-        //    conec.annadir_consulta(consulta);
-        //    conec.annadir_parametro(buscar._correo, 2);
-        //    contenedor = conec.busca();
-        //    while (contenedor.Read())
-        //    {
-        //        Publicacion tmp = new Publicacion();
-        //        tmp._correo = contenedor["CORREO"].ToString();
-        //        tmp._texto = contenedor["TEXTO"].ToString();
-        //        lista.Add(tmp);
-        //    }
-        //    return lista;
-        //}
+        public List<Usuario> ListaUsuarios()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC ListaUsuarios";
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                Usuario tmp = new Usuario();
+                tmp._Cedula = contenedor["cedula"].ToString();
+                tmp._Genero = contenedor["genero"].ToString();
+                tmp._FechaNac = Convert.ToDateTime(contenedor["fechaNac"]);
+                tmp._Nombre = contenedor["nombre"].ToString();
+                tmp._Apellido1 = contenedor["apellido1"].ToString();
+                tmp._Apellido2 = contenedor["apellido2"].ToString();
+                tmp._Direccion = contenedor["direccion"].ToString();
+                tmp._Telefono1 = contenedor["telefono1"].ToString();
+                tmp._Estatura= Convert.ToInt16(contenedor["estatura"]);
+                tmp._Peso = Convert.ToDecimal(contenedor["peso"]);
+                tmp._Proposito = contenedor["proposito"].ToString();
+                tmp._Correo = contenedor["correo"].ToString();
+                tmp._NomUsuario = contenedor["usuario"].ToString();
+                tmp._Contrasena = contenedor["contrasena"].ToString();
+                tmp._TipoUsuario = contenedor["tipoUsuario"].ToString();
+                lista.Add(tmp);
+            }
+            return lista;
+        }
 
         //public bool insertar_publicacion(Publicacion insertar)
         //{
@@ -313,26 +344,6 @@ namespace nutritionApp
         //    return true;
         //}
 
-        //public Usuario rellenar_usuario(Usuario rellenar)
-        //{
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC Select_Usuario ?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(rellenar._correo, 2);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //        rellenar._contrasenna = contenedor["CONTRASENNA"].ToString();
-        //        rellenar._apellido_1 = contenedor["APELLIDO_1"].ToString();
-        //        rellenar._nombre = contenedor["NOMBRE"].ToString();
-        //        rellenar._apellido_2 = contenedor["APELLIDO_2"].ToString();
-        //    }
-        //    contenedor.Close();
-        //    return rellenar;
         //}
     }
 }
