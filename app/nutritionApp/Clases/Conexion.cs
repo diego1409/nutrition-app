@@ -66,7 +66,6 @@ namespace nutritionApp
                     parametro.Value = _PARAMETRO;
                     break;
                 case 2:
-
                     parametro = comando.Parameters.Add("@InputParm", OleDbType.VarChar, 2500);
                     parametro.Value = _PARAMETRO;
                     break;

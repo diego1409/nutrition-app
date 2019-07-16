@@ -16,10 +16,6 @@
 		<div class="card">
 			<div class="card-header">
 				<h1>Modificar Usuario</h1>
-				<!--<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
-					<span><i class="fab fa-instagram"></i></span>
-				</div> -->
 			</div>
 			<div class="card-body">
 				
@@ -33,10 +29,12 @@
                 
             <br />
             <br />
+            <!-- En este label se van a cargar los resultados de la tabla -->
+            <asp:Label ID="usuarioModificar" runat="server" Text=""></asp:Label>
 
             <table>
 
-                                <!-- Número de Cédula -->
+                <!-- Número de Cédula -->
                 <tr>
                     <td>Número de Cédula:</td>
                     <td>
@@ -185,9 +183,18 @@
                         <asp:RequiredFieldValidator ID="rqvNomUsuario" class="form-control" runat="server" ControlToValidate="txtNomUsuario" ErrorMessage="Debe ingresar su nombre de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
+                <!-- Contraseña antigua -->
+                <tr>
+                    <td>Contraseña antigua:</td>
+                    <td>
+                        <asp:TextBox ID="txtPassAntigua" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtPassAntigua" class="form-control" runat="server" ControlToValidate="txtPassAntigua" ErrorMessage="Debe ingresar la contraseña antigua del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
 
-
-                <!-- Contraseña -->
+                <!-- Contraseña Nueva -->
                 <tr>
                     <td>Contraseña:</td>
                     <td>
@@ -198,7 +205,7 @@
                     </td>
                 </tr>
 
-                <!-- Confirmar Contraseña -->
+                <!-- Confirmar Contraseña Nueva -->
                 <tr>
                     <td>Confirmar Contraseña:</td>
                     <td>
@@ -216,6 +223,20 @@
                     <td>
                         <!-- CompareValidator para comparar contrasenas -->
                         <asp:CompareValidator ID="cmvPass" class="form-control" runat="server" ControlToCompare="txtConfirmarPass" ControlToValidate="txtPass" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
+                    </td>
+                </tr>
+                <!-- Tipo de usuario -->
+                <tr>
+                    <td>Tipo de usuario:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlTipoUsuario" runat="server" Height="37px" Width="258px" Enabled="True">
+                            <asp:ListItem Value="" Selected="True">Seleccione el tipo de usuario</asp:ListItem>
+                            <asp:ListItem Value="A">Administrador</asp:ListItem>
+                            <asp:ListItem Value="C">Regular</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvDdlTipoUsuario" runat="server" ControlToValidate="ddlTipoUsuario" ErrorMessage="Debe seleccionar un tipo de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
             </table>

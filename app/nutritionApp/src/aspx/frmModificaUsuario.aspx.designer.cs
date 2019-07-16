@@ -22,6 +22,15 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.HtmlControls.HtmlButton btnRegresar;
         
         /// <summary>
+        /// usuarioModificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label usuarioModificar;
+        
+        /// <summary>
         /// txtNumIdentificacion control.
         /// </summary>
         /// <remarks>
@@ -265,6 +274,24 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvNomUsuario;
         
         /// <summary>
+        /// txtPassAntigua control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassAntigua;
+        
+        /// <summary>
+        /// rqvTxtPassAntigua control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPassAntigua;
+        
+        /// <summary>
         /// txtPass control.
         /// </summary>
         /// <remarks>
@@ -308,6 +335,24 @@ namespace nutritionApp.src.aspx {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator cmvPass;
+        
+        /// <summary>
+        /// ddlTipoUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoUsuario;
+        
+        /// <summary>
+        /// rqvDdlTipoUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlTipoUsuario;
         
         /// <summary>
         /// btnModificar control.

@@ -10,7 +10,16 @@
 namespace nutritionApp.src.aspx {
     
     
-    public partial class frmListaUsuarios2 {
+    public partial class frmListaUsuarios {
+        
+        /// <summary>
+        /// btnEliminar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
         
         /// <summary>
         /// btnRegresar control.

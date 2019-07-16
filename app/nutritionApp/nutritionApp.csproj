@@ -124,7 +124,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="src\aspx\frmListaUsuarios2.aspx" />
+    <Content Include="src\aspx\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\frmRegistro.aspx" />
     <Content Include="src\aspx\frmCalcCalorias.aspx" />
     <Content Include="src\aspx\frmIMC.aspx" />
@@ -189,7 +189,6 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="src\aspx\frmLogin.aspx" />
-    <Content Include="src\aspx\Usuarios\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\Usuarios\frmModificaUsuario.aspx" />
     <Content Include="src\aspx\Usuarios\frmInsertaUsuario.aspx" />
     <Content Include="src\aspx\Usuarios\frmInsertaAdmin.aspx" />
@@ -220,12 +219,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="src\aspx\frmListaUsuarios2.aspx.cs">
-      <DependentUpon>frmListaUsuarios2.aspx</DependentUpon>
+    <Compile Include="src\aspx\frmListaUsuarios.aspx.cs">
+      <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="src\aspx\frmListaUsuarios2.aspx.designer.cs">
-      <DependentUpon>frmListaUsuarios2.aspx</DependentUpon>
+    <Compile Include="src\aspx\frmListaUsuarios.aspx.designer.cs">
+      <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmRegistro.aspx.cs">
       <DependentUpon>frmRegistro.aspx</DependentUpon>
@@ -299,13 +298,6 @@
       <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\usuario.cs" />
-    <Compile Include="src\aspx\Usuarios\frmListaUsuarios.aspx.cs">
-      <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="src\aspx\Usuarios\frmListaUsuarios.aspx.designer.cs">
-      <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
