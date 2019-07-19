@@ -13,7 +13,7 @@ namespace nutritionApp
         public OleDbConnection conexion;
         public OleDbCommand comando;
         String strcomando;
-        String strconexion;
+        public String strconexion;
         OleDbTransaction transaccion;
         bool conecta;
         String xconecta;
@@ -21,7 +21,7 @@ namespace nutritionApp
         public void parametro(String bd, String ip, String nom_usuario, String clave)
         {
             //no funciona con localhost, ocupa el nombre del server
-            strconexion = "Provider=SQLOLEDB;Server=DESKTOP-0U0J66R;Database=salad;Trusted_Connection=yes";
+            strconexion = "Provider=SQLOLEDB;Server=DESKTOP-DIEGO;Database=salad;Trusted_Connection=yes";
         }
 
 
