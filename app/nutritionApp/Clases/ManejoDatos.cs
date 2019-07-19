@@ -58,6 +58,35 @@ namespace nutritionApp
             return lista;
         }
 
+        /* == Funcion para Iniciar sesion == */
+        public int RetornaUsuarioPass(Usuario user)
+        {
+            //Declaracion de variables
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            int idUsuario = 0;
+
+            //Se crea la consulta
+            consulta = "EXEC RetornaUsuarioPass ?,?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(user._NomUsuario, 2);
+            conect_local.annadir_parametro(user._Contrasena, 2);
+
+            //Se procede a buscar
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+                idUsuario = Convert.ToInt32(contenedor["idUsuario"].ToString());
+            }
+            contenedor.Close();
+
+            //Se retorna el idUsuario para buscarlo y obtener los datos de usuario
+            return idUsuario;
+        }
+
         public List<Usuario> RetornaUsuario(Usuario usuario)
         {
             List<Usuario> usuarioDevolver = new List<Usuario>();
@@ -91,40 +120,6 @@ namespace nutritionApp
             }
             return usuarioDevolver;
         }
-
-        //public Usuario rellenar_usuario(Usuario usuarioRellenar)
-        //{
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC RetornaUsuario ?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(usuarioRellenar._Cedula, 2);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //        usuarioRellenar._Genero = contenedor["genero"].ToString();
-        //        usuarioRellenar._FechaNac = Convert.ToDateTime(contenedor["fechaNac"]);
-        //        usuarioRellenar._Nombre = contenedor["nombre"].ToString();
-        //        usuarioRellenar._Apellido1 = contenedor["apellido1"].ToString();
-        //        usuarioRellenar._Apellido2 = contenedor["apellido2"].ToString();
-        //        usuarioRellenar._Direccion = contenedor["direccion"].ToString();
-        //        usuarioRellenar._Telefono1 = contenedor["telefono1"].ToString();
-        //        usuarioRellenar._Estatura = Convert.ToInt16(contenedor["estatura"]);
-        //        usuarioRellenar._Peso = Convert.ToDecimal(contenedor["peso"]);
-        //        usuarioRellenar._Proposito = contenedor["proposito"].ToString();
-        //        usuarioRellenar._Correo = contenedor["correo"].ToString();
-        //        usuarioRellenar._NomUsuario = contenedor["usuario"].ToString();
-        //        usuarioRellenar._Contrasena = contenedor["contrasena"].ToString();
-        //        usuarioRellenar._TipoUsuario = contenedor["tipoUsuario"].ToString();
-        //    }
-        //    contenedor.Close();
-        //    return usuarioRellenar;
-        //}
-
-
 
         /* == Funcion para insertar un usuario comun y corriente == */
         public bool insertar_usuario(Usuario insertar)
@@ -170,7 +165,6 @@ namespace nutritionApp
             consulta = "EXEC ModificaUsuario ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?";
             conect_local.annadir_consulta(consulta);
             conect_local.annadir_parametro(modificar._Cedula, 2);
-            //conect_local.annadir_parametro(modificar._Foto, 5);
             conect_local.annadir_parametro(modificar._Genero, 2);
             conect_local.annadir_parametro(modificar._FechaNac, 4);
             conect_local.annadir_parametro(modificar._Nombre, 2);

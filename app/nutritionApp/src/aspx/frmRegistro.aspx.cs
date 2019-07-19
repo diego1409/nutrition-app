@@ -40,7 +40,7 @@ namespace nutritionApp.src.aspx
                     nuevo_usuario._Telefono1 = txtTelefono.Text;
                     nuevo_usuario._Estatura = Convert.ToInt32(txtEstatura.Text);
                     nuevo_usuario._Peso = Convert.ToDecimal(txtPeso.Text);
-                    nuevo_usuario._Proposito = txtProposito.Text;
+                    nuevo_usuario._Proposito = ddlProposito.SelectedValue;
                     nuevo_usuario._Correo = txtCorreo.Text;
                     nuevo_usuario._NomUsuario = txtNomUsuario.Text;
                     nuevo_usuario._Contrasena = txtPass.Text;

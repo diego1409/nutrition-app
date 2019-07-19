@@ -49,9 +49,6 @@
             <!-- Modal end-->
 
         <div class="form-group">
-            <!-- Hipervínculo Regresar -->
-            <button id="btnRegresar" class="btn btn-info" runat="server">Regresar</button>
-
                     <table class="table">
                       <thead>
                         <tr>
@@ -69,6 +66,8 @@
                         </tbody>
                     </table>
             <asp:Button ID="btnRegistrar" class="btn btn-primary" runat="server" Text="Registrar usuario" OnClick="btnRegistrar_Click"/>
+            <br><br>
+            <button id="btnRegresar" class="btn btn-info" runat="server">Regresar</button>
         </div>
 			</div>
 		</div>

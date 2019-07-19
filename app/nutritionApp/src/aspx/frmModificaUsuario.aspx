@@ -38,7 +38,7 @@
                 <tr>
                     <td>Número de Cédula:</td>
                     <td>
-                        <asp:TextBox ID="txtNumIdentificacion" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                        <asp:TextBox ID="txtNumIdentificacion" class="form-control" runat="server" Width="250px" ReadOnly></asp:TextBox>
                     </td> 
                     <td>
                         <asp:RequiredFieldValidator ID="rqvTxtNumIdentificacion" class="form-control" runat="server" ControlToValidate="txtNumIdentificacion" ErrorMessage="Debe ingresar la cédula del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -166,10 +166,14 @@
                 <tr>
                     <td>Proposito:</td>
                     <td>
-                        <asp:TextBox ID="txtProposito" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine"></asp:TextBox>
-                    </td> 
+                        <asp:DropDownList ID="ddlProposito" runat="server" Height="37px" Width="258px" Enabled="True">
+                            <asp:ListItem Value="Bajar peso">Bajar peso</asp:ListItem>
+                            <asp:ListItem Value="Aumentar peso">Aumentar peso</asp:ListItem>
+                            <asp:ListItem Value="Mantener peso">Mantener peso</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
                     <td>
-                        <asp:RequiredFieldValidator ID="rqvTxtProposito" class="form-control" runat="server" ControlToValidate="txtProposito" ErrorMessage="Debe ingresar el propósito del uso de la aplicación" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rqvDdlProposito" runat="server" ControlToValidate="ddlProposito" ErrorMessage="Debe seleccionar un propósito" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
 
@@ -182,49 +186,8 @@
                     <td>
                         <asp:RequiredFieldValidator ID="rqvNomUsuario" class="form-control" runat="server" ControlToValidate="txtNomUsuario" ErrorMessage="Debe ingresar su nombre de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                </tr>
-                <!-- Contraseña antigua -->
-                <tr>
-                    <td>Contraseña antigua:</td>
-                    <td>
-                        <asp:TextBox ID="txtPassAntigua" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
-                    </td> 
-                    <td>
-                        <asp:RequiredFieldValidator ID="rqvTxtPassAntigua" class="form-control" runat="server" ControlToValidate="txtPassAntigua" ErrorMessage="Debe ingresar la contraseña antigua del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
+                </tr>        
 
-                <!-- Contraseña Nueva -->
-                <tr>
-                    <td>Contraseña:</td>
-                    <td>
-                        <asp:TextBox ID="txtPass" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
-                    </td> 
-                    <td>
-                        <asp:RequiredFieldValidator ID="rqvTxtPass" class="form-control" runat="server" ControlToValidate="txtPass" ErrorMessage="Debe ingresar la contraseña del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-
-                <!-- Confirmar Contraseña Nueva -->
-                <tr>
-                    <td>Confirmar Contraseña:</td>
-                    <td>
-                        <asp:TextBox ID="txtConfirmarPass" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
-                    </td> 
-                    <td>
-                        <asp:RequiredFieldValidator ID="rqvTxtConfirmarPass" class="form-control" runat="server" ControlToValidate="txtConfirmarPass" ErrorMessage="Debe ingresar la confirmación de la contraseña del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-
-                    </td>
-                    <td>
-                        <!-- CompareValidator para comparar contrasenas -->
-                        <asp:CompareValidator ID="cmvPass" class="form-control" runat="server" ControlToCompare="txtConfirmarPass" ControlToValidate="txtPass" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
-                    </td>
-                </tr>
                 <!-- Tipo de usuario -->
                 <tr>
                     <td>Tipo de usuario:</td>
@@ -239,6 +202,21 @@
                         <asp:RequiredFieldValidator ID="rqvDdlTipoUsuario" runat="server" ControlToValidate="ddlTipoUsuario" ErrorMessage="Debe seleccionar un tipo de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
+
+                <!-- Contraseña (no se muestra al usuario) -->
+                <tr>
+                    <td>
+                        <asp:TextBox ID="txtContrasena" class="form-control" runat="server" Width="250px" ReadOnly Enabled="False" Visible="False" Font-Size="0pt"></asp:TextBox>
+                    </td> 
+                </tr>
+
+                <!-- Reiniciar contraseña -->
+                <tr>
+                    <td><b>Reiniciar contraseña: </b>
+                        <asp:CheckBox ID="cbReinicioContrasena" runat="server" Width="250px"></asp:CheckBox>
+                    </td> 
+                </tr>
+                <tr><td><p>La nueva contraseña será "Salad123" y se recomienda cambiarla después de iniciar nuevamente</p></td> </tr>
             </table>
                 
             <br />

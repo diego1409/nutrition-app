@@ -238,22 +238,22 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPeso;
         
         /// <summary>
-        /// txtProposito control.
+        /// ddlProposito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProposito;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProposito;
         
         /// <summary>
-        /// rqvTxtProposito control.
+        /// rqvDdlProposito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtProposito;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlProposito;
         
         /// <summary>
         /// txtNomUsuario control.
@@ -274,69 +274,6 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvNomUsuario;
         
         /// <summary>
-        /// txtPassAntigua control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassAntigua;
-        
-        /// <summary>
-        /// rqvTxtPassAntigua control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPassAntigua;
-        
-        /// <summary>
-        /// txtPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPass;
-        
-        /// <summary>
-        /// rqvTxtPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPass;
-        
-        /// <summary>
-        /// txtConfirmarPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmarPass;
-        
-        /// <summary>
-        /// rqvTxtConfirmarPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtConfirmarPass;
-        
-        /// <summary>
-        /// cmvPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cmvPass;
-        
-        /// <summary>
         /// ddlTipoUsuario control.
         /// </summary>
         /// <remarks>
@@ -353,6 +290,24 @@ namespace nutritionApp.src.aspx {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlTipoUsuario;
+        
+        /// <summary>
+        /// txtContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena;
+        
+        /// <summary>
+        /// cbReinicioContrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbReinicioContrasena;
         
         /// <summary>
         /// btnModificar control.

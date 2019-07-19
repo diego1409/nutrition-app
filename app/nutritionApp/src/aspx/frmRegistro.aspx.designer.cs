@@ -229,22 +229,22 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPeso;
         
         /// <summary>
-        /// txtProposito control.
+        /// ddlProposito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProposito;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProposito;
         
         /// <summary>
-        /// rqvTxtProposito control.
+        /// rqvDdlProposito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtProposito;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlProposito;
         
         /// <summary>
         /// txtNomUsuario control.

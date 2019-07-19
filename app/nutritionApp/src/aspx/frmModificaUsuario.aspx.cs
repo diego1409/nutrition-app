@@ -13,7 +13,6 @@ namespace nutritionApp.src.aspx
     public partial class frmModificaUsuario : System.Web.UI.Page
     {
         string cedulaUsuarioModificar;
-        string contrasenaAntigua;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -39,15 +38,13 @@ namespace nutritionApp.src.aspx
                     txtDireccion.Text = item._Direccion;
                     txtEstatura.Text = item._Estatura.ToString();
                     txtPeso.Text = item._Peso.ToString();
-                    txtProposito.Text = item._Proposito;
+                    ddlProposito.SelectedValue = item._Proposito;
                     ddlGenero.SelectedValue = item._Genero;
                     ddlTipoUsuario.SelectedValue = item._TipoUsuario;
                     txtFechaNac.Text = item._FechaNac.ToString();
                     txtNomUsuario.Text = item._NomUsuario;
                     txtTelefono.Text = item._Telefono1;
-
-                    //Se guarda la contrasena en caso de que el user desee cambiarla
-                    contrasenaAntigua = item._Contrasena;
+                    txtContrasena.Text = item._Contrasena;
                     
                 }
             }
@@ -56,8 +53,6 @@ namespace nutritionApp.src.aspx
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             ///Verificar que todas las validaciones hayan sido satisfactorias.
-            if (txtPass.Text == txtConfirmarPass.Text)
-            {
                 Usuario usuarioModificar = new Usuario();
                 usuarioModificar._Cedula = txtNumIdentificacion.Text;
                 usuarioModificar._Genero = ddlGenero.SelectedValue;
@@ -69,22 +64,21 @@ namespace nutritionApp.src.aspx
                 usuarioModificar._Telefono1 = txtTelefono.Text;
                 usuarioModificar._Estatura = Convert.ToInt32(txtEstatura.Text);
                 usuarioModificar._Peso = Convert.ToDecimal(txtPeso.Text);
-                usuarioModificar._Proposito = txtProposito.Text;
+                usuarioModificar._Proposito = ddlProposito.SelectedValue;
                 usuarioModificar._Correo = txtCorreo.Text;
                 usuarioModificar._NomUsuario = txtNomUsuario.Text;
-                usuarioModificar._Contrasena = txtPass.Text;
                 usuarioModificar._TipoUsuario = ddlTipoUsuario.SelectedValue;
+
+                if (cbReinicioContrasena.Checked) {
+                usuarioModificar._Contrasena = "Salad123";
+                }
+                else {
+                    usuarioModificar._Contrasena = txtContrasena.Text;
+                }
 
                 ManejoDatos md = new ManejoDatos();
                 md.modificar_usuario(usuarioModificar);
                 Response.Redirect("frmIMC.aspx");
-            }
-            else
-            {
-                Response.Write("<script>window.alert('Por favor verifique su contrasena nueva. No coincide en los campos.');</script>");
-                txtPass.Text = "";
-                txtConfirmarPass.Text = "";
-            }
         }
     }
 }

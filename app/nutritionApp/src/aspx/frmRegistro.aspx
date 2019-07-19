@@ -82,9 +82,9 @@
                     </td>
                 </tr>
 
-                <!-- Tipo de Usuario -->
+                <!-- Genero -->
                 <tr>
-                    <td>Genero:</td>
+                    <td>Género:</td>
                     <td>
                         <asp:DropDownList ID="ddlGenero" runat="server" Height="37px" Width="258px" Enabled="True">
                             <asp:ListItem Value="" Selected="True">Seleccione su genero</asp:ListItem>
@@ -167,10 +167,14 @@
                 <tr>
                     <td>Proposito:</td>
                     <td>
-                        <asp:TextBox ID="txtProposito" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine"></asp:TextBox>
-                    </td> 
+                        <asp:DropDownList ID="ddlProposito" runat="server" Height="37px" Width="258px" Enabled="True">
+                            <asp:ListItem Value="Bajar peso" Selected>Bajar peso</asp:ListItem>
+                            <asp:ListItem Value="Aumentar peso">Aumentar peso</asp:ListItem>
+                            <asp:ListItem Value="Mantener peso">Mantener peso</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
                     <td>
-                        <asp:RequiredFieldValidator ID="rqvTxtProposito" class="form-control" runat="server" ControlToValidate="txtProposito" ErrorMessage="Debe ingresar el propósito del uso de la aplicación" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rqvDdlProposito" runat="server" ControlToValidate="ddlProposito" ErrorMessage="Debe seleccionar un propósito" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
 
