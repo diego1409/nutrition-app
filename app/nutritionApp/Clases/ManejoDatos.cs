@@ -24,6 +24,57 @@ namespace nutritionApp
             }
         }
 
+        /* == Funcion para Iniciar sesion == */
+        public int RetornaUsuarioPass(Usuario user)
+        {
+            //Declaracion de variables
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            int idUsuario = 0;
+
+            //Se crea la consulta
+            consulta = "EXEC RetornaUsuarioPass ?,?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(user._NomUsuario, 2);
+            conect_local.annadir_parametro(user._Contrasena, 2);
+
+            //Se procede a buscar
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+                idUsuario = Convert.ToInt32(contenedor["idUsuario"].ToString());
+            }
+            contenedor.Close();
+
+            //Se retorna el idUsuario para buscarlo y obtener los datos de usuario
+            return idUsuario;
+        }
+
+        /* == Funcion para retornar un usuario == */
+        public OleDbDataReader RetornaUsuario(int idUsuario)
+        {
+            //Declaracion de variables
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+
+            //Se crea la consulta
+            consulta = "EXEC RetornaUsuario ?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(idUsuario, 1);
+
+            //Se procede a buscar
+            contenedor = conect_local.busca();
+
+            //Se retorna el contenedor para usar todos sus datos
+            return contenedor;
+        }
+
         /* == Funcion para insertar un usuario comun y corriente == */
         public bool insertar_usuario(Usuario insertar)
         {
