@@ -192,6 +192,7 @@
     <Content Include="src\aspx\Usuarios\frmModificaUsuario.aspx" />
     <Content Include="src\aspx\Usuarios\frmInsertaUsuario.aspx" />
     <Content Include="src\aspx\Usuarios\frmInsertaAdmin.aspx" />
+    <Content Include="src\css\frmRegistro.css" />
     <Content Include="src\css\Index.css" />
     <Content Include="src\css\Login.css" />
     <Content Include="src\css\salad.css" />
