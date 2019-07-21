@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 //Clases de conexion
 using nutritionApp.Clases;
 
+using System.IO;
+
 namespace nutritionApp.src.aspx
 {
     public partial class frmRegistro : System.Web.UI.Page
@@ -40,7 +42,7 @@ namespace nutritionApp.src.aspx
                     nuevo_usuario._Telefono1 = txtTelefono.Text;
                     nuevo_usuario._Estatura = Convert.ToInt32(txtEstatura.Text);
                     nuevo_usuario._Peso = Convert.ToDecimal(txtPeso.Text);
-                    nuevo_usuario._Proposito = txtProposito.Text;
+                    nuevo_usuario._Proposito = ddlProposito.SelectedValue;
                     nuevo_usuario._Correo = txtCorreo.Text;
                     nuevo_usuario._NomUsuario = txtNomUsuario.Text;
                     nuevo_usuario._Contrasena = txtPass.Text;
@@ -57,6 +59,30 @@ namespace nutritionApp.src.aspx
                     txtPass.Text = "";
                     txtConfirmarPass.Text = "";
                 }
+        }
+
+        protected void hplCargarFoto_Click(object sender, EventArgs e)
+        {
+            //Variables a utilizar
+            Byte[] Archivo = null;
+            string rutaArchivo = string.Empty;
+            string nombreArchivo = string.Empty;
+            string extensionArchivo = string.Empty;
+
+            //Verificar si ya se selecciono una foto
+            if (fupAgregarFoto.HasFile)
+            {
+                using (BinaryReader reader = new BinaryReader(fupAgregarFoto.PostedFile.InputStream))
+                {
+                    Archivo = reader.ReadBytes(fupAgregarFoto.PostedFile.ContentLength);
+                }
+
+                rutaArchivo = Server.MapPath(fupAgregarFoto.FileName);
+                nombreArchivo = Path.GetFileNameWithoutExtension(fupAgregarFoto.FileName);
+                extensionArchivo = Path.GetExtension(fupAgregarFoto.FileName);
+
+                imgPerfil.ImageUrl = rutaArchivo;
+            }
         }
     }
 }
