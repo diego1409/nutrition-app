@@ -14,7 +14,6 @@ GO
 -- Description:	<Description,,>
 -- =============================================
 CREATE OR ALTER PROCEDURE [dbo].[InsertaUsuario]
-	@foto image NULL,
 	@cedula varchar(20),
 	@genero char(1),
 	@fechaNac date,
@@ -24,7 +23,7 @@ CREATE OR ALTER PROCEDURE [dbo].[InsertaUsuario]
 	@direccion varchar(100),
 	@telefono1 varchar (10),
 	@estatura tinyint,
-	@peso real,
+	@peso decimal(5,2),
 	@proposito varchar(50),
 	@correo varchar(50),
 	@usuario varchar(20),
@@ -33,7 +32,7 @@ CREATE OR ALTER PROCEDURE [dbo].[InsertaUsuario]
 AS
 BEGIN
 	Insert into usuario
-	Values (@foto,@cedula,@genero,@fechaNac,@nombre,@apellido1,@apellido2,@direccion,@telefono1,@estatura,@peso,@proposito,@correo,@usuario,@contrasena,@tipoUsuario)
+	Values (NULL,@cedula,@genero,@fechaNac,@nombre,@apellido1,@apellido2,@direccion,@telefono1,@estatura,@peso,@proposito,@correo,@usuario,@contrasena,@tipoUsuario)
 END
 GO
 
@@ -49,7 +48,7 @@ CREATE OR ALTER PROCEDURE [dbo].[ModificaUsuario]
 	@direccion varchar(100),
 	@telefono1 varchar (10),
 	@estatura tinyint,
-	@peso real,
+	@peso decimal(5,2),
 	@proposito varchar(50),
 	@correo varchar(50),
 	@usuario varchar(20),

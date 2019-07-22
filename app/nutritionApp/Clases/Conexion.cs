@@ -13,7 +13,7 @@ namespace nutritionApp
         public OleDbConnection conexion;
         public OleDbCommand comando;
         String strcomando;
-        String strconexion;
+        public String strconexion;
         OleDbTransaction transaccion;
         bool conecta;
         String xconecta;

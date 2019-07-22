@@ -87,7 +87,7 @@ namespace nutritionApp
             return idUsuario;
         }
 
-        public List<Usuario> RetornaUsuario(Usuario usuario)
+        public List<Usuario> RetornaUsuarioCedula(Usuario usuario)
         {
             List<Usuario> usuarioDevolver = new List<Usuario>();
             Conexion conec = new Conexion();
@@ -119,6 +119,26 @@ namespace nutritionApp
                 usuarioDevolver.Add(tmp);
             }
             return usuarioDevolver;
+        /* == Funcion para retornar un usuario == */
+        public OleDbDataReader RetornaUsuario(int idUsuario)
+        {
+            //Declaracion de variables
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+
+            //Se crea la consulta
+            consulta = "EXEC RetornaUsuario ?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(idUsuario, 1);
+
+            //Se procede a buscar
+            contenedor = conect_local.busca();
+
+            //Se retorna el contenedor para usar todos sus datos
+            return contenedor;
         }
 
         /* == Funcion para insertar un usuario comun y corriente == */
