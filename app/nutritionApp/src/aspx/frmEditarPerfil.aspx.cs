@@ -88,7 +88,6 @@ namespace nutritionApp.src.aspx
                         ScriptManager.RegisterStartupScript(this, GetType(),
                                               "ServerControlScript", script, true);
                     }
-                    
                 }
                 else
                 {

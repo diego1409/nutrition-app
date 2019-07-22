@@ -129,7 +129,7 @@
     <Content Include="src\aspx\frmEditarPerfil.aspx" />
     <Content Include="src\aspx\frmRegistro.aspx" />
     <Content Include="src\aspx\frmCalcCalorias.aspx" />
-    <Content Include="src\aspx\frmIMC.aspx" />
+    <Content Include="src\aspx\frmMedidas.aspx" />
     <Content Include="src\aspx\frmInsertaAdmin.aspx" />
     <Content Include="src\aspx\frmModificaUsuario.aspx" />
     <Content Include="src\aspx\Index.aspx" />
@@ -216,6 +216,7 @@
     <Compile Include="Clases\clsProcedimientosAlmacenados.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\ManejoDatos.cs" />
+    <Compile Include="Clases\medicion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -268,12 +269,12 @@
     <Compile Include="src\aspx\frmCalcCalorias.aspx.designer.cs">
       <DependentUpon>frmCalcCalorias.aspx</DependentUpon>
     </Compile>
-    <Compile Include="src\aspx\frmIMC.aspx.cs">
-      <DependentUpon>frmIMC.aspx</DependentUpon>
+    <Compile Include="src\aspx\frmMedidas.aspx.cs">
+      <DependentUpon>frmMedidas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="src\aspx\frmIMC.aspx.designer.cs">
-      <DependentUpon>frmIMC.aspx</DependentUpon>
+    <Compile Include="src\aspx\frmMedidas.aspx.designer.cs">
+      <DependentUpon>frmMedidas.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmInsertaAdmin.aspx.cs">
       <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>

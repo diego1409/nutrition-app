@@ -225,6 +225,36 @@ namespace nutritionApp
             return true;
         }
 
+        public List<Medicion> RetornaUltimaMedicion(Medicion medicion)
+        {
+            List<Medicion> medicionDevolver = new List<Medicion>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "select top 1 * from medicion where idUsuario=" + medicion._IdUsuario+ " order by fecha desc";
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                Medicion tmp = new Medicion();
+                tmp._IdMedicion = Convert.ToInt16(contenedor["IdMedicion"]);
+                tmp._IdUsuario = Convert.ToInt16(contenedor["IdUsuario"]);
+                tmp._Peso = Convert.ToDecimal(contenedor["peso"]);
+                tmp._Grasa = Convert.ToDecimal(contenedor["grasa"]);
+                tmp._Musculo = Convert.ToDecimal(contenedor["musculo"]);
+                tmp._Agua = Convert.ToDecimal(contenedor["agua"]);
+                tmp._Hueso = Convert.ToDecimal(contenedor["hueso"]);
+                tmp._Observaciones = contenedor["observaciones"].ToString();
+                tmp._Imc = Convert.ToDecimal(contenedor["imc"]);
+                tmp._Fecha = Convert.ToDateTime(contenedor["fecha"]);
+
+                medicionDevolver.Add(tmp);
+            }
+            return medicionDevolver;
+        }
+
         ///* == Funcion que inserta un administrador == */
         //public bool insertar_administrador(Administrador insertar)
         //{
@@ -404,7 +434,7 @@ namespace nutritionApp
         //    return lista;
         //}
 
-        
+
 
         //public bool insertar_publicacion(Publicacion insertar)
         //{
