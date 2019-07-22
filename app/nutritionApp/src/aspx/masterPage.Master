@@ -57,8 +57,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="Portal.aspx">
-                                        Portal
+                                    <a class="nav-link js-scroll-trigger" href="Dashboard.aspx">
+                                        Dashboard
                                     </a>
                                 </li>
                             </ul>

@@ -12,12 +12,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <h2>Datos Nutricionales</h2>
-                    </div>
-                </div>
-                <div class="row mb-5">
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Datos Nutricionales</h2>
+                            </div>
+                        </div>
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group">
@@ -109,201 +109,35 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="txtFechaNac">Fecha de Nacimiento*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                date_range
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Fecha de Nacimiento -->
-                                    <asp:TextBox ID="txtFechaNac" class="form-control" runat="server" CssClass="form-control" Width="250px" TextMode="Date"></asp:TextBox>
-                                </div>
-                                <p class="text-center mb-3">
-                                   
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="txtTelefono">Teléfono*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                phone
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Teléfono -->
-                                    <asp:TextBox ID="txtTelefono" class="form-control" runat="server" Width="250px" TextMode="Number" MaxLength="10"></asp:TextBox>  
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtTelefono" class="form-control" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Debe ingresar su telefono" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="txtDireccion">Dirección*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                map
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Dirección -->
-                                    <asp:TextBox ID="txtDireccion" class="form-control" runat="server" Width="250px" Height="163px" TextMode="MultiLine"></asp:TextBox>
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtDireccion" class="form-control" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe ingresar su dirección" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mb-5">
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="row">
                             <div class="col">
-                                <h2>Datos Médicos</h2>
+                                <h2>Alergias</h2>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label for="txtEstatura">Estatura (en cms)*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                trending_up
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Estatura -->
-                                    <asp:TextBox ID="txtEstatura" class="form-control" runat="server" Width="250px" TextMode="Number"></asp:TextBox>
+                                <label for="chkAlergias">Seleccione los ingredientes a evitar</label>
+                                <div class="form-group">
+                                    <!-- Alergias -->
+                                    <asp:CheckBoxList ID="chkAlergias" CssClass="form-control" runat="server" Width="250px" Height="162px">
+                                    </asp:CheckBoxList>
                                 </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtEstatura" class="form-control" runat="server" ControlToValidate="txtEstatura" ErrorMessage="Debe ingresar su estatura" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="txtPeso">Peso (en kgs)*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                fitness_center
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Peso -->
-                                    <asp:TextBox ID="txtPeso" class="form-control" runat="server" Width="250px"></asp:TextBox>
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtPeso" class="form-control" runat="server" ControlToValidate="txtPeso" ErrorMessage="Debe ingresar su peso" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                        <div class="row">
-                            <div class="col">
-                                <h2>Credenciales de Usuario</h2>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="txtCorreo">Correo Electrónico*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                mail
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Correo -->
-                                    <asp:TextBox ID="txtCorreo" class="form-control" runat="server" Width="250px"></asp:TextBox>
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvCorreo" class="form-control" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Debe ingresar su correo electrónico" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="txtNomUsuario">Nombre de Usuario*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                alternate_email
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Usuario -->
-                                    <asp:TextBox ID="txtNomUsuario" class="form-control" runat="server" Width="250px"></asp:TextBox>
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvNomUsuario" class="form-control" runat="server" ControlToValidate="txtNomUsuario" ErrorMessage="Debe ingresar su nombre de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="txtPass">Contraseña*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                vpn_key
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Contraseña -->
-                                    <asp:TextBox ID="txtPass" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtPass" class="form-control" runat="server" ControlToValidate="txtPass" ErrorMessage="Debe ingresar la contraseña del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="txtConfirmarPass">Confirmar Contraseña*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                vpn_key
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Contraseña -->
-                                    <asp:TextBox ID="txtConfirmarPass" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtConfirmarPass" class="form-control" runat="server" ControlToValidate="txtConfirmarPass" ErrorMessage="Debe ingresar la confirmación de la contraseña del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <!-- CompareValidator para comparar contrasenas -->
-                                <asp:CompareValidator ID="cmvPass" class="form-control" runat="server" ControlToCompare="txtConfirmarPass" ControlToValidate="txtPass" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
+                                <h2>Consumo Calórico</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="text">
+                                    De acuerdo con sus medidas actuales, debes consumir en 5 comidas:
+                                </p>
+                                <p class="text-center">
+                                    
+                                    <asp:Label ID="lblCalorias" runat="server" Text="" Font-Size="XX-Large"></asp:Label> kcal
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -314,7 +148,7 @@
                         <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/Index.aspx">Cancelar</asp:HyperLink>
                     </div>
                     <div class="col-6 align-self-center">
-                        <asp:Button ID="btnRegistrar" class="btn btn-success btn-block" runat="server" Text="Registrarse"  />
+                        <asp:Button ID="btnCrearPlan" class="btn btn-success btn-block" runat="server" Text="Crear Plan"  />
                     </div>
                 </div>
             </div>

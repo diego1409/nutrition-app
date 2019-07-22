@@ -75,6 +75,33 @@ namespace nutritionApp
             return contenedor;
         }
 
+        /* == Funcion para almacenar un usuario == */
+        public Usuario almacenarDatosUsuario(OleDbDataReader datos, Usuario user)
+        {
+            while (datos.Read())
+            {
+                //Se almacenan los datos de usuario
+                user._Foto = Convert.FromBase64String(datos["foto"].ToString());
+                user._Cedula = Convert.ToString(datos["cedula"].ToString());
+                user._Genero = Convert.ToString(datos["genero"].ToString());
+                user._FechaNac = Convert.ToDateTime(datos["fechaNac"].ToString());
+                user._Nombre = Convert.ToString(datos["nombre"].ToString());
+                user._Apellido1 = Convert.ToString(datos["apellido1"].ToString());
+                user._Apellido2 = Convert.ToString(datos["apellido2"].ToString());
+                user._Direccion = Convert.ToString(datos["direccion"].ToString());
+                user._Telefono1 = Convert.ToString(datos["telefono1"].ToString());
+                user._Estatura = Convert.ToInt32(datos["estatura"].ToString());
+                user._Peso = Convert.ToDecimal(datos["peso"].ToString());
+                user._Proposito = Convert.ToString(datos["proposito"].ToString());
+                user._TipoUsuario = Convert.ToString(datos["tipoUsuario"].ToString());
+            }
+
+            //Se agrega el usuario como variable de sesion
+            //this.Session.Add("Usuario", user);
+
+            return user;
+        }
+
         /* == Funcion para insertar un usuario comun y corriente == */
         public bool insertar_usuario(Usuario insertar)
         {
@@ -142,6 +169,48 @@ namespace nutritionApp
             }
             contenedor.Close();
             return true;
+        }
+
+        /* == Funcion para retornar todos los ingredientes == */
+        public OleDbDataReader RetornaIngrediente()
+        {
+            //Declaracion de variables
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+
+            //Se crea la consulta
+            consulta = "EXEC RetornaIngrediente";
+            conect_local.annadir_consulta(consulta);
+
+            //Se procede a buscar
+            contenedor = conect_local.busca();
+
+            //Se retorna el contenedor para usar todos sus datos
+            return contenedor;
+        }
+
+        /* == Funcion para retornar todos los ingredientes == */
+        public OleDbDataReader RetornaAlergias(int idUsuario)
+        {
+            //Declaracion de variables
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+           
+            //Se crea la consulta
+            consulta = "EXEC RetornaAlergias ?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(idUsuario, 1);
+            //Se procede a buscar
+            contenedor = conect_local.busca();
+
+            //Se retorna el contenedor para usar todos sus datos
+            return contenedor;
         }
 
         ///* == Funcion que inserta un administrador == */
