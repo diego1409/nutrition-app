@@ -120,6 +120,22 @@ namespace nutritionApp
             }
             return usuarioDevolver;
         }
+
+        public void DarDeBajaUsuario(Usuario usuario)
+        {
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "Delete from usuario where cedula=" + usuario._Cedula;
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+            }
+        }
+
         /* == Funcion para retornar un usuario == */
         public OleDbDataReader RetornaUsuario(int idUsuario)
         {

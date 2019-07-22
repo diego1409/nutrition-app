@@ -19,7 +19,7 @@ namespace nutritionApp.src.aspx {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnRegresar;
+        protected global::System.Web.UI.WebControls.Button btnRegresar;
         
         /// <summary>
         /// usuarioModificar control.

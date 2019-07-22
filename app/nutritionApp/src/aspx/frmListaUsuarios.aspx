@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Lista Usuarios" Language="C#" MasterPageFile="~/src/aspx/masterPageUser.Master" AutoEventWireup="true" CodeBehind="frmListaUsuarios.aspx.cs" Inherits="nutritionApp.src.aspx.frmListaUsuarios" %>
+﻿<%@ Page Title="Lista Usuarios" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmListaUsuarios.aspx.cs" Inherits="nutritionApp.src.aspx.frmListaUsuarios" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/Login.css" type="text/css" />
@@ -28,7 +28,7 @@
         </div>
 
                 <!-- Modal Eliminar -->
-            <div class="modal fade" id="modalEliminarUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modalDarDeBajaUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header text-center">

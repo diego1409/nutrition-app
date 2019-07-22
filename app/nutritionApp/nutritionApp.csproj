@@ -125,6 +125,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="src\aspx\frmListaUsuarios.aspx" />
+    <Content Include="src\aspx\frmDarDeBajaUsuario.aspx" />
+    <Content Include="src\aspx\frmEditarPerfil.aspx" />
     <Content Include="src\aspx\frmRegistro.aspx" />
     <Content Include="src\aspx\frmCalcCalorias.aspx" />
     <Content Include="src\aspx\frmIMC.aspx" />
@@ -223,6 +225,20 @@
     </Compile>
     <Compile Include="src\aspx\frmListaUsuarios.aspx.designer.cs">
       <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmDarDeBajaUsuario.aspx.cs">
+      <DependentUpon>frmDarDeBajaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmDarDeBajaUsuario.aspx.designer.cs">
+      <DependentUpon>frmDarDeBajaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmEditarPerfil.aspx.cs">
+      <DependentUpon>frmEditarPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmEditarPerfil.aspx.designer.cs">
+      <DependentUpon>frmEditarPerfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmRegistro.aspx.cs">
       <DependentUpon>frmRegistro.aspx</DependentUpon>

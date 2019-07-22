@@ -10,51 +10,60 @@
 namespace nutritionApp.src.aspx {
     
     
-    public partial class masterPageUser {
+    public partial class frmDarDeBajaUsuario {
         
         /// <summary>
-        /// head control.
+        /// btnRegresar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Button btnRegresar;
         
         /// <summary>
-        /// frmMaster control.
+        /// txtNumIdentificacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frmMaster;
+        protected global::System.Web.UI.WebControls.TextBox txtNumIdentificacion;
         
         /// <summary>
-        /// lblBienvenida control.
+        /// txtNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBienvenida;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// body control.
+        /// txtNomUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder body;
+        protected global::System.Web.UI.WebControls.TextBox txtNomUsuario;
         
         /// <summary>
-        /// scmScripts control.
+        /// ddlTipoUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager scmScripts;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoUsuario;
+        
+        /// <summary>
+        /// btnDarDeBaja control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDarDeBaja;
     }
 }
