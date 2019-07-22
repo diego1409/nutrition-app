@@ -1,97 +1,109 @@
-﻿<%@ Page Title="Registrarse" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmRegistro.aspx.cs" Inherits="nutritionApp.src.aspx.frmRegistro" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/src/aspx/masterPageUser.Master" AutoEventWireup="true" CodeBehind="frmCrearPlan.aspx.cs" Inherits="nutritionApp.src.aspx.Plan_Nutricional.frmCrearPlan" %>
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../css/frmRegistro.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/frmCrearPlan.css" type="text/css" />
 </asp:Content>
-
 <asp:Content ID="body" ContentPlaceHolderID="body" runat="server">
-    <div id="divRegistro" class="container-fluid">
+    <div id="divCrearPlan" class="container-fluid">
         <div class="row justify-content-center">
             <div class="col">
                 <div class="row">
                     <div class="col">
-                        <h1>Registrarse</h1>
+                        <h1>Crear Plan Nutricional</h1>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <h2>Datos Personales</h2>
+                        <h2>Datos Nutricionales</h2>
                     </div>
                 </div>
                 <div class="row mb-5">
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-row">
                             <div class="col">
-                                <label for="txtNumIdentificacion">Número de Cédula*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                perm_identity
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Número de Cédula -->
-                                    <asp:TextBox ID="txtNumIdentificacion" class="form-control" runat="server" Width="250px" MaxLength="20" TextMode="Number"></asp:TextBox>
+                                <div class="form-group">
+                                    <label for="ddlProposito">Propósito*</label>
+                                    <!-- Propósito -->
+                                    <asp:DropDownList ID="ddlProposito" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                        <asp:ListItem Value="" Selected="True">Seleccione su propósito</asp:ListItem>
+                                        <asp:ListItem Value="Bajar porcentaje de grasa">Bajar porcentaje de grasa</asp:ListItem>
+                                        <asp:ListItem Value="Ganar masa muscular">Ganar masa muscular</asp:ListItem>
+                                        <asp:ListItem Value="Mantener peso">Mantener peso</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                                 <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtNumIdentificacion" class="form-control" runat="server" ControlToValidate="txtNumIdentificacion" ErrorMessage="Debe ingresar su cédula" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="rqvDdlProposito" class="form-control" runat="server" ControlToValidate="ddlProposito" ErrorMessage="Debe ingresar el propósito del plan" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </p>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label for="txtNombre">Nombre*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                person
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Nombre -->
-                                    <asp:TextBox ID="txtNombre" class="form-control" runat="server" Width="250px" MaxLength="50"></asp:TextBox>
+                                <div class="form-group">
+                                    <label for="ddlCarbos">Carbohidratos*</label>
+                                    <!-- Propósito -->
+                                    <asp:DropDownList ID="ddlCarbos" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                        <asp:ListItem Value="" Selected="True">Seleccione cantidad de carbohidratos</asp:ListItem>
+                                        <asp:ListItem Value="N">Nula</asp:ListItem>
+                                        <asp:ListItem Value="B">Baja</asp:ListItem>
+                                        <asp:ListItem Value="M">Media</asp:ListItem>
+                                        <asp:ListItem Value="A">Alta</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                                 <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtNombre" class="form-control" runat="server" ControlToValidate="txtNombre" ErrorMessage="Debe ingresar su nombre" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="rqvDdlCarbos" class="form-control" runat="server" ControlToValidate="ddlCarbos" ErrorMessage="Debe ingresar la cantidad de carbohidratos" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </p>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label for="txtPrimerApellido">Primer Apellido*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                person
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Apellido 1 -->
-                                    <asp:TextBox ID="txtPrimerApellido" class="form-control" runat="server" Width="250px" MaxLength="50"></asp:TextBox>
+                                <div class="form-group">
+                                    <label for="ddlProteinas">Proteínas*</label>
+                                    <!-- Propósito -->
+                                    <asp:DropDownList ID="ddlProteinas" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                        <asp:ListItem Value="" Selected="True">Seleccione cantidad de proteínas</asp:ListItem>
+                                        <asp:ListItem Value="N">Nula</asp:ListItem>
+                                        <asp:ListItem Value="B">Baja</asp:ListItem>
+                                        <asp:ListItem Value="M">Media</asp:ListItem>
+                                        <asp:ListItem Value="A">Alta</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                                 <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtPrimerApellido" class="form-control" runat="server" ControlToValidate="txtPrimerApellido" ErrorMessage="Debe ingresar su primer apellido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="rqvDdlProteinas" class="form-control" runat="server" ControlToValidate="ddlProteinas" ErrorMessage="Debe ingresar la cantidad de proteínas" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </p>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <label for="txtSegundoApellido">Segundo Apellido</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                person
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Apellido 2 -->
-                                    <asp:TextBox ID="txtSegundoApellido" class="form-control" runat="server" Width="250px" MaxLength="50"></asp:TextBox>
+                                <div class="form-group">
+                                    <label for="ddlGrasas">Grasas*</label>
+                                    <!-- Propósito -->
+                                    <asp:DropDownList ID="ddlGrasas" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                        <asp:ListItem Value="" Selected="True">Seleccione cantidad de grasas</asp:ListItem>
+                                        <asp:ListItem Value="N">Nula</asp:ListItem>
+                                        <asp:ListItem Value="B">Baja</asp:ListItem>
+                                        <asp:ListItem Value="M">Media</asp:ListItem>
+                                        <asp:ListItem Value="A">Alta</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
                                 <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtSegundoApellido" class="form-control" runat="server" ControlToValidate="txtSegundoApellido" ErrorMessage="Debe ingresar su segundo apellido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="rqvDdlGrasas" class="form-control" runat="server" ControlToValidate="ddlGrasas" ErrorMessage="Debe ingresar la cantidad de grasas" ForeColor="Red"></asp:RequiredFieldValidator>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="ddlAzucares">Azúcares*</label>
+                                    <!-- Propósito -->
+                                    <asp:DropDownList ID="ddlAzucares" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                        <asp:ListItem Value="" Selected="True">Seleccione cantidad de azúcares</asp:ListItem>
+                                        <asp:ListItem Value="N">Nula</asp:ListItem>
+                                        <asp:ListItem Value="B">Baja</asp:ListItem>
+                                        <asp:ListItem Value="M">Media</asp:ListItem>
+                                        <asp:ListItem Value="A">Alta</asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <p class="text-center mb-3">
+                                    <asp:RequiredFieldValidator ID="rqvDdlAzucares" class="form-control" runat="server" ControlToValidate="ddlAzucares" ErrorMessage="Debe ingresar la cantidad de azúcares" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </p>
                             </div>
                         </div>
@@ -112,7 +124,7 @@
                                     <asp:TextBox ID="txtFechaNac" class="form-control" runat="server" CssClass="form-control" Width="250px" TextMode="Date"></asp:TextBox>
                                 </div>
                                 <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" class="form-control" runat="server" ControlToValidate="txtSegundoApellido" ErrorMessage="Debe ingresar su segundo apellido" ForeColor="Red"></asp:RequiredFieldValidator>
+                                   
                                 </p>
                             </div>
                         </div>
@@ -152,56 +164,6 @@
                                 <p class="text-center mb-3">
                                     <asp:RequiredFieldValidator ID="rqvTxtDireccion" class="form-control" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe ingresar su dirección" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-row">
-                            <div class="col">
-                                <label for="ddlGenero">Género*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                people
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Género -->
-                                    <asp:DropDownList ID="ddlGenero" runat="server" Width="250px" Enabled="True">
-                                        <asp:ListItem Value="" Selected="True">Seleccione su genéro</asp:ListItem>
-                                        <asp:ListItem Value="M">Masculino</asp:ListItem>
-                                        <asp:ListItem Value="F">Femenino</asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvDdlGenero" runat="server" ControlToValidate="ddlGenero" ErrorMessage="Debe seleccionar un genero" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <p class="text">
-                                            Foto de Perfil
-                                        </p>
-                                        <div class="text-center">
-                                            <asp:Image ID="imgPerfil" runat="server" Height="240px" Width="240px" ImageUrl="~/src/img/male-fill-circle-512.png" />
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <asp:FileUpload ID="fupAgregarFoto" runat="server" Width="100%" accept="image/*" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <asp:LinkButton ID="hplCargarFoto" runat="server" class="btn btn-success btn-block" OnClick="hplCargarFoto_Click">Cargar Foto</asp:LinkButton>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -253,28 +215,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col">
-                                <label for="ddlProposito">Propósito*</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">
-                                                fitness_center
-                                            </i>
-                                        </span>
-                                    </div>
-                                    <!-- Propósito -->
-                                    <asp:DropDownList ID="ddlProposito" runat="server" Width="250px" Enabled="True">
-                                        <asp:ListItem Value="" Selected="True">Seleccione su propósito</asp:ListItem>
-                                        <asp:ListItem Value="Bajar porcentaje de grasa">Bajar porcentaje de grasa</asp:ListItem>
-                                        <asp:ListItem Value="Ganar masa muscular">Ganar masa muscular</asp:ListItem>
-                                        <asp:ListItem Value="Mantener peso">Mantener peso</asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvDdlProposito" class="form-control" runat="server" ControlToValidate="ddlProposito" ErrorMessage="Debe ingresar el propósito del uso de la aplicación" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
@@ -295,7 +236,7 @@
                                         </span>
                                     </div>
                                     <!-- Correo -->
-                                    <asp:TextBox ID="txtCorreo" class="form-control" runat="server" Width="250px" TextMode="Email"></asp:TextBox>
+                                    <asp:TextBox ID="txtCorreo" class="form-control" runat="server" Width="250px"></asp:TextBox>
                                 </div>
                                 <p class="text-center mb-3">
                                     <asp:RequiredFieldValidator ID="rqvCorreo" class="form-control" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Debe ingresar su correo electrónico" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -373,7 +314,7 @@
                         <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/Index.aspx">Cancelar</asp:HyperLink>
                     </div>
                     <div class="col-6 align-self-center">
-                        <asp:Button ID="btnRegistrar" class="btn btn-success btn-block" runat="server" Text="Registrarse" OnClick="btnRegistrar_Click"  />
+                        <asp:Button ID="btnRegistrar" class="btn btn-success btn-block" runat="server" Text="Registrarse"  />
                     </div>
                 </div>
             </div>
