@@ -422,7 +422,6 @@ C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\bin\ros
 C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\bin\roslyn\vbc.rsp
 C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\bin\roslyn\VBCSCompiler.exe
 C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\leonardo.aguilar\Downloads\nutritionApp-master\app\nutritionApp\obj\Debug\nutritionApp.csprojAssemblyReference.cache
 D:\Usuarios\Diego\Documents\GitHub\nutritionApp\app\nutritionApp\bin\nutritionApp.dll.config
 D:\Usuarios\Diego\Documents\GitHub\nutritionApp\app\nutritionApp\bin\nutritionApp.dll
 D:\Usuarios\Diego\Documents\GitHub\nutritionApp\app\nutritionApp\bin\nutritionApp.pdb

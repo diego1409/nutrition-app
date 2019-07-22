@@ -238,16 +238,6 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlProposito;
         
         /// <summary>
-        /// ddlProposito control.
-        /// Control txtCorreo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProposito;
-        
-        /// <summary>
         /// rqvDdlProposito control.
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
         
@@ -258,7 +248,6 @@ namespace nutritionApp.src.aspx {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlProposito;
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvCorreo;
         
         /// <summary>

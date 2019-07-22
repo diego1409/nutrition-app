@@ -95,7 +95,7 @@ namespace nutritionApp
             conec.inicializa();
             string consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "Select * from usuario where cedula="+ usuario._Cedula;
+            consulta = "Select * from usuario where cedula=" + usuario._Cedula;
             conec.annadir_consulta(consulta);
             contenedor = conec.busca();
             while (contenedor.Read())
@@ -119,6 +119,7 @@ namespace nutritionApp
                 usuarioDevolver.Add(tmp);
             }
             return usuarioDevolver;
+        }
         /* == Funcion para retornar un usuario == */
         public OleDbDataReader RetornaUsuario(int idUsuario)
         {

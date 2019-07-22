@@ -28,7 +28,7 @@ namespace nutritionApp.src.aspx
                 ManejoDatos mostrar = new ManejoDatos();
                 Usuario usuario = new Usuario();
                 usuario._Cedula = cedulaUsuarioModificar;
-                foreach (Usuario item in mostrar.RetornaUsuario(usuario))
+                foreach (Usuario item in mostrar.RetornaUsuarioCedula(usuario))
                 {
                     //Seteando cada uno de los campos del form de acuerdo al usuario
                     txtNombre.Text = item._Nombre;
