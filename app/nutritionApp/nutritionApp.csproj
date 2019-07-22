@@ -189,10 +189,6 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="src\aspx\frmLogin.aspx" />
     <Content Include="src\aspx\Plan Nutricional\frmCrearPlan.aspx" />
-    <Content Include="src\aspx\Usuarios\frmListaUsuarios.aspx" />
-    <Content Include="src\aspx\Usuarios\frmModificaUsuario.aspx" />
-    <Content Include="src\aspx\Usuarios\frmInsertaUsuario.aspx" />
-    <Content Include="src\aspx\Usuarios\frmInsertaAdmin.aspx" />
     <Content Include="src\css\frmCrearPlan.css" />
     <Content Include="src\css\frmRegistro.css" />
     <Content Include="src\css\Index.css" />
@@ -293,21 +289,7 @@
     <Compile Include="src\aspx\Plan Nutricional\frmCrearPlan.aspx.designer.cs">
       <DependentUpon>frmCrearPlan.aspx</DependentUpon>
     </Compile>
-    <Compile Include="src\aspx\Usuarios\frmInsertaAdmin.aspx.cs">
-      <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="src\aspx\Usuarios\frmInsertaAdmin.aspx.designer.cs">
-      <DependentUpon>frmInsertaAdmin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Clases\usuario.cs" />
-    <Compile Include="src\aspx\Usuarios\frmListaUsuarios.aspx.cs">
-      <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="src\aspx\Usuarios\frmListaUsuarios.aspx.designer.cs">
-      <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
