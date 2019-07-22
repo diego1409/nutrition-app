@@ -90,9 +90,6 @@
                                     <!-- Apellido 2 -->
                                     <asp:TextBox ID="txtSegundoApellido" class="form-control" runat="server" Width="250px" MaxLength="50"></asp:TextBox>
                                 </div>
-                                <p class="text-center mb-3">
-                                    <asp:RequiredFieldValidator ID="rqvTxtSegundoApellido" class="form-control" runat="server" ControlToValidate="txtSegundoApellido" ErrorMessage="Debe ingresar su segundo apellido" ForeColor="Red"></asp:RequiredFieldValidator>
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -147,7 +144,7 @@
                                         </span>
                                     </div>
                                     <!-- Dirección -->
-                                    <asp:TextBox ID="txtDireccion" class="form-control" runat="server" Width="250px" Height="163px" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:TextBox ID="txtDireccion" class="form-control" runat="server" Width="250px" Height="163px" MaxLength="100" TextMode="MultiLine"></asp:TextBox>
                                 </div>
                                 <p class="text-center mb-3">
                                     <asp:RequiredFieldValidator ID="rqvTxtDireccion" class="form-control" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe ingresar su dirección" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -295,7 +292,7 @@
                                         </span>
                                     </div>
                                     <!-- Correo -->
-                                    <asp:TextBox ID="txtCorreo" class="form-control" runat="server" Width="250px" TextMode="Email"></asp:TextBox>
+                                    <asp:TextBox ID="txtCorreo" class="form-control" runat="server" Width="250px" MaxLength="50" TextMode="Email"></asp:TextBox>
                                 </div>
                                 <p class="text-center mb-3">
                                     <asp:RequiredFieldValidator ID="rqvCorreo" class="form-control" runat="server" ControlToValidate="txtCorreo" ErrorMessage="Debe ingresar su correo electrónico" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -314,7 +311,7 @@
                                         </span>
                                     </div>
                                     <!-- Usuario -->
-                                    <asp:TextBox ID="txtNomUsuario" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                                    <asp:TextBox ID="txtNomUsuario" class="form-control" runat="server" Width="250px" MaxLength="20"></asp:TextBox>
                                 </div>
                                 <p class="text-center mb-3">
                                     <asp:RequiredFieldValidator ID="rqvNomUsuario" class="form-control" runat="server" ControlToValidate="txtNomUsuario" ErrorMessage="Debe ingresar su nombre de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -333,7 +330,7 @@
                                         </span>
                                     </div>
                                     <!-- Contraseña -->
-                                    <asp:TextBox ID="txtPass" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox ID="txtPass" class="form-control" runat="server" Width="250px" MaxLength="50" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <p class="text-center mb-3">
                                     <asp:RequiredFieldValidator ID="rqvTxtPass" class="form-control" runat="server" ControlToValidate="txtPass" ErrorMessage="Debe ingresar la contraseña del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -352,7 +349,7 @@
                                         </span>
                                     </div>
                                     <!-- Contraseña -->
-                                    <asp:TextBox ID="txtConfirmarPass" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox ID="txtConfirmarPass" class="form-control" runat="server" Width="250px" MaxLength="50" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <p class="text-center mb-3">
                                     <asp:RequiredFieldValidator ID="rqvTxtConfirmarPass" class="form-control" runat="server" ControlToValidate="txtConfirmarPass" ErrorMessage="Debe ingresar la confirmación de la contraseña del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
