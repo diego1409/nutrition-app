@@ -80,16 +80,17 @@ CREATE TABLE medicion(
 -- Descripción:	Recetas a utilizar en los planes		--
 -- =====================================================--
 CREATE TABLE receta(
-	idReceta int PRIMARY KEY IDENTITY(1,1),							-- Id de Receta
-	foto image NULL,												-- Imagen de la Receta
-	dificultad char(1) CHECK (dificultad IN ('F','M','D')) NOT NULL,-- Dificultad de la receta: F= Fácil, M= Media, D= Difícil
-	tiempo int NOT NULL,											-- Duración de la receta (en minutos)
-	carbos real NOT NULL,											-- Cantidad Carbohidratos por cada 100g
-	proteinas real NOT NULL,										-- Cantidad Proteínas por cada 100g
-	grasas real NOT NULL,											-- Cantidad Grasas por cada 100g
-	azucares real NOT NULL,											-- Cantidad Azúcares por cada 100g
-	calorias int,													-- Cantidad de Calorías
-	pasos varchar(8000)												-- Pasos de la Receta
+	idReceta int PRIMARY KEY IDENTITY(1,1),												-- Id de Receta
+	foto image NULL,																	-- Imagen de la Receta
+	dificultad char(1) CHECK (dificultad IN ('F','M','D')) NOT NULL,					-- Dificultad de la receta: F= Fácil, M= Media, D= Difícil
+	tiempo int NOT NULL,																-- Duración de la receta (en minutos)
+	tiempoComida char(1) CHECK (tiempoComida IN ('D','MM','A','MT','C','MN')) NOT NULL,	-- Tiempo de Comida: D= Desayuno, MM= Merienda Mañana, A= Almuerzo, MT= Merienda Tarde, C= Cena, MN= Merienda Noche
+	carbos real NOT NULL,																-- Cantidad Carbohidratos por cada 100g
+	proteinas real NOT NULL,															-- Cantidad Proteínas por cada 100g
+	grasas real NOT NULL,																-- Cantidad Grasas por cada 100g
+	azucares real NOT NULL,																-- Cantidad Azúcares por cada 100g
+	calorias int,																		-- Cantidad de Calorías
+	pasos varchar(8000)																	-- Pasos de la Receta
 )
 
 -- =====================================================--
