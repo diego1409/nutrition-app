@@ -6,6 +6,9 @@ using System.Data.OleDb;
 using System.Text;
 using System.Threading.Tasks;
 
+//Clases utilizadas
+using nutritionApp.Clases;
+
 namespace nutritionApp
 {
     public class ManejoDatos
@@ -211,6 +214,31 @@ namespace nutritionApp
 
             //Se retorna el contenedor para usar todos sus datos
             return contenedor;
+        }
+
+        /* == Funcion para insertar un plan nutricional == */
+        public bool InsertaPlanNutricional(planNutricional plan)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC InsertaPlanNutricional ?,?,?,?,?,?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(plan.idUsuario, 1);
+            conect_local.annadir_parametro(plan.carbos, 2);
+            conect_local.annadir_parametro(plan.proteinas, 2);
+            conect_local.annadir_parametro(plan.grasas, 2);
+            conect_local.annadir_parametro(plan.azucares, 2);
+            conect_local.annadir_parametro(plan.calorias, 1);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
         }
 
         ///* == Funcion que inserta un administrador == */

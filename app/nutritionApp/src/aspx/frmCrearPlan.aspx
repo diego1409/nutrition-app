@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/src/aspx/masterPageUser.Master" AutoEventWireup="true" CodeBehind="frmCrearPlan.aspx.cs" Inherits="nutritionApp.src.aspx.Plan_Nutricional.frmCrearPlan" %>
+﻿<%@ Page Title="Crear Plan Nutricional" Language="C#" MasterPageFile="~/src/aspx/masterPageUser.Master" AutoEventWireup="true" CodeBehind="frmCrearPlan.aspx.cs" Inherits="nutritionApp.src.aspx.Plan_Nutricional.frmCrearPlan" %>
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../../css/frmCrearPlan.css" type="text/css" />
+    <link rel="stylesheet" href="../css/frmCrearPlan.css" type="text/css" />
 </asp:Content>
 <asp:Content ID="body" ContentPlaceHolderID="body" runat="server">
     <div id="divCrearPlan" class="container-fluid">
@@ -11,8 +11,8 @@
                         <h1>Crear Plan Nutricional</h1>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div id="divFormCrearPlan" class="row">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                         <div class="row">
                             <div class="col">
                                 <h2>Datos Nutricionales</h2>
@@ -23,7 +23,7 @@
                                 <div class="form-group">
                                     <label for="ddlProposito">Propósito*</label>
                                     <!-- Propósito -->
-                                    <asp:DropDownList ID="ddlProposito" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                    <asp:DropDownList ID="ddlProposito" CssClass="form-control" runat="server" Width="250px" Enabled="True" AutoPostBack="true" OnSelectedIndexChanged="ddlProposito_SelectedIndexChanged">
                                         <asp:ListItem Value="" Selected="True">Seleccione su propósito</asp:ListItem>
                                         <asp:ListItem Value="Bajar porcentaje de grasa">Bajar porcentaje de grasa</asp:ListItem>
                                         <asp:ListItem Value="Ganar masa muscular">Ganar masa muscular</asp:ListItem>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                         <div class="row">
                             <div class="col">
                                 <h2>Alergias</h2>
@@ -129,28 +129,29 @@
                                 <h2>Consumo Calórico</h2>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mb-5">
                             <div class="col">
-                                <p class="text">
+                                <h3>
                                     De acuerdo con sus medidas actuales, debes consumir en 5 comidas:
-                                </p>
-                                <p class="text-center">
-                                    
-                                    <asp:Label ID="lblCalorias" runat="server" Text="" Font-Size="XX-Large"></asp:Label> kcal
-                                </p>
+                                </h3>
+                                <h3 class="text-center">
+                                    <asp:Label ID="lblCalorias" runat="server" Font-Size="50pt"></asp:Label> kcal
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 align-self-center">
+                                <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/Index.aspx">Cancelar</asp:HyperLink>
+                            </div>
+                            <div class="col-6 align-self-center">
+                                <asp:Button ID="btnCrearPlan" class="btn btn-success btn-block" runat="server" Text="Crear Plan" OnClick="btnCrearPlan_Click"  />
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-6 align-self-center">
-                        <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/Index.aspx">Cancelar</asp:HyperLink>
-                    </div>
-                    <div class="col-6 align-self-center">
-                        <asp:Button ID="btnCrearPlan" class="btn btn-success btn-block" runat="server" Text="Crear Plan"  />
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

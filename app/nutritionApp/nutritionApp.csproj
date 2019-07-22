@@ -188,7 +188,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="src\aspx\frmLogin.aspx" />
-    <Content Include="src\aspx\Plan Nutricional\frmCrearPlan.aspx" />
+    <Content Include="src\aspx\frmCrearPlan.aspx" />
     <Content Include="src\css\frmCrearPlan.css" />
     <Content Include="src\css\frmRegistro.css" />
     <Content Include="src\css\Index.css" />
@@ -215,6 +215,7 @@
     <Compile Include="Clases\clsProcedimientosAlmacenados.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\ManejoDatos.cs" />
+    <Compile Include="Clases\planNutricional.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -282,11 +283,11 @@
     <Compile Include="src\aspx\frmLogin.aspx.designer.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="src\aspx\Plan Nutricional\frmCrearPlan.aspx.cs">
+    <Compile Include="src\aspx\frmCrearPlan.aspx.cs">
       <DependentUpon>frmCrearPlan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="src\aspx\Plan Nutricional\frmCrearPlan.aspx.designer.cs">
+    <Compile Include="src\aspx\frmCrearPlan.aspx.designer.cs">
       <DependentUpon>frmCrearPlan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\usuario.cs" />

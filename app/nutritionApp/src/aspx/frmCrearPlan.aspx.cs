@@ -30,6 +30,7 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
                 CargaIngredientes();
                 this.Session.Add("idUsuario", 2);
                 CalcularCalc();
+                ObtenerProposito();
             }
 
             
@@ -112,6 +113,75 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
 
             //Mostrar el resultado en el form
             lblCalorias.Text = calorias.ToString();
+        }
+
+        void ObtenerProposito()
+        {
+            //Se obtiene el proposito de la persona
+            idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
+            lista = retorna.RetornaUsuario(idUsuario);
+            Usuario user = new Usuario();
+            user = retorna.almacenarDatosUsuario(lista, user);
+            this.ddlProposito.SelectedValue = user._Proposito;
+            cambiarOpciones();
+        }
+
+        /// <summary>
+        /// Se llama metodo para cambiar las opciones de los dropdownlists
+        /// </summary>
+        void cambiarOpciones()
+        {
+            switch (ddlProposito.Text)
+            {
+                case "Bajar porcentaje de grasa":
+                    ddlCarbos.SelectedValue = "B";
+                    ddlProteinas.SelectedValue = "A";
+                    ddlGrasas.SelectedValue = "B";
+                    ddlAzucares.SelectedValue = "N";
+                    break;
+
+                case "Ganar masa muscular":
+                    ddlCarbos.SelectedValue = "B";
+                    ddlProteinas.SelectedValue = "A";
+                    ddlGrasas.SelectedValue = "A";
+                    ddlAzucares.SelectedValue = "N";
+                    break;
+
+                case "Mantener peso":
+                    ddlCarbos.SelectedValue = "M";
+                    ddlProteinas.SelectedValue = "M";
+                    ddlGrasas.SelectedValue = "M";
+                    ddlAzucares.SelectedValue = "B";
+                    break;
+
+                default:
+                    ddlCarbos.SelectedValue = "";
+                    ddlProteinas.SelectedValue = "";
+                    ddlGrasas.SelectedValue = "";
+                    ddlAzucares.SelectedValue = "";
+                    break;
+            }
+        }
+        /// <summary>
+        /// Para que esta funcion funcione, AutoPostBack tiene que estar
+        /// en true dentro del dropdownlist
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ddlProposito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Se llama metodo para cambiar opciones
+            cambiarOpciones();
+        }
+
+        protected void btnCrearPlan_Click(object sender, EventArgs e)
+        {
+            idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
+            planNutricional plan = new planNutricional(idUsuario, this.ddlCarbos.SelectedValue, 
+                                        this.ddlProteinas.SelectedValue, this.ddlGrasas.SelectedValue, 
+                                        this.ddlAzucares.SelectedValue, Convert.ToInt32(this.lblCalorias.Text));
+
+            retorna.InsertaPlanNutricional(plan);
         }
     }
 }

@@ -6,6 +6,9 @@
 #divCrearPlan {
     padding-top: 100px;
     padding-bottom: 100px;
-    padding-left: 13%;
-    padding-right: 13%;
+}
+
+#divFormCrearPlan {
+    padding-left: 18%;
+    padding-right: 18%;
 }
