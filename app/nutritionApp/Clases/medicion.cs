@@ -17,6 +17,7 @@ namespace nutritionApp
         private string observaciones;
         private decimal imc;
         private DateTime fecha;
+        private int estatura;
 
         public int _IdUsuario { get => idUsuario; set => idUsuario = value; }
         public decimal _Peso { get => peso; set => peso = value; }
@@ -28,5 +29,6 @@ namespace nutritionApp
         public decimal _Imc { get => imc; set => imc = value; }
         public DateTime _Fecha { get => fecha; set => fecha = value; }
         public int _IdMedicion { get => idMedicion; set => idMedicion = value; }
+        public int _Estatura { get => estatura; set => estatura = value; }
     }
 }

@@ -13,33 +13,6 @@ namespace nutritionApp.src.aspx {
     public partial class frmMedidas {
         
         /// <summary>
-        /// txtNumIdentificacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumIdentificacion;
-        
-        /// <summary>
-        /// rqvTxtNumIdentificacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtNumIdentificacion;
-        
-        /// <summary>
-        /// revtxtNumIdentificacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator revtxtNumIdentificacion;
-        
-        /// <summary>
         /// txtEstatura control.
         /// </summary>
         /// <remarks>

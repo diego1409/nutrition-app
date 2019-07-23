@@ -22,6 +22,8 @@ namespace nutritionApp.src.aspx
             //en el boton de guardar
             if (!this.IsPostBack)
             {
+                //Rellenar IMC 
+                txtObservaciones.Text = "";
                 idUsuarioMedicion = Convert.ToInt16(Request.QueryString["idUsuario"]);
                 Medicion medicion = new Medicion();
                 medicion._IdUsuario = idUsuarioMedicion;
@@ -29,6 +31,16 @@ namespace nutritionApp.src.aspx
 
                 foreach (Medicion item in md.RetornaUltimaMedicion(medicion))
                 {
+                    //Rellenar campos
+                    txtPeso.Text = item._Peso.ToString();
+                    txtGrasa.Text = item._Grasa.ToString();
+                    txtHueso.Text = item._Hueso.ToString();
+                    txtAgua.Text = item._Agua.ToString();
+                    txtObservaciones.Text = item._Observaciones;
+                    txtMusculo.Text = item._Musculo.ToString();
+                    txtEstatura.Text = item._Estatura.ToString();
+
+                    //Rellenar IMC
                     if (item._Imc < (185 / 10)) {
                         lblIMC.Text = lblIMC.Text + "<h2>" + item._Imc + "</h2><br><p>IMC</p><br><p>Bajo Peso</p>";
                     }
@@ -50,6 +62,27 @@ namespace nutritionApp.src.aspx
                     }
                 }
             }
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Medicion nueva_medicion = new Medicion();
+            nueva_medicion._IdUsuario = idUsuarioMedicion;
+            nueva_medicion._Peso  = Convert.ToDecimal(txtPeso.Text);
+            nueva_medicion._Grasa = Convert.ToDecimal(txtGrasa.Text);
+            nueva_medicion._Musculo = Convert.ToDecimal(txtMusculo.Text);
+            nueva_medicion._Agua = Convert.ToDecimal(txtAgua.Text);
+            nueva_medicion._Hueso = Convert.ToDecimal(txtHueso.Text);
+            nueva_medicion._Observaciones = txtObservaciones.Text;
+
+            ManejoDatos md = new ManejoDatos();
+            md.insertar_medicion(nueva_medicion);
+            Response.Redirect("frmMedidas.aspx");
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmfrmDashboardCliente.aspx?IdUsuario=" + idUsuarioMedicion);
         }
     }
 }

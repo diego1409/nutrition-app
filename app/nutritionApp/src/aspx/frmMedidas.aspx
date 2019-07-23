@@ -50,19 +50,6 @@
 
             <table>
 
-                <!-- Número de Cédula -->
-                <tr>
-                    <td>Número de Cédula:</td>
-                    <td>
-                        <asp:TextBox ID="txtNumIdentificacion" class="form-control" runat="server" Width="250px" ReadOnly></asp:TextBox>
-                    </td> 
-                    <td>
-                        <asp:RequiredFieldValidator ID="rqvTxtNumIdentificacion" class="form-control" runat="server" ControlToValidate="txtNumIdentificacion" ErrorMessage="Debe ingresar la cédula del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                    <td>
-                        <asp:RegularExpressionValidator ID="revtxtNumIdentificacion" class="form-control" runat="server" ErrorMessage="Debe ingresar sólo números para la cédula" ForeColor="Red" ValidationExpression="^[0-9]*" ControlToValidate="txtNumIdentificacion"></asp:RegularExpressionValidator>
-                    </td>
-                </tr>
                 <!-- Estatura -->
                 <tr>
                     <td>Estatura (en cms):</td>
@@ -149,8 +136,8 @@
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ModalInformacionIMC">Ver información de IMC</button>
 
 
-                <asp:Button ID="btnVolver" class="btn btn-primary" runat="server" Text="Volver" />
-                <asp:Button ID="btnActualizar" class="btn btn-primary" runat="server" Text="Actualizar" />
+                <asp:Button ID="btnVolver" class="btn btn-primary" runat="server" Text="Volver" OnClick="btnVolver_Click" />
+                <asp:Button ID="btnActualizar" class="btn btn-primary" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
                 <div class="bmi-calculator-form">
     <%--<fieldset>
 
