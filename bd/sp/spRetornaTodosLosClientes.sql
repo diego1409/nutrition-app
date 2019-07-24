@@ -1,3 +1,9 @@
+USE [salad]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 Create procedure dbo.spRetornaTodosLosClientes
 as
 begin

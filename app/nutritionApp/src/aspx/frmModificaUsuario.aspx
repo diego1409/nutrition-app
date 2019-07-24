@@ -166,11 +166,13 @@
                 <tr>
                     <td>Proposito:</td>
                     <td>
-                        <asp:DropDownList ID="ddlProposito" runat="server" Height="37px" Width="258px" Enabled="True">
-                            <asp:ListItem Value="Bajar peso">Bajar peso</asp:ListItem>
-                            <asp:ListItem Value="Aumentar peso">Aumentar peso</asp:ListItem>
+                        <asp:DropDownList ID="ddlProposito" runat="server" Width="250px" class="form-control" Enabled="True">
+                            <asp:ListItem Value="" Selected="True">Seleccione su propósito</asp:ListItem>
+                            <asp:ListItem Value="Bajar porcentaje de grasa">Bajar porcentaje de grasa</asp:ListItem>
+                            <asp:ListItem Value="Ganar masa muscular">Ganar masa muscular</asp:ListItem>
                             <asp:ListItem Value="Mantener peso">Mantener peso</asp:ListItem>
                         </asp:DropDownList>
+
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="rqvDdlProposito" runat="server" ControlToValidate="ddlProposito" ErrorMessage="Debe seleccionar un propósito" ForeColor="Red"></asp:RequiredFieldValidator>

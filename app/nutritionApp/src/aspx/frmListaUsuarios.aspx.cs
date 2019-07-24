@@ -25,6 +25,7 @@ namespace nutritionApp.src.aspx
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            Response.Redirect("frmInsertaAdmin.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

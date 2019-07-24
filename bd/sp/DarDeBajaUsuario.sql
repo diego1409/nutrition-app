@@ -1,3 +1,5 @@
+USE salad
+GO
 CREATE   PROCEDURE [dbo].[DarDeBajaUsuario]
 	--@foto image NULL,
 	@cedula varchar(20)

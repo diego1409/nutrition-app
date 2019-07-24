@@ -49,11 +49,11 @@ namespace nutritionApp.src.aspx
                     ManejoDatos InsertaUsuario = new ManejoDatos();
                     InsertaUsuario.insertar_usuario(nuevo_usuario);
                     Session["ClaseUsuario"] = nuevo_usuario;
-                    Response.Redirect("frmIMC.aspx");
+                    Response.Redirect("frmListaUsuarios.aspx");
                 }
                 else
                 {
-                    Response.Write("<script>window.alert('Contraseñas no coinciden porfavor verificar');</script>");
+                    Response.Write("<script>window.alert('Contraseñas no coinciden. Por favor verificar');</script>");
                     txtPass.Text = "";
                     txtConfirmarPass.Text = "";
                 }

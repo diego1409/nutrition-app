@@ -1,4 +1,9 @@
-
+USE [salad]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE   PROCEDURE [dbo].[ModificaUsuario]
 	--@foto image NULL,
 	@cedula varchar(20),

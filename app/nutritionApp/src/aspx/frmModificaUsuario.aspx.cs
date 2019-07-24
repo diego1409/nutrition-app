@@ -78,7 +78,7 @@ namespace nutritionApp.src.aspx
 
                 ManejoDatos md = new ManejoDatos();
                 md.modificar_usuario(usuarioModificar);
-                Response.Redirect("frmIMC.aspx");
+                Response.Redirect("frmListausuarios.aspx");
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)

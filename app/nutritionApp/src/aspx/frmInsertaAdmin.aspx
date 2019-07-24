@@ -101,7 +101,7 @@
                 <tr>
                     <td>Fecha de Nacimiento:</td>
                     <td>
-                        <asp:TextBox ID="txtFechaNac" class="form-control" runat="server" CssClass="form-control" Width="249px"></asp:TextBox>
+                        <asp:TextBox ID="txtFechaNac" class="form-control" runat="server" CssClass="form-control" Width="249px" TextMode="Date"></asp:TextBox>
                     </td> 
                     <td>
                         <asp:RequiredFieldValidator ID="rqvTxtFechaNac" class="form-control" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="Debe ingresar la fecha de nacimiento del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
