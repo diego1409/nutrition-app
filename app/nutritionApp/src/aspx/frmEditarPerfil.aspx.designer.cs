@@ -10,7 +10,25 @@
 namespace nutritionApp.src.aspx {
     
     
-    public partial class frmRegistro {
+    public partial class frmEditarPerfil {
+        
+        /// <summary>
+        /// btnRegresar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegresar;
+        
+        /// <summary>
+        /// usuarioModificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label usuarioModificar;
         
         /// <summary>
         /// txtNumIdentificacion control.
@@ -29,6 +47,15 @@ namespace nutritionApp.src.aspx {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtNumIdentificacion;
+        
+        /// <summary>
+        /// revtxtNumIdentificacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revtxtNumIdentificacion;
         
         /// <summary>
         /// txtNombre control.
@@ -85,6 +112,24 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtSegundoApellido;
         
         /// <summary>
+        /// ddlGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGenero;
+        
+        /// <summary>
+        /// rqvDdlGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlGenero;
+        
+        /// <summary>
         /// txtFechaNac control.
         /// </summary>
         /// <remarks>
@@ -94,31 +139,13 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.TextBox txtFechaNac;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// rqvTxtFechaNac control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
-        /// txtTelefono control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
-        
-        /// <summary>
-        /// rqvTxtTelefono control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtTelefono;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtFechaNac;
         
         /// <summary>
         /// txtDireccion control.
@@ -139,49 +166,40 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtDireccion;
         
         /// <summary>
-        /// ddlGenero control.
+        /// txtCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGenero;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
         
         /// <summary>
-        /// rqvDdlGenero control.
+        /// rqvCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlGenero;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvCorreo;
         
         /// <summary>
-        /// imgPerfil control.
+        /// txtTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPerfil;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
         
         /// <summary>
-        /// fupAgregarFoto control.
+        /// rqvTxtTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fupAgregarFoto;
-        
-        /// <summary>
-        /// hplCargarFoto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton hplCargarFoto;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtTelefono;
         
         /// <summary>
         /// txtEstatura control.
@@ -238,24 +256,6 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlProposito;
         
         /// <summary>
-        /// txtCorreo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
-        
-        /// <summary>
-        /// rqvCorreo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvCorreo;
-        
-        /// <summary>
         /// txtNomUsuario control.
         /// </summary>
         /// <remarks>
@@ -274,66 +274,66 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvNomUsuario;
         
         /// <summary>
-        /// txtPass control.
+        /// txtContrasenaNueva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPass;
+        protected global::System.Web.UI.WebControls.TextBox txtContrasenaNueva;
         
         /// <summary>
-        /// rqvTxtPass control.
+        /// txtConfirmarContrasena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPass;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmarContrasena;
         
         /// <summary>
-        /// txtConfirmarPass control.
+        /// txtContrasenaAntigua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmarPass;
+        protected global::System.Web.UI.WebControls.TextBox txtContrasenaAntigua;
         
         /// <summary>
-        /// rqvTxtConfirmarPass control.
+        /// rqvTxtContrasenaAntigua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtConfirmarPass;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtContrasenaAntigua;
         
         /// <summary>
-        /// cmvPass control.
+        /// txtContrasena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cmvPass;
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena;
         
         /// <summary>
-        /// hplCancelar control.
+        /// txtTipoUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplCancelar;
+        protected global::System.Web.UI.WebControls.TextBox txtTipoUsuario;
         
         /// <summary>
-        /// btnRegistrar control.
+        /// btnModificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.Button btnModificar;
     }
 }

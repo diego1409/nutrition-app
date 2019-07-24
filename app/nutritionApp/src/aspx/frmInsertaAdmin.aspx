@@ -185,6 +185,21 @@
                         <asp:CompareValidator ID="cmvPass" class="form-control" runat="server" ControlToCompare="txtConfirmarPass" ControlToValidate="txtPass" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
                     </td>
                 </tr>
+
+                <!-- Tipo de usuario -->
+                <tr>
+                    <td>Tipo de usuario:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlTipoUsuario" runat="server" Height="37px" Width="258px" Enabled="True">
+                            <asp:ListItem Value="" Selected="True">Seleccione el tipo de usuario</asp:ListItem>
+                            <asp:ListItem Value="A">Administrador</asp:ListItem>
+                            <asp:ListItem Value="C">Regular</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvDdlTipoUsuario" runat="server" ControlToValidate="ddlTipoUsuario" ErrorMessage="Debe seleccionar un tipo de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
             </table>
                 
             <br />

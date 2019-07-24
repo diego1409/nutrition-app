@@ -44,7 +44,7 @@ namespace nutritionApp.src.aspx
                     nuevo_usuario._Correo = txtCorreo.Text;
                     nuevo_usuario._NomUsuario = txtNomUsuario.Text;
                     nuevo_usuario._Contrasena = txtPass.Text;
-                    nuevo_usuario._TipoUsuario = "A";
+                    nuevo_usuario._TipoUsuario = ddlTipoUsuario.SelectedValue;
 
                     ManejoDatos InsertaUsuario = new ManejoDatos();
                     InsertaUsuario.insertar_usuario(nuevo_usuario);

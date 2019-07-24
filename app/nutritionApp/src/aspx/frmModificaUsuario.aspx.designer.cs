@@ -19,7 +19,16 @@ namespace nutritionApp.src.aspx {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnRegresar;
+        protected global::System.Web.UI.WebControls.Button btnRegresar;
+        
+        /// <summary>
+        /// usuarioModificar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label usuarioModificar;
         
         /// <summary>
         /// txtNumIdentificacion control.
@@ -229,22 +238,22 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPeso;
         
         /// <summary>
-        /// txtProposito control.
+        /// ddlProposito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProposito;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProposito;
         
         /// <summary>
-        /// rqvTxtProposito control.
+        /// rqvDdlProposito control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtProposito;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlProposito;
         
         /// <summary>
         /// txtNomUsuario control.
@@ -265,49 +274,40 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvNomUsuario;
         
         /// <summary>
-        /// txtPass control.
+        /// ddlTipoUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPass;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoUsuario;
         
         /// <summary>
-        /// rqvTxtPass control.
+        /// rqvDdlTipoUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPass;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlTipoUsuario;
         
         /// <summary>
-        /// txtConfirmarPass control.
+        /// txtContrasena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmarPass;
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena;
         
         /// <summary>
-        /// rqvTxtConfirmarPass control.
+        /// cbReinicioContrasena control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtConfirmarPass;
-        
-        /// <summary>
-        /// cmvPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cmvPass;
+        protected global::System.Web.UI.WebControls.CheckBox cbReinicioContrasena;
         
         /// <summary>
         /// btnModificar control.

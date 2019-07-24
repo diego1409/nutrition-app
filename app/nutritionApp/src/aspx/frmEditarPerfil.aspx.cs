@@ -10,7 +10,7 @@ using nutritionApp.Clases;
 
 namespace nutritionApp.src.aspx
 {
-    public partial class frmModificaUsuario : System.Web.UI.Page
+    public partial class frmEditarPerfil : System.Web.UI.Page
     {
         string cedulaUsuarioModificar;
         protected void Page_Load(object sender, EventArgs e)
@@ -40,11 +40,12 @@ namespace nutritionApp.src.aspx
                     txtPeso.Text = item._Peso.ToString();
                     ddlProposito.SelectedValue = item._Proposito;
                     ddlGenero.SelectedValue = item._Genero;
-                    ddlTipoUsuario.SelectedValue = item._TipoUsuario;
                     txtFechaNac.Text = item._FechaNac.ToString();
                     txtNomUsuario.Text = item._NomUsuario;
                     txtTelefono.Text = item._Telefono1;
                     txtContrasena.Text = item._Contrasena;
+                    txtTipoUsuario.Text = item._TipoUsuario;
+                    txtContrasenaNueva.Text = "";
                     
                 }
             }
@@ -52,7 +53,9 @@ namespace nutritionApp.src.aspx
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            ///Verificar que todas las validaciones hayan sido satisfactorias.
+            ///Verificar que la contraseña que el usuario digitó esté correcta.
+            if (txtContrasenaAntigua.Text == txtContrasena.Text)
+            {
                 Usuario usuarioModificar = new Usuario();
                 usuarioModificar._Cedula = txtNumIdentificacion.Text;
                 usuarioModificar._Genero = ddlGenero.SelectedValue;
@@ -67,18 +70,39 @@ namespace nutritionApp.src.aspx
                 usuarioModificar._Proposito = ddlProposito.SelectedValue;
                 usuarioModificar._Correo = txtCorreo.Text;
                 usuarioModificar._NomUsuario = txtNomUsuario.Text;
-                usuarioModificar._TipoUsuario = ddlTipoUsuario.SelectedValue;
+                usuarioModificar._TipoUsuario = txtTipoUsuario.Text;
+                usuarioModificar._Contrasena = txtContrasena.Text;
 
-                if (cbReinicioContrasena.Checked) {
-                usuarioModificar._Contrasena = "Salad123";
+                if (txtContrasenaNueva.Text != "")
+                {
+                    if (txtContrasenaNueva.Text == txtConfirmarContrasena.Text)
+                    {
+                        usuarioModificar._Contrasena = txtContrasenaNueva.Text;
+                        ManejoDatos md = new ManejoDatos();
+                        md.modificar_usuario(usuarioModificar);
+                        Response.Redirect("frmListaUsuarios.aspx");
+                    }
+                    else
+                    {
+                        string script = "alert(\"Su confirmación de contraseña nueva no coincide con la digitada\");";
+                        ScriptManager.RegisterStartupScript(this, GetType(),
+                                              "ServerControlScript", script, true);
+                    }
                 }
-                else {
-                    usuarioModificar._Contrasena = txtContrasena.Text;
+                else
+                {
+                    ManejoDatos md = new ManejoDatos();
+                    md.modificar_usuario(usuarioModificar);
+                    
+                    Response.Redirect("frmListaUsuarios.aspx");
                 }
-
-                ManejoDatos md = new ManejoDatos();
-                md.modificar_usuario(usuarioModificar);
-                Response.Redirect("frmIMC.aspx");
+            }
+            else {
+                string script = "alert(\"Por favor revise que haya digitado bien su contraseña\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
+                
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)

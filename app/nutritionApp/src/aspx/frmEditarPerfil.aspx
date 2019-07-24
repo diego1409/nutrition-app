@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Modificar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmModificaUsuario.aspx.cs" Inherits="nutritionApp.src.aspx.frmModificaUsuario" %>
+﻿<%@ Page Title="Modificar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPageUser.Master" AutoEventWireup="true" CodeBehind="frmEditarPerfil.aspx.cs" Inherits="nutritionApp.src.aspx.frmEditarPerfil" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/Login.css" type="text/css" />
@@ -15,7 +15,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h1>Modificar Usuario</h1>
+				<h1>Editar Perfil</h1>
 			</div>
 			<div class="card-body">
 				
@@ -86,7 +86,7 @@
                     <td>Genero:</td>
                     <td>
                         <asp:DropDownList ID="ddlGenero" runat="server" Height="37px" Width="258px" Enabled="True">
-                            <asp:ListItem Value="" Selected="True">Seleccione su genero</asp:ListItem>
+                            <asp:ListItem Value="" Selected="True">Seleccione su género</asp:ListItem>
                             <asp:ListItem Value="M">Masculino</asp:ListItem>
                             <asp:ListItem Value="F">Femenino</asp:ListItem>
                         </asp:DropDownList>
@@ -188,18 +188,30 @@
                     </td>
                 </tr>        
 
-                <!-- Tipo de usuario -->
+                <!-- Contraseña nueva -->
                 <tr>
-                    <td>Tipo de usuario:</td>
+                    <td>Contraseña nueva (deje en blanco si no desea cambiarla):</td>
                     <td>
-                        <asp:DropDownList ID="ddlTipoUsuario" runat="server" Height="37px" Width="258px" Enabled="True">
-                            <asp:ListItem Value="" Selected="True">Seleccione el tipo de usuario</asp:ListItem>
-                            <asp:ListItem Value="A">Administrador</asp:ListItem>
-                            <asp:ListItem Value="C">Regular</asp:ListItem>
-                        </asp:DropDownList>
-                    </td>
+                        <asp:TextBox ID="txtContrasenaNueva" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
+                    </td> 
+                </tr>
+
+                <!-- Confirmar Contraseña -->
+                <tr>
+                    <td>Confirmar contraseña:</td>
                     <td>
-                        <asp:RequiredFieldValidator ID="rqvDdlTipoUsuario" runat="server" ControlToValidate="ddlTipoUsuario" ErrorMessage="Debe seleccionar un tipo de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtConfirmarContrasena" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
+                    </td> 
+                </tr>
+
+                                <!-- Contraseña antigua -->
+                <tr>
+                    <td>Digite su contraseña antigua para validar todos los cambios:</td>
+                    <td>
+                        <asp:TextBox ID="txtContrasenaAntigua" class="form-control" runat="server" Width="250px" TextMode="Password"></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:RequiredFieldValidator ID="rqvTxtContrasenaAntigua" class="form-control" runat="server" ControlToValidate="txtContrasenaAntigua" ErrorMessage="Debe ingresar la contraseña antigua" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
 
@@ -210,13 +222,14 @@
                     </td> 
                 </tr>
 
-                <!-- Reiniciar contraseña -->
+                <!-- Tipo de usuario -->
                 <tr>
-                    <td><b>Reiniciar contraseña: </b>
-                        <asp:CheckBox ID="cbReinicioContrasena" runat="server" Width="250px"></asp:CheckBox>
+                    <td>
+                        <asp:TextBox ID="txtTipoUsuario" class="form-control" runat="server" Width="250px" ReadOnly Enabled="False" Visible="False" Font-Size="0pt"></asp:TextBox>
                     </td> 
                 </tr>
-                <tr><td><p>La nueva contraseña será "Salad123" y se recomienda cambiarla después de iniciar nuevamente</p></td> </tr>
+
+
             </table>
                 
             <br />

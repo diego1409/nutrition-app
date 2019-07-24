@@ -21,7 +21,7 @@ namespace nutritionApp
         public void parametro(String bd, String ip, String nom_usuario, String clave)
         {
             //no funciona con localhost, ocupa el nombre del server
-            strconexion = "Provider=SQLOLEDB;Server=DESKTOP-DIEGO;Database=salad;Trusted_Connection=yes";
+            strconexion = "Provider=SQLOLEDB;Server=DESKTOP-0U0J66R;Database=salad;Trusted_Connection=yes";
         }
 
 
@@ -66,7 +66,6 @@ namespace nutritionApp
                     parametro.Value = _PARAMETRO;
                     break;
                 case 2:
-
                     parametro = comando.Parameters.Add("@InputParm", OleDbType.VarChar, 2500);
                     parametro.Value = _PARAMETRO;
                     break;
