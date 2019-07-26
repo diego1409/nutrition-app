@@ -68,6 +68,13 @@
                     </td>
                 </tr>
 
+                <!-- Origen (de donde viene la solicitud de dar de baja el usuario) -->
+                <tr>
+                    <td>
+                        <asp:TextBox ID="txtOrigen" class="form-control" runat="server" Width="250px" ReadOnly Enabled="False" Visible="False" Font-Size="0pt"></asp:TextBox>
+                    </td> 
+                </tr>
+
                
             </table>
                 

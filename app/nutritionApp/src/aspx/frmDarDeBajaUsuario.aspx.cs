@@ -13,14 +13,16 @@ namespace nutritionApp.src.aspx
     public partial class frmDarDeBajaUsuario : System.Web.UI.Page
     {
         string cedulaUsuarioDarDeBaja;
+        string origen = "";
         protected void Page_Load(object sender, EventArgs e)
         {
 
             if (!this.IsPostBack)
             {
                 cedulaUsuarioDarDeBaja = Request.QueryString["cedula"];
+                origen= Request.QueryString["origen"];
                 txtNumIdentificacion.Text = cedulaUsuarioDarDeBaja;
-                txtNumIdentificacion.Enabled = false;
+                txtOrigen.Text = origen;
                 //se pregunta si no es una recarga de pagina...
                 //validar si es la primera vez que carga la pagina
                 //para que no cargue las listas cuando se da click
@@ -34,7 +36,7 @@ namespace nutritionApp.src.aspx
                     txtNombre.Text = item._Nombre + " " + item._Apellido1 + " "+ item._Apellido2;
                     ddlTipoUsuario.SelectedValue = item._TipoUsuario;
                     txtNomUsuario.Text = item._NomUsuario;
-                    
+
                 }
             }
         }
@@ -47,7 +49,14 @@ namespace nutritionApp.src.aspx
 
                 ManejoDatos md = new ManejoDatos();
                 md.DarDeBajaUsuario(usuario);
-                Response.Redirect("frmListaUsuarios.aspx");
+                if(txtOrigen.Text == "listausuarios")
+                {
+                    Response.Redirect("frmListaUsuarios.aspx");
+                }
+                else {
+                    Response.Redirect("frmLogin.aspx");
+                }
+                
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)

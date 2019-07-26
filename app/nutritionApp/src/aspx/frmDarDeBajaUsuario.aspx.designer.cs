@@ -58,6 +58,15 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoUsuario;
         
         /// <summary>
+        /// txtOrigen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOrigen;
+        
+        /// <summary>
         /// btnDarDeBaja control.
         /// </summary>
         /// <remarks>

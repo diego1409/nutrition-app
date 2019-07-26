@@ -131,7 +131,7 @@ namespace nutritionApp
             conec.inicializa();
             string consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "Delete from usuario where cedula=" + usuario._Cedula;
+            consulta = "Update usuario set tipoUsuario='B' where cedula=" + usuario._Cedula;
             conec.annadir_consulta(consulta);
             contenedor = conec.busca();
             while (contenedor.Read())
