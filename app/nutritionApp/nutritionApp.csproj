@@ -124,6 +124,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="src\aspx\frmInsertaReceta.aspx" />
     <Content Include="src\aspx\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\frmDarDeBajaUsuario.aspx" />
     <Content Include="src\aspx\frmEditarPerfil.aspx" />
@@ -220,8 +221,16 @@
     <Compile Include="Clases\ManejoDatos.cs" />
     <Compile Include="Clases\planNutricional.cs" />
     <Compile Include="Clases\medicion.cs" />
+    <Compile Include="Clases\receta.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmInsertaReceta.aspx.cs">
+      <DependentUpon>frmInsertaReceta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmInsertaReceta.aspx.designer.cs">
+      <DependentUpon>frmInsertaReceta.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmListaUsuarios.aspx.cs">
       <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
