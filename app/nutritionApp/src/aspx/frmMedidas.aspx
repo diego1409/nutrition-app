@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmMedidas.aspx.cs" Inherits="nutritionApp.src.aspx.frmMedidas" %>
+﻿<%@ Page Title="Medidas" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmMedidas.aspx.cs" Inherits="nutritionApp.src.aspx.frmMedidas" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/Login.css" type="text/css" />
@@ -123,6 +123,14 @@
                         <asp:TextBox ID="txtObservaciones" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine"></asp:TextBox>
                     </td> 
                 </tr>
+
+                <!-- ID -->
+                <tr>
+                    <td>
+                        <asp:TextBox ID="txtIDUsuario" class="form-control" runat="server" Width="250px" ReadOnly Enabled="False" Visible="False" Font-Size="0pt"></asp:TextBox>
+                    </td> 
+                </tr>
+
 
             </table>
 

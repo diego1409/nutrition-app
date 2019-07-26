@@ -39,6 +39,7 @@ namespace nutritionApp.src.aspx
                     txtObservaciones.Text = item._Observaciones;
                     txtMusculo.Text = item._Musculo.ToString();
                     txtEstatura.Text = item._Estatura.ToString();
+                    txtIDUsuario.Text = item._IdUsuario.ToString();
 
                     //Rellenar IMC
                     if (item._Imc < (185 / 10)) {
@@ -67,7 +68,7 @@ namespace nutritionApp.src.aspx
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             Medicion nueva_medicion = new Medicion();
-            nueva_medicion._IdUsuario = idUsuarioMedicion;
+            nueva_medicion._IdUsuario = Convert.ToInt16(txtIDUsuario.Text);
             nueva_medicion._Peso  = Convert.ToDecimal(txtPeso.Text);
             nueva_medicion._Grasa = Convert.ToDecimal(txtGrasa.Text);
             nueva_medicion._Musculo = Convert.ToDecimal(txtMusculo.Text);
@@ -77,7 +78,7 @@ namespace nutritionApp.src.aspx
 
             ManejoDatos md = new ManejoDatos();
             md.insertar_medicion(nueva_medicion);
-            Response.Redirect("frmMedidas.aspx?idUsuario="+ idUsuarioMedicion);
+            Response.Redirect("frmMedidas.aspx?idUsuario="+ nueva_medicion._IdUsuario);
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

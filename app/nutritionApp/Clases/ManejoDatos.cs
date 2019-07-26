@@ -330,13 +330,13 @@ namespace nutritionApp
             conec.inicializa();
             string consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "select top 1 *,usuario.estatura as estatura from medicion inner join usuario on medicion.idUsuario = usuario.idUsuario where medicion.idUsuario =" + medicion._IdUsuario + "order by fecha desc";
+            consulta = "select top 1 *,usuario.estatura as estatura from medicion inner join usuario on medicion.idUsuario = usuario.idUsuario where medicion.idUsuario =" + medicion._IdUsuario + "order by idMedicion desc";
             conec.annadir_consulta(consulta);
             contenedor = conec.busca();
             while (contenedor.Read())
             {
                 Medicion tmp = new Medicion();
-                tmp._IdMedicion = Convert.ToInt16(contenedor["IdMedicion"]);
+
                 tmp._IdUsuario = Convert.ToInt16(contenedor["IdUsuario"]);
                 tmp._Peso = Convert.ToDecimal(contenedor["peso"]);
                 tmp._Grasa = Convert.ToDecimal(contenedor["grasa"]);
@@ -360,7 +360,7 @@ namespace nutritionApp
             conect_local.inicializa();
             String consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "EXEC InsertaMedicion "+ medicion._IdUsuario+"," + medicion._Peso + "," + medicion._Grasa + "," + medicion._Musculo + "," + medicion._Agua + "," + medicion._Hueso + ",'" + medicion._Observaciones + "'";
+            consulta = "EXEC InsertaMedicion "+ medicion._IdUsuario + "," + medicion._Peso + "," + medicion._Grasa + "," + medicion._Musculo + "," + medicion._Agua + "," + medicion._Hueso + ",'" + medicion._Observaciones + "'";
             conect_local.annadir_consulta(consulta);
             //conect_local.annadir_parametro(medicion._IdUsuario, 1);
             //conect_local.annadir_parametro(medicion._Peso, 3);

@@ -7,7 +7,6 @@ namespace nutritionApp
 {
     public class Medicion
     {
-        private int idMedicion;
         private int idUsuario;
         private decimal peso;
         private decimal grasa;
@@ -28,7 +27,6 @@ namespace nutritionApp
         public string _Observaciones { get => observaciones; set => observaciones = value; }
         public decimal _Imc { get => imc; set => imc = value; }
         public DateTime _Fecha { get => fecha; set => fecha = value; }
-        public int _IdMedicion { get => idMedicion; set => idMedicion = value; }
         public int _Estatura { get => estatura; set => estatura = value; }
     }
 }
