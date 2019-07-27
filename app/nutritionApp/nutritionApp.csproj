@@ -123,6 +123,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="src\aspx\frmDashboard.aspx" />
+    <Content Include="src\aspx\frmDashboardAdministrador.aspx" />
+    <Content Include="src\aspx\frmDashboardCliente.aspx" />
     <Content Include="src\aspx\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\frmDarDeBajaUsuario.aspx" />
     <Content Include="src\aspx\frmEditarPerfil.aspx" />
@@ -192,6 +195,7 @@
     <Content Include="src\aspx\frmLogin.aspx" />
     <Content Include="src\aspx\frmCrearPlan.aspx" />
     <Content Include="src\css\frmCrearPlan.css" />
+    <Content Include="src\css\frmDashboardCliente.css" />
     <Content Include="src\css\frmRegistro.css" />
     <Content Include="src\css\Index.css" />
     <Content Include="src\css\Login.css" />
@@ -213,14 +217,33 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Clases\clsConexion.cs" />
-    <Compile Include="Clases\clsProcedimientosAlmacenados.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\ManejoDatos.cs" />
     <Compile Include="Clases\planNutricional.cs" />
     <Compile Include="Clases\medicion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmDashboard.aspx.cs">
+      <DependentUpon>frmDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmDashboard.aspx.designer.cs">
+      <DependentUpon>frmDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmDashboardAdministrador.aspx.cs">
+      <DependentUpon>frmDashboardAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmDashboardAdministrador.aspx.designer.cs">
+      <DependentUpon>frmDashboardAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmDashboardCliente.aspx.cs">
+      <DependentUpon>frmDashboardCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmDashboardCliente.aspx.designer.cs">
+      <DependentUpon>frmDashboardCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmListaUsuarios.aspx.cs">
       <DependentUpon>frmListaUsuarios.aspx</DependentUpon>
@@ -292,6 +315,13 @@
     <Compile Include="src\aspx\frmModificaUsuario.aspx.designer.cs">
       <DependentUpon>frmModificaUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="src\aspx\masterPageAdmin.Master.cs">
+      <DependentUpon>masterPageAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\masterPageAdmin.Master.designer.cs">
+      <DependentUpon>masterPageAdmin.Master</DependentUpon>
+    </Compile>
     <Compile Include="src\aspx\masterPageUser.Master.cs">
       <DependentUpon>masterPageUser.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -362,6 +392,7 @@
     <Content Include="src\fonts\HKGrotesk-SemiBoldLegacy.otf" />
     <Content Include="src\fonts\HKGrotesk-SemiBoldLegacyItalic.otf" />
     <Content Include="src\aspx\masterPageUser.Master" />
+    <Content Include="src\aspx\masterPageAdmin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

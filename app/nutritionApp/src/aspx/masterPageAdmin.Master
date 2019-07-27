@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPageUser.Master.cs" Inherits="nutritionApp.src.aspx.masterPageUser" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPageAdmin.master.cs" Inherits="nutritionApp.src.aspx.masterPageAdmin" %>
 
 <!DOCTYPE html>
 
@@ -37,7 +37,7 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="frmDashboardCliente.aspx">
+                                    <a class="nav-link js-scroll-trigger" href="frmDashboardAdmin.aspx">
                                         Inicio
                                     </a>
                                 </li>
@@ -60,10 +60,23 @@
                                         <a class="dropdown-item" href="#">Historial</a>
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="#">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="drpRecetas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Recetas
                                     </a>
+                                    <div class="dropdown-menu" aria-labelledby="drpUsuarios">
+                                        <a class="dropdown-item" href="#">Agregar Receta</a>
+                                        <a class="dropdown-item" href="#">Ver Lista de Recetas</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="drpUsuarios" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Usuarios
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="drpUsuarios">
+                                        <a class="dropdown-item" href="#">Agregar Usuario</a>
+                                        <a class="dropdown-item" href="frmListaUsuarios.aspx">Ver Lista de Usuarios</a>
+                                    </div>
                                 </li>
                             </ul>
 

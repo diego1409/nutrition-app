@@ -65,11 +65,11 @@ namespace nutritionApp.src.aspx
                     string TipoUsuario = Convert.ToString(this.Session["tipoUsuario"]);
                     if (TipoUsuario == "A" ){
                         // login tipo Administrador
-                        this.Response.Redirect("~src/aspx/frmDashboardAdministrador.aspx?IdUsuario=" + idUsuario);
+                        this.Response.Redirect("~/src/aspx/frmDashboardAdministrador.aspx");
                     }
                     else if (TipoUsuario == "C") {  //if (TipoUsuario == "C")
                         // login tipo Cliente
-                        this.Response.Redirect("~src/aspx/frmDashboardCliente.aspx?IdUsuario=" + idUsuario);
+                        this.Response.Redirect("~/src/aspx/frmDashboardCliente.aspx");
                     }
                 }
                 else

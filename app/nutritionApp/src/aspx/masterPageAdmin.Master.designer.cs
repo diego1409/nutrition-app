@@ -10,7 +10,7 @@
 namespace nutritionApp.src.aspx {
     
     
-    public partial class masterPageUser {
+    public partial class masterPageAdmin {
         
         /// <summary>
         /// Control head.

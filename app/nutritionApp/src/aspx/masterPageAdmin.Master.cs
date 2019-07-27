@@ -7,9 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace nutritionApp.src.aspx
 {
-    public partial class masterPageUser : System.Web.UI.MasterPage
+    public partial class masterPageAdmin : System.Web.UI.MasterPage
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             //Se valida si el ususario esta loguado
@@ -23,9 +22,6 @@ namespace nutritionApp.src.aspx
                 //Se redirecciona a login
                 this.Response.Redirect("~/src/aspx/frmLogin.aspx");
             }
-
-
-            
         }
     }
 }
