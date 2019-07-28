@@ -1,16 +1,11 @@
-﻿<%@ Page Title="Lista de Usuarios" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmListaUsuarios.aspx.cs" Inherits="nutritionApp.src.aspx.frmListaUsuarios" %>
+﻿<%@ Page Title="Lista de Usuarios" Language="C#" MasterPageFile="~/src/aspx/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="frmListaUsuarios.aspx.cs" Inherits="nutritionApp.src.aspx.frmListaUsuarios" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/frmListaUsuarios.css" type="text/css" />
 </asp:Content>
 
 <asp:Content ID="body" ContentPlaceHolderID="body" runat="server">
-    <div id="divLogin">
-        <div id="divLoginIzq">
 
-            
-        </div>
-    </div>
         <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
