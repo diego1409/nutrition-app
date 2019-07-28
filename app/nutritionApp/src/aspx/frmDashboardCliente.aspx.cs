@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace nutritionApp.src.aspx
 {
-    public partial class masterPage : System.Web.UI.MasterPage
+    public partial class frmDashboardCliente : System.Web.UI.Page
     {
-        
-
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
     }
 }
