@@ -13,15 +13,6 @@ namespace nutritionApp.src.aspx {
     public partial class frmListaUsuarios {
         
         /// <summary>
-        /// Control btnEliminar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
-        
-        /// <summary>
         /// Control usuarios.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace nutritionApp.src.aspx {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label usuarios;
+        
+        /// <summary>
+        /// Control hplRegresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplRegresar;
         
         /// <summary>
         /// Control btnRegistrar.
@@ -40,12 +40,12 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.Button btnRegistrar;
         
         /// <summary>
-        /// Control btnRegresar.
+        /// Control btnEliminar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnRegresar;
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
     }
 }

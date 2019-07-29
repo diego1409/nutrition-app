@@ -198,6 +198,8 @@
     <Content Include="src\css\frmDashboardCliente.css" />
     <Content Include="src\css\frmEditarPerfil.css" />
     <Content Include="src\css\frmInsertaAdmin.css" />
+    <Content Include="src\css\frmListaUsuarios.css" />
+    <Content Include="src\css\frmMedidas.css" />
     <Content Include="src\css\frmModificaUsuario.css" />
     <Content Include="src\css\frmRegistro.css" />
     <Content Include="src\css\Index.css" />

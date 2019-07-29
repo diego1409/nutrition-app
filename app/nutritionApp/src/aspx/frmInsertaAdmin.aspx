@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Agregar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmInsertaAdmin.aspx.cs" Inherits="nutritionApp.src.aspx.frmInsertaAdmin" %>
+﻿<%@ Page Title="Agregar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="frmInsertaAdmin.aspx.cs" Inherits="nutritionApp.src.aspx.frmInsertaAdmin" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/frmInsertaAdmin.css" type="text/css" />
@@ -394,7 +394,7 @@
                         <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/frmListaUsuarios.aspx">Cancelar</asp:HyperLink>
                     </div>
                     <div class="col-6 align-self-center">
-                        <asp:Button ID="btnRegistrar" class="btn btn-success btn-block" runat="server" Text="Registrarse" OnClick="btnRegistrar_Click"  />
+                        <asp:Button ID="btnRegistrar" class="btn btn-success btn-block" runat="server" Text="Agregar Usuario" OnClick="btnRegistrar_Click"  />
                     </div>
                 </div>
             </div>
