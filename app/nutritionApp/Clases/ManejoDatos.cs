@@ -61,6 +61,27 @@ namespace nutritionApp
             return lista;
         }
 
+        public List<ingrediente> ListaIngredientes()
+        {
+            List<ingrediente> lista = new List<ingrediente>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "Select * from ingrediente order by nombre";
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                ingrediente tmp = new ingrediente();
+                tmp._IdIngrediente = Convert.ToInt16(contenedor["idIngrediente"]);
+                tmp._Nombre = contenedor["nombre"].ToString();
+                lista.Add(tmp);
+            }
+            return lista;
+        }
+
         /* == Funcion para Iniciar sesion == */
         public int RetornaUsuarioPass(Usuario user)
         {
@@ -222,7 +243,35 @@ namespace nutritionApp
             return true;
         }
 
-    public bool modificar_usuario(Usuario modificar)
+        public bool insertar_receta(receta insertar_receta)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC InsertaReceta ?,?,?,?,?,?,?,?,?,?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(insertar_receta._Foto, 2);
+            conect_local.annadir_parametro(insertar_receta._Dificultad, 2);
+            conect_local.annadir_parametro(insertar_receta._Tiempo, 4);
+            conect_local.annadir_parametro(insertar_receta._TiempoComida, 2);
+            conect_local.annadir_parametro(insertar_receta._Carbos, 2);
+            conect_local.annadir_parametro(insertar_receta._Proteinas, 2);
+            conect_local.annadir_parametro(insertar_receta._Grasas, 2);
+            conect_local.annadir_parametro(insertar_receta._Azucares, 2);
+            conect_local.annadir_parametro(insertar_receta._Calorias, 1);
+            conect_local.annadir_parametro(insertar_receta._Pasos, 3);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
+        }
+
+        public bool modificar_usuario(Usuario modificar)
         {
             Conexion conect_local = new Conexion();
             conect_local.parametro("", "", "", "");

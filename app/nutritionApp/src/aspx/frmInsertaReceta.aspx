@@ -30,6 +30,11 @@
         <div class="form-group">
             <!-- Hipervínculo Regresar -->
             <button id="btnRegresar" class="btn btn-info" runat="server">Regresar</button>
+            <br>
+            <br>
+            <div class="card-header">
+				<h2>Paso 1: Crear la receta</h2>
+			</div>
                 
             <br />
             <br />
@@ -41,9 +46,6 @@
                     <td>
                         <asp:FileUpload ID="fotoReceta" class="form-control" runat="server" Width="250px"></asp:FileUpload>
                     </td> 
-                    <td>
-                        <asp:RequiredFieldValidator ID="rqvTxtNombre" class="form-control" runat="server" ControlToValidate="txtNombre" ErrorMessage="Debe ingresar el nombre del usuario" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
                 </tr>
 
                 <!-- Dificultad -->
@@ -143,6 +145,37 @@
                     <td>
                         <asp:RequiredFieldValidator ID="rqvTxtCalorias" class="form-control" runat="server" ControlToValidate="txtCalorias" ErrorMessage="Debe ingresar las calorías" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
+                </tr></table>
+            <br><br>
+            <asp:Button ID="btnCrearReceta" class="btn btn-primary" runat="server" Text="Crear receta" />
+            <br><br>
+
+                <div class="card-header">
+				<h2>Paso 2: Seleccionar ingredientes</h2>
+			    </div>
+            <br>
+
+                <!-- Selecciona Ingredientes -->
+            <table>
+                <tr>
+                    <td>Ingredientes:</td>
+                    <td>
+                        <asp:DropDownList ID='ddlIngredientes' runat='server' Height='37px' Width='258px' Enabled='True'>
+                            <asp:ListItem Value="" Selected="True">Seleccione los ingredientes de su receta</asp:ListItem>
+                         </asp:DropDownList> 
+                    </td>
+                    <td>
+                        <asp:Button ID="btnAgregarIngrediente" class="btn btn-primary" runat="server" Text="Agregar ingrediente" OnClick="btnAgregarIngrediente_Click" />
+                    </td>
+                </tr>
+
+                <!-- Muestra Ingredientes -->
+                <tr>
+                    <td>Ingredientes de la receta:</td>
+                    <td>
+                        
+                    </td>
+                    <td></td>
                 </tr>
                   
                 <!-- Pasos -->
@@ -162,7 +195,7 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <asp:Button ID="btnRegistrar" class="btn btn-primary" runat="server" Text="Registrar receta" OnClick="btnRegistrar_Click"  />
+            <asp:Button ID="btnRegistrar" class="btn btn-primary" runat="server" Text="" />
         </div>
 			</div>
 		</div>

@@ -31,15 +31,6 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.FileUpload fotoReceta;
         
         /// <summary>
-        /// rqvTxtNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtNombre;
-        
-        /// <summary>
         /// ddlDificultad control.
         /// </summary>
         /// <remarks>
@@ -182,6 +173,33 @@ namespace nutritionApp.src.aspx {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtCalorias;
+        
+        /// <summary>
+        /// btnCrearReceta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCrearReceta;
+        
+        /// <summary>
+        /// ddlIngredientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlIngredientes;
+        
+        /// <summary>
+        /// btnAgregarIngrediente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarIngrediente;
         
         /// <summary>
         /// txtPasos control.
