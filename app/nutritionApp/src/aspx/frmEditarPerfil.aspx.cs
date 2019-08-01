@@ -46,7 +46,9 @@ namespace nutritionApp.src.aspx
                     txtContrasena.Text = item._Contrasena;
                     txtTipoUsuario.Text = item._TipoUsuario;
                     txtContrasenaNueva.Text = "";
-                    
+                    lblBtnDarDeBaja.Text = lblBtnDarDeBaja.Text + "<a class='btn btn-primary' href='frmDarDeBajaUsuario.aspx?cedula=" + cedulaUsuarioModificar + "&origen=editarperfil'>Dar de baja</a>";
+
+
                 }
             }
         }
@@ -80,7 +82,7 @@ namespace nutritionApp.src.aspx
                         usuarioModificar._Contrasena = txtContrasenaNueva.Text;
                         ManejoDatos md = new ManejoDatos();
                         md.modificar_usuario(usuarioModificar);
-                        Response.Redirect("frmListaUsuarios.aspx");
+                        Response.Redirect("frmEditarPerfil.aspx?cedula="+ usuarioModificar._Cedula);
                     }
                     else
                     {
@@ -93,8 +95,8 @@ namespace nutritionApp.src.aspx
                 {
                     ManejoDatos md = new ManejoDatos();
                     md.modificar_usuario(usuarioModificar);
-                    
-                    Response.Redirect("frmListaUsuarios.aspx");
+
+                    Response.Redirect("frmEditarPerfil.aspx?cedula=" + usuarioModificar._Cedula);
                 }
             }
             else {
@@ -108,6 +110,11 @@ namespace nutritionApp.src.aspx
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmListaUsuarios.aspx");
+        }
+
+        protected void btnDarDeBaja_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

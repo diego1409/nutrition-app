@@ -15,7 +15,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h1>Registrar Administrador</h1>
+				<h1>Registrar Usuario</h1>
 				<!--<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-instagram"></i></span>
@@ -101,7 +101,7 @@
                 <tr>
                     <td>Fecha de Nacimiento:</td>
                     <td>
-                        <asp:TextBox ID="txtFechaNac" class="form-control" runat="server" CssClass="form-control" Width="249px"></asp:TextBox>
+                        <asp:TextBox ID="txtFechaNac" class="form-control" runat="server" CssClass="form-control" Width="249px" TextMode="Date"></asp:TextBox>
                     </td> 
                     <td>
                         <asp:RequiredFieldValidator ID="rqvTxtFechaNac" class="form-control" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="Debe ingresar la fecha de nacimiento del usuario" ForeColor="Red"></asp:RequiredFieldValidator>

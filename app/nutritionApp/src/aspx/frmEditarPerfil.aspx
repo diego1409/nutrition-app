@@ -237,6 +237,9 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <asp:Button ID="btnModificar" class="btn btn-primary" runat="server" Text="Modificar usuario" OnClick="btnModificar_Click"  />
+            <!-- En este label se publica el boton con el link de dar de baja usuario -->
+             <asp:Label ID="lblBtnDarDeBaja" runat="server" Text=""></asp:Label>
+           <%--<a class='btn btn-primary' href='frmDarDeBajaUsuario.aspx?cedula=" + cedulaUsuarioModificar + "'>Dar de baja</a>--%>
         </div>
 			</div>
 		</div>

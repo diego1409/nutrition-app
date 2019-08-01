@@ -61,6 +61,27 @@ namespace nutritionApp
             return lista;
         }
 
+        public List<ingrediente> ListaIngredientes()
+        {
+            List<ingrediente> lista = new List<ingrediente>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "Select * from ingrediente order by nombre";
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                ingrediente tmp = new ingrediente();
+                tmp._IdIngrediente = Convert.ToInt16(contenedor["idIngrediente"]);
+                tmp._Nombre = contenedor["nombre"].ToString();
+                lista.Add(tmp);
+            }
+            return lista;
+        }
+
         /* == Funcion para Iniciar sesion == */
         public int RetornaUsuarioPass(Usuario user)
         {
@@ -131,7 +152,7 @@ namespace nutritionApp
             conec.inicializa();
             string consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "Delete from usuario where cedula=" + usuario._Cedula;
+            consulta = "Update usuario set tipoUsuario='B' where cedula=" + usuario._Cedula;
             conec.annadir_consulta(consulta);
             contenedor = conec.busca();
             while (contenedor.Read())
@@ -222,7 +243,35 @@ namespace nutritionApp
             return true;
         }
 
-    public bool modificar_usuario(Usuario modificar)
+        public bool insertar_receta(receta insertar_receta)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC InsertaReceta ?,?,?,?,?,?,?,?,?,?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(insertar_receta._Foto, 2);
+            conect_local.annadir_parametro(insertar_receta._Dificultad, 2);
+            conect_local.annadir_parametro(insertar_receta._Tiempo, 4);
+            conect_local.annadir_parametro(insertar_receta._TiempoComida, 2);
+            conect_local.annadir_parametro(insertar_receta._Carbos, 2);
+            conect_local.annadir_parametro(insertar_receta._Proteinas, 2);
+            conect_local.annadir_parametro(insertar_receta._Grasas, 2);
+            conect_local.annadir_parametro(insertar_receta._Azucares, 2);
+            conect_local.annadir_parametro(insertar_receta._Calorias, 1);
+            conect_local.annadir_parametro(insertar_receta._Pasos, 3);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
+        }
+
+        public bool modificar_usuario(Usuario modificar)
         {
             Conexion conect_local = new Conexion();
             conect_local.parametro("", "", "", "");
@@ -322,157 +371,6 @@ namespace nutritionApp
             return true;
         }
 
-        ///* == Funcion que inserta un administrador == */
-        //public bool insertar_administrador(Administrador insertar)
-        //{
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC Insert_Administrador ?,?,?,?,?,?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(insertar._correo, 2);
-        //    conect_local.annadir_parametro(insertar._nombre, 2);
-        //    conect_local.annadir_parametro(insertar._apellido_1, 2);
-        //    conect_local.annadir_parametro(insertar._apellido_2, 2);
-        //    conect_local.annadir_parametro(insertar._contrasenna, 2);
-        //    conect_local.annadir_parametro(insertar._profesion, 2);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //    }
-        //    contenedor.Close();
-        //    return true;
-        //}
-
-        //public bool insertar_restaurante(Restaurante insertar)
-        //{
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC Insert_Restaurante ?,?,?,?,?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(insertar._correo, 2);
-        //    conect_local.annadir_parametro(insertar._contrasenna, 2);
-        //    conect_local.annadir_parametro(insertar._nombre, 2);
-        //    conect_local.annadir_parametro(insertar._descripcion, 2);
-        //    conect_local.annadir_parametro(insertar._telefono, 1);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //    }
-        //    contenedor.Close();
-        //    return true;
-        //}
-
-        ///* == Iniciar sesion == */
-        //public int iniciar_sesion_normal(Usuario iniciar)
-        //{
-        //    int correcto = 2;
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC sesion_usuario ?,?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(iniciar._correo, 2);
-        //    conect_local.annadir_parametro(iniciar._contrasenna, 2);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //        correcto = Convert.ToInt32(contenedor["correcto"].ToString());
-        //    }
-        //    contenedor.Close();
-        //    return correcto;
-        //}
-
-        //public int iniciar_sesion(Administrador iniciar)
-        //{
-        //    int correcto = 2;
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC sesion_administrador ?,?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(iniciar._correo, 2);
-        //    conect_local.annadir_parametro(iniciar._contrasenna, 2);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //        correcto = Convert.ToInt32(contenedor["correcto"].ToString());
-        //    }
-        //    contenedor.Close();
-        //    return correcto;
-        //}
-
-        //public int iniciar_sesion(Restaurante iniciar)
-        //{
-        //    int correcto = 2;
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC sesion_restaurante ?,?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(iniciar._correo, 2);
-        //    conect_local.annadir_parametro(iniciar._contrasenna, 2);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //        correcto = Convert.ToInt32(contenedor["correcto"].ToString());
-        //    }
-        //    contenedor.Close();
-        //    return correcto;
-        //}
-
-        ///* == Modificar usuario == */
-        //public bool modificar_usuario(Usuario modificar)
-        //{
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC Update_Usuario_datos ?,?,?,?,?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(modificar._correo, 2);
-        //    conect_local.annadir_parametro(modificar._contrasenna, 2);
-        //    conect_local.annadir_parametro(modificar._nombre, 2);
-        //    conect_local.annadir_parametro(modificar._apellido_1, 2);
-        //    conect_local.annadir_parametro(modificar._apellido_2, 2);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //    }
-        //    contenedor.Close();
-        //    return true;
-        //}
-
-        //public bool insertar_dia(Dia insertar)
-        //{
-        //    Conexion conect_local = new Conexion();
-        //    conect_local.parametro("", "", "", "");
-        //    conect_local.inicializa();
-        //    String consulta;
-        //    System.Data.OleDb.OleDbDataReader contenedor;
-        //    consulta = "EXEC Insert_Dia ?,?";
-        //    conect_local.annadir_consulta(consulta);
-        //    conect_local.annadir_parametro(insertar._correo, 2);
-        //    conect_local.annadir_parametro(insertar._fecha, 4);
-        //    contenedor = conect_local.busca();
-        //    while (contenedor.Read())
-        //    {
-        //    }
-        //    contenedor.Close();
-        //    return true;
-        //}
         public List<Medicion> RetornaUltimaMedicion(Medicion medicion)
         {
             List<Medicion> medicionDevolver = new List<Medicion>();
@@ -481,13 +379,13 @@ namespace nutritionApp
             conec.inicializa();
             string consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "select top 1 *,usuario.estatura as estatura from medicion inner join usuario on medicion.idUsuario = usuario.idUsuario where medicion.idUsuario =" + medicion._IdUsuario + "order by fecha desc";
+            consulta = "select top 1 *,usuario.estatura as estatura from medicion inner join usuario on medicion.idUsuario = usuario.idUsuario where medicion.idUsuario =" + medicion._IdUsuario + "order by idMedicion desc";
             conec.annadir_consulta(consulta);
             contenedor = conec.busca();
             while (contenedor.Read())
             {
                 Medicion tmp = new Medicion();
-                tmp._IdMedicion = Convert.ToInt16(contenedor["IdMedicion"]);
+
                 tmp._IdUsuario = Convert.ToInt16(contenedor["IdUsuario"]);
                 tmp._Peso = Convert.ToDecimal(contenedor["peso"]);
                 tmp._Grasa = Convert.ToDecimal(contenedor["grasa"]);
@@ -511,15 +409,15 @@ namespace nutritionApp
             conect_local.inicializa();
             String consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "EXEC InsertaMedicion ?,?,?,?,?,?,?";
+            consulta = "EXEC InsertaMedicion "+ medicion._IdUsuario + "," + medicion._Peso + "," + medicion._Grasa + "," + medicion._Musculo + "," + medicion._Agua + "," + medicion._Hueso + ",'" + medicion._Observaciones + "'";
             conect_local.annadir_consulta(consulta);
-            conect_local.annadir_parametro(medicion._IdUsuario, 1);
-            conect_local.annadir_parametro(medicion._Peso, 3);
-            conect_local.annadir_parametro(medicion._Grasa, 3);
-            conect_local.annadir_parametro(medicion._Musculo, 3);
-            conect_local.annadir_parametro(medicion._Agua, 3);
-            conect_local.annadir_parametro(medicion._Hueso, 3);
-            conect_local.annadir_parametro(medicion._Observaciones, 2);
+            //conect_local.annadir_parametro(medicion._IdUsuario, 1);
+            //conect_local.annadir_parametro(medicion._Peso, 3);
+            //conect_local.annadir_parametro(medicion._Grasa, 3);
+            //conect_local.annadir_parametro(medicion._Musculo, 3);
+            //conect_local.annadir_parametro(medicion._Agua, 3);
+            //conect_local.annadir_parametro(medicion._Hueso, 3);
+            //conect_local.annadir_parametro(medicion._Observaciones, 2);
 
 
             contenedor = conect_local.busca();
