@@ -74,7 +74,7 @@
                                         Usuarios
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="drpUsuarios">
-                                        <a class="dropdown-item" href="#">Agregar Usuario</a>
+                                        <a class="dropdown-item" href="frmInsertaAdmin.aspx">Agregar Usuario</a>
                                         <a class="dropdown-item" href="frmListaUsuarios.aspx">Ver Lista de Usuarios</a>
                                     </div>
                                 </li>
@@ -86,7 +86,7 @@
                                         <asp:Label ID="lblNombreCompleto" runat="server" Text="Usuario"></asp:Label>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="drpUsuario">
-                                        <a class="dropdown-item" href="frmModificaUsuario.aspx">Editar Perfil</a>
+                                        <a class="dropdown-item" href="frmEditarPerfil.aspx">Editar Perfil</a>
                                         <a class="dropdown-item" href="#">Cerrar Sesión</a>
                                     </div>
                                 </li>

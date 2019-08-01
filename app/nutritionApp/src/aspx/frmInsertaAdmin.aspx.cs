@@ -27,36 +27,35 @@ namespace nutritionApp.src.aspx
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             ///Verificar que todas las validaciones hayan sido satisfactorias.
-                if (txtPass.Text == txtConfirmarPass.Text)
-                {
-                    Usuario nuevo_usuario = new Usuario();
-                    nuevo_usuario._Cedula = txtNumIdentificacion.Text;
-                    nuevo_usuario._Genero = ddlGenero.SelectedValue;
-                    nuevo_usuario._FechaNac = Convert.ToDateTime(txtFechaNac.Text);
-                    nuevo_usuario._Nombre = txtNombre.Text;
-                    nuevo_usuario._Apellido1 = txtPrimerApellido.Text;
-                    nuevo_usuario._Apellido2 = txtSegundoApellido.Text;
-                    nuevo_usuario._Direccion = txtDireccion.Text;
-                    nuevo_usuario._Telefono1 = txtTelefono.Text;
-                    nuevo_usuario._Estatura = 0;
-                    nuevo_usuario._Peso = 0;
-                    nuevo_usuario._Proposito = "";
-                    nuevo_usuario._Correo = txtCorreo.Text;
-                    nuevo_usuario._NomUsuario = txtNomUsuario.Text;
-                    nuevo_usuario._Contrasena = txtPass.Text;
-                    nuevo_usuario._TipoUsuario = ddlTipoUsuario.SelectedValue;
+            if (this.IsValid)
+            {
+                Usuario nuevo_usuario = new Usuario();
+                nuevo_usuario._Cedula = txtNumIdentificacion.Text;
+                nuevo_usuario._Genero = ddlGenero.SelectedValue;
+                nuevo_usuario._FechaNac = Convert.ToDateTime(txtFechaNac.Text);
+                nuevo_usuario._Nombre = txtNombre.Text;
+                nuevo_usuario._Apellido1 = txtPrimerApellido.Text;
+                nuevo_usuario._Apellido2 = txtSegundoApellido.Text;
+                nuevo_usuario._Direccion = txtDireccion.Text;
+                nuevo_usuario._Telefono1 = txtTelefono.Text;
+                nuevo_usuario._Estatura = Convert.ToInt32(txtEstatura.Text);
+                nuevo_usuario._Peso = Convert.ToDecimal(txtPeso.Text);
+                nuevo_usuario._Proposito = ddlProposito.SelectedValue;
+                nuevo_usuario._Correo = txtCorreo.Text;
+                nuevo_usuario._NomUsuario = txtNomUsuario.Text;
+                nuevo_usuario._Contrasena = txtPass.Text;
+                nuevo_usuario._TipoUsuario = ddlTipoUsuario.SelectedValue;
 
-                    ManejoDatos InsertaUsuario = new ManejoDatos();
-                    InsertaUsuario.insertar_usuario(nuevo_usuario);
-                    Session["ClaseUsuario"] = nuevo_usuario;
-                    Response.Redirect("frmListaUsuarios.aspx");
-                }
-                else
-                {
-                    Response.Write("<script>window.alert('Contraseñas no coinciden. Por favor verificar');</script>");
-                    txtPass.Text = "";
-                    txtConfirmarPass.Text = "";
-                }
+                ManejoDatos InsertaUsuario = new ManejoDatos();
+                InsertaUsuario.insertar_usuario(nuevo_usuario);
+                Response.Redirect("frmListaUsuarios.aspx");
+            }
+            else
+            {
+                Response.Write("<script>window.alert('Contraseñas no coinciden porfavor verificar');</script>");
+                txtPass.Text = "";
+                txtConfirmarPass.Text = "";
+            }
         }
     }
 }

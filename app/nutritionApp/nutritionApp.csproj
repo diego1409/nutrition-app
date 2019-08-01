@@ -196,7 +196,13 @@
     <Content Include="src\aspx\frmLogin.aspx" />
     <Content Include="src\aspx\frmCrearPlan.aspx" />
     <Content Include="src\css\frmCrearPlan.css" />
+    <Content Include="src\css\frmDarDeBajaUsuario.css" />
     <Content Include="src\css\frmDashboardCliente.css" />
+    <Content Include="src\css\frmEditarPerfil.css" />
+    <Content Include="src\css\frmInsertaAdmin.css" />
+    <Content Include="src\css\frmListaUsuarios.css" />
+    <Content Include="src\css\frmMedidas.css" />
+    <Content Include="src\css\frmModificaUsuario.css" />
     <Content Include="src\css\frmRegistro.css" />
     <Content Include="src\css\Index.css" />
     <Content Include="src\css\Login.css" />

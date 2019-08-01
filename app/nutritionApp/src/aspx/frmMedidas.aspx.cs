@@ -24,7 +24,7 @@ namespace nutritionApp.src.aspx
             {
                 //Rellenar IMC 
                 txtObservaciones.Text = "";
-                idUsuarioMedicion = Convert.ToInt16(Request.QueryString["idUsuario"]);
+                idUsuarioMedicion = Convert.ToInt16(Session["idUsuario"]);
                 Medicion medicion = new Medicion();
                 medicion._IdUsuario = idUsuarioMedicion;
 
@@ -83,7 +83,7 @@ namespace nutritionApp.src.aspx
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("frmfrmDashboardCliente.aspx?IdUsuario=" + idUsuarioMedicion);
+            Response.Redirect("frmfrmDashboardCliente.aspx");
         }
     }
 }

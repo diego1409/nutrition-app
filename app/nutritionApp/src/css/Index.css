@@ -1,5 +1,5 @@
 ﻿#divBienvenida {
-    height: 40rem !important;
+    height: 33rem !important;
     background: rgba(0, 0, 0, 0.7); /* Fondo para oscurecer el video de fondo */
 }
 
@@ -13,7 +13,7 @@
 
 #bienvenidaTexto {
     position:absolute;
-    padding-top: 8%;
+    margin-top: 80px;
     color: white;
 }
 
