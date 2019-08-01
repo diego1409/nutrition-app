@@ -253,6 +253,7 @@
     </Compile>
     <Compile Include="src\aspx\frmDashboardCliente.aspx.designer.cs">
       <DependentUpon>frmDashboardCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="src\aspx\frmInsertaReceta.aspx.cs">
       <DependentUpon>frmInsertaReceta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

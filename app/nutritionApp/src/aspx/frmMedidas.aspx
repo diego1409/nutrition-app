@@ -119,6 +119,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="txtObservaciones"></label>
+                                    <!-- IDUsuario -->
+                                    <asp:TextBox ID="txtIDUsuario" class="form-control" runat="server" Width="120px" Visible="false"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                         <div class="row">
