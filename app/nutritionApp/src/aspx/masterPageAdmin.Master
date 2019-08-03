@@ -47,7 +47,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="drpPlanes">
                                         <a class="dropdown-item" href="#">Plan Actual</a>
-                                        <a class="dropdown-item" href="#">Crear Nuevo Plan</a>
+                                        <a class="dropdown-item" href="frmCrearPlan.aspx">Crear Nuevo Plan</a>
                                         <a class="dropdown-item" href="#">Historial</a>
                                     </div>
                                 </li>
@@ -56,7 +56,7 @@
                                         Mis Medidas
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="drpMedidas">
-                                        <a class="dropdown-item" href="#">Actualizar Medidas</a>
+                                        <a class="dropdown-item" href="frmMedidas.aspx">Actualizar Medidas</a>
                                         <a class="dropdown-item" href="#">Historial</a>
                                     </div>
                                 </li>
@@ -65,8 +65,8 @@
                                         Recetas
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="drpUsuarios">
-                                        <a class="dropdown-item" href="#">Agregar Receta</a>
-                                        <a class="dropdown-item" href="#">Ver Lista de Recetas</a>
+                                        <a class="dropdown-item" href="frmInsertaReceta.aspx">Agregar Receta</a>
+                                        <a class="dropdown-item" href="frmListaRecetas.aspx">Ver Lista de Recetas</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">

@@ -8,7 +8,7 @@
     <div id="divListaUsuarios" class="container-fluid">
         <div class="row">
             <div class="col">
-                <h1>Lista de usuarios</h1>
+                <h1>Lista de Usuarios</h1>
             </div>
         </div>
         <div id="divTabla" class="row">
