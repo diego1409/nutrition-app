@@ -59,13 +59,20 @@ namespace nutritionApp.src.aspx
             txtCantidad.Enabled = true;
             txtMedida.Enabled = true;
             txtObservaciones.Enabled = true;
+            txtNuevoIngrediente.Enabled = true;
             ddlIngredientes.Enabled = true;
             btnAgregarIngrediente.Enabled = true;
+            btnRegistrarIngrediente.Enabled = true;
         }
 
         protected void btnRegistrarIngrediente_Click(object sender, EventArgs e)
         {
-
+            md.insertar_ingrediente(txtNuevoIngrediente.Text);
+            ddlIngredientes.Items.Clear();
+            foreach (ingrediente item in md.ListaIngredientes())
+            {
+                ddlIngredientes.Items.Add(new ListItem(item._Nombre, item._IdIngrediente.ToString()));
+            }
         }
 
         protected void btnInsertarPasos_Click(object sender, EventArgs e)

@@ -174,13 +174,17 @@
                             <asp:ListItem Value="" Selected="True">Seleccione los ingredientes de su receta</asp:ListItem>
                          </asp:DropDownList> 
                     </td>
+                </tr>
+
+                <tr>
                     <td>
-                        <asp:Button ID="btnAgregarIngrediente" class="btn btn-primary" runat="server" Text="Agregar ingrediente a la receta" OnClick="btnAgregarIngrediente_Click" />
-                    </td>
+                        <asp:TextBox ID="txtNuevoIngrediente" class="form-control" runat="server" Width="250px" Enabled="false" Text=""></asp:TextBox>
+                    </td> 
                     <td>
-                        <asp:Button ID="btnRegistrarIngrediente" class="btn btn-info" runat="server" Text="Registrar un nuevo ingrediente" OnClick="btnRegistrarIngrediente_Click" />
+                        <asp:Button ID="btnRegistrarIngrediente" class="btn btn-info" runat="server" Text="Registrar un nuevo ingrediente" Enabled="false" OnClick="btnRegistrarIngrediente_Click" />
                     </td>
                 </tr>
+                <tr></br></tr>
 
                 <!-- Cantidad -->
                 <tr>
@@ -210,6 +214,13 @@
                     <td>
                         <asp:TextBox ID="txtObservaciones" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine" Enabled="false" Text=""></asp:TextBox>
                     </td> 
+                </tr>
+
+                <!-- Agregar ingrediente -->
+                <tr>
+                    <td>
+                        <asp:Button ID="btnAgregarIngrediente" class="btn btn-primary" runat="server" Text="Agregar ingrediente a la receta" OnClick="btnAgregarIngrediente_Click" />
+                    </td>
                 </tr>
 
                 <!-- Muestra Ingredientes -->
@@ -255,37 +266,27 @@
 
 
 <!-- Modal -->
-    <div id="ModalInformacionIMC" class="modal fade" role="dialog">
+    <%--<div id="ModalRegistrarIngrediente" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" align="center">Agregar ingrediente</h4>
+                    <h4 class="modal-title" align="center">Registrar ingrediente</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                 </div>
                 <div class="modal-body">
                     
-                    <p>“Bajo peso”, “normal”, “sobrepeso” y “obesidad” son términos para referirse a los distintos
-                        rangos de peso corporal. La obesidad y el sobrepeso caracterizan a los rangos de peso que
-                        exceden lo que se considera saludable para una determinada estatura, el bajo peso describe al
-                        peso corporal inferior a lo que se considera saludable. Si su IMC está fuera del rango “normal”
-                        o peso saludable, se recomienda que hable con su médico o proveedor de atención médica sobre
-                        cómo puede llegar a un peso corporal más saludable. Se ha demostrado que la obesidad y el
-                        sobrepeso aumentan la probabilidad de padecer ciertas enfermedades y otros problemas de salud.
-                    </p>
-                    <p>A nivel individual, el IMC puede usarse como un método de detección, pero no sirve para
-                        diagnosticar la grasa corporal ni la salud de las personas. Un proveedor de atención médica con
-                        experiencia es quien debe realizar las evaluaciones médicas adecuadas para estimar el estado de
-                        salud y los riesgos de las personas.</p>
+                    <asp:TextBox ID="txtIngredienteNuevo" class="form-control" runat="server" Width="250px" Enabled="false" Text=""></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rqvTxtIngredienteNuevo" class="form-control" runat="server" ControlToValidate="txtIngredienteNuevo" ErrorMessage="Debe ingresar el ingrediente" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ModalRegistrarIngrediente">Registrar nuevo ingrediente</button>
                 </div>
             </div>
 
         </div>
-    </div>
+    </div>--%>
 
 
 </asp:Content>

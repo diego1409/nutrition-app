@@ -211,13 +211,13 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredientes;
         
         /// <summary>
-        /// btnAgregarIngrediente control.
+        /// txtNuevoIngrediente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarIngrediente;
+        protected global::System.Web.UI.WebControls.TextBox txtNuevoIngrediente;
         
         /// <summary>
         /// btnRegistrarIngrediente control.
@@ -254,6 +254,15 @@ namespace nutritionApp.src.aspx {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
+        
+        /// <summary>
+        /// btnAgregarIngrediente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarIngrediente;
         
         /// <summary>
         /// lblListaIngredientesReceta control.

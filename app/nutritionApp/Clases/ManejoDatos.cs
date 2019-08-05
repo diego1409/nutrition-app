@@ -317,6 +317,25 @@ namespace nutritionApp
             return true;
         }
 
+        public bool insertar_ingrediente(string ingrediente)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC InsertaIngrediente ?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(ingrediente, 2);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
+        }
+
         public bool modificar_usuario(Usuario modificar)
         {
             Conexion conect_local = new Conexion();
