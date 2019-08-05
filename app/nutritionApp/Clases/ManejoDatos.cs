@@ -82,6 +82,29 @@ namespace nutritionApp
             return lista;
         }
 
+        public List<receta> ListaRecetas()
+        {
+            List<receta> lista = new List<receta>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "exec ListaRecetas";
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                receta tmp = new receta();
+                tmp._idReceta = Convert.ToInt32(contenedor["idReceta"]);
+                tmp._Nombre = contenedor["nombre"].ToString();
+                tmp._Tiempo = Convert.ToInt32(contenedor["tiempo"]);
+                tmp._TiempoComida = Convert.ToChar(contenedor["tiempoComida"]);
+                lista.Add(tmp);
+            }
+            return lista;
+        }
+
         /* == Funcion para Iniciar sesion == */
         public int RetornaUsuarioPass(Usuario user)
         {

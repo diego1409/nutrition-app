@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Insertar Receta" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmInsertaReceta.aspx.cs" Inherits="nutritionApp.src.aspx.frmInsertaReceta" %>
+﻿<%@ Page Title="Insertar Receta" Language="C#" MasterPageFile="~/src/aspx/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="frmInsertaReceta.aspx.cs" Inherits="nutritionApp.src.aspx.frmInsertaReceta" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/Login.css" type="text/css" />
@@ -46,6 +46,17 @@
                     <td>
                         <asp:FileUpload ID="fotoReceta" class="form-control" runat="server" Width="250px"></asp:FileUpload>
                     </td> 
+                </tr>
+
+                <!-- Nombre -->
+                <tr>
+                    <td>Nombre:</td>
+                    <td>
+                        <asp:TextBox ID="txtNombre" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td">
+                        <asp:RequiredFieldValidator ID="rqvTxtNombre" class="form-control" runat="server" ControlToValidate="txtNombre" ErrorMessage="Debe ingresar el nombre de la receta" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
 
                 <!-- Dificultad -->
@@ -147,7 +158,7 @@
                     </td>
                 </tr></table>
             <br><br>
-            <asp:Button ID="btnCrearReceta" class="btn btn-primary" runat="server" Text="Crear receta" />
+            <asp:Button ID="btnCrearReceta" class="btn btn-primary" runat="server" Text="Crear receta" OnClick="btnCrearReceta_Click" />
             <br><br>
 
                 <div class="card-header">
