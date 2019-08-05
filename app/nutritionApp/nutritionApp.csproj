@@ -127,6 +127,7 @@
     <Content Include="src\aspx\frmDashboardAdministrador.aspx" />
     <Content Include="src\aspx\frmDashboardCliente.aspx" />
     <Content Include="src\aspx\frmInsertaReceta.aspx" />
+    <Content Include="src\aspx\frmHistorialMedidas.aspx" />
     <Content Include="src\aspx\frmListaRecetas.aspx" />
     <Content Include="src\aspx\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\frmDarDeBajaUsuario.aspx" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="src\aspx\frmInsertaReceta.aspx.designer.cs">
       <DependentUpon>frmInsertaReceta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmHistorialMedidas.aspx.cs">
+      <DependentUpon>frmHistorialMedidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmHistorialMedidas.aspx.designer.cs">
+      <DependentUpon>frmHistorialMedidas.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmListaRecetas.aspx.cs">
       <DependentUpon>frmListaRecetas.aspx</DependentUpon>

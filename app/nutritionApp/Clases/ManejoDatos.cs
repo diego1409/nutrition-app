@@ -399,7 +399,7 @@ namespace nutritionApp
             System.Data.OleDb.OleDbDataReader contenedor;
 
             //Se crea la consulta
-            consulta = "EXEC RetornaIngrediente";
+            consulta = "EXEC RetornaIngredientes";
             conect_local.annadir_consulta(consulta);
 
             //Se procede a buscar
@@ -480,6 +480,35 @@ namespace nutritionApp
                 tmp._Imc = Convert.ToDecimal(contenedor["imc"]);
                 tmp._Fecha = Convert.ToDateTime(contenedor["fecha"]);
                 tmp._Estatura = Convert.ToInt16(contenedor["estatura"]);
+
+                medicionDevolver.Add(tmp);
+            }
+            return medicionDevolver;
+        }
+
+        public List<Medicion> HistorialMedidas(int idUsuario)
+        {
+            List<Medicion> medicionDevolver = new List<Medicion>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "select * from medicion where idUsuario="+ idUsuario + " order by idMedicion desc";
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                Medicion tmp = new Medicion();
+
+                tmp._Peso = Convert.ToDecimal(contenedor["peso"]);
+                tmp._Grasa = Convert.ToDecimal(contenedor["grasa"]);
+                tmp._Musculo = Convert.ToDecimal(contenedor["musculo"]);
+                tmp._Agua = Convert.ToDecimal(contenedor["agua"]);
+                tmp._Hueso = Convert.ToDecimal(contenedor["hueso"]);
+                tmp._Observaciones = contenedor["observaciones"].ToString();
+                tmp._Imc = Convert.ToDecimal(contenedor["imc"]);
+                tmp._Fecha = Convert.ToDateTime(contenedor["fecha"]);
 
                 medicionDevolver.Add(tmp);
             }
