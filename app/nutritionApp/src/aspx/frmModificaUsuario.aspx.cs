@@ -18,7 +18,7 @@ namespace nutritionApp.src.aspx
 
             if (!this.IsPostBack)
             {
-                cedulaUsuarioModificar = Request.QueryString["cedula"];
+                cedulaUsuarioModificar = this.Request.QueryString["cedula"].ToString();
                 txtNumIdentificacion.Text = cedulaUsuarioModificar;
                 txtNumIdentificacion.Enabled = false;
                 //se pregunta si no es una recarga de pagina...
@@ -41,7 +41,7 @@ namespace nutritionApp.src.aspx
                     ddlProposito.SelectedValue = item._Proposito;
                     ddlGenero.SelectedValue = item._Genero;
                     ddlTipoUsuario.SelectedValue = item._TipoUsuario;
-                    txtFechaNac.Text = item._FechaNac.ToString();
+                    txtFechaNac.Text = item._FechaNac.ToString("yyyy-MM-dd");
                     txtNomUsuario.Text = item._NomUsuario;
                     txtTelefono.Text = item._Telefono1;
                     txtContrasena.Text = item._Contrasena;

@@ -31,16 +31,16 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.HtmlControls.HtmlForm frmMaster;
         
         /// <summary>
-        /// lblBienvenida control.
+        /// Control lblNombreCompleto.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBienvenida;
+        protected global::System.Web.UI.WebControls.Label lblNombreCompleto;
         
         /// <summary>
-        /// body control.
+        /// Control body.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

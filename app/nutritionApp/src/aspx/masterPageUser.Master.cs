@@ -9,24 +9,23 @@ namespace nutritionApp.src.aspx
 {
     public partial class masterPageUser : System.Web.UI.MasterPage
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            //Se valida si el ususario esta loguado
+            bool logged = Convert.ToBoolean(Session["UsuarioLogueado"]);
+            if (logged)
             {
-                string cedulaUsuario = Request.QueryString["cedula"];
-                //se pregunta si no es una recarga de pagina...
-                //validar si es la primera vez que carga la pagina
-                //para que no cargue las listas cuando se da click
-                //en el boton de guardar
-                ManejoDatos mostrar = new ManejoDatos();
-                Usuario usuario = new Usuario();
-                usuario._Cedula = cedulaUsuario;
-                foreach (Usuario item in mostrar.RetornaUsuarioCedula(usuario))
-                {
-                    //Seteando cada uno de los campos del form de acuerdo al usuario
-                    lblBienvenida.Text = "Bienvenido "+item._Nombre;
-                }
+                lblNombreCompleto.Text = Session["Nombre"].ToString() + " " + Session["Apellido1"].ToString() + " " + Session["Apellido2"].ToString();
             }
+            else
+            {
+                //Se redirecciona a login
+                this.Response.Redirect("~/src/aspx/frmLogin.aspx");
+            }
+
+
+            
         }
     }
 }

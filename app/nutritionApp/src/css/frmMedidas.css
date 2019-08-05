@@ -1,0 +1,14 @@
+﻿h1 {
+    font-size: 9rem;
+    text-align: center;
+}
+
+#divMedidas {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#divFormMedidas {
+    padding-left: 18%;
+    padding-right: 18%;
+}

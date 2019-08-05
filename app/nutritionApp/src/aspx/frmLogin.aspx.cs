@@ -66,12 +66,12 @@ namespace nutritionApp.src.aspx
                     if (TipoUsuario == "A")
                     {
                         // login tipo Administrador
-                        this.Response.Redirect("frmDashboardAdministrador.aspx?IdUsuario=" + idUsuario);
+                        this.Response.Redirect("~/src/aspx/frmDashboardAdministrador.aspx");
                     }
                     else
                     {  //if (TipoUsuario == "C")
                         // login tipo Cliente
-                        this.Response.Redirect("frmDashboardCliente.aspx?IdUsuario=" + idUsuario);
+                        this.Response.Redirect("~/src/aspx/frmDashboardCliente.aspx");
                     }
                 }
                 else

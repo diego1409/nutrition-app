@@ -18,7 +18,7 @@ namespace nutritionApp.src.aspx
 
             if (!this.IsPostBack)
             {
-                cedulaUsuarioModificar = Request.QueryString["cedula"];
+                cedulaUsuarioModificar = Session["Cedula"].ToString();
                 txtNumIdentificacion.Text = cedulaUsuarioModificar;
                 txtNumIdentificacion.Enabled = false;
                 //se pregunta si no es una recarga de pagina...
@@ -40,11 +40,11 @@ namespace nutritionApp.src.aspx
                     txtPeso.Text = item._Peso.ToString();
                     ddlProposito.SelectedValue = item._Proposito;
                     ddlGenero.SelectedValue = item._Genero;
-                    txtFechaNac.Text = item._FechaNac.ToString();
+                    txtFechaNac.Text = item._FechaNac.ToString("yyyy-MM-dd");
                     txtNomUsuario.Text = item._NomUsuario;
                     txtTelefono.Text = item._Telefono1;
                     txtContrasena.Text = item._Contrasena;
-                    txtTipoUsuario.Text = item._TipoUsuario;
+                    ddlTipoUsuario.SelectedValue = item._TipoUsuario;
                     txtContrasenaNueva.Text = "";
                     lblBtnDarDeBaja.Text = lblBtnDarDeBaja.Text + "<a class='btn btn-primary' href='frmDarDeBajaUsuario.aspx?cedula=" + cedulaUsuarioModificar + "&origen=editarperfil'>Dar de baja</a>";
 
@@ -72,7 +72,7 @@ namespace nutritionApp.src.aspx
                 usuarioModificar._Proposito = ddlProposito.SelectedValue;
                 usuarioModificar._Correo = txtCorreo.Text;
                 usuarioModificar._NomUsuario = txtNomUsuario.Text;
-                usuarioModificar._TipoUsuario = txtTipoUsuario.Text;
+                usuarioModificar._TipoUsuario = ddlTipoUsuario.SelectedValue;
                 usuarioModificar._Contrasena = txtContrasena.Text;
 
                 if (txtContrasenaNueva.Text != "")
@@ -109,7 +109,7 @@ namespace nutritionApp.src.aspx
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("frmListaUsuarios.aspx");
+            Response.Redirect("frmDashboard.aspx");
         }
 
         protected void btnDarDeBaja_Click(object sender, EventArgs e)

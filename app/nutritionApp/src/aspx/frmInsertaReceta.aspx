@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Insertar Receta" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmInsertaReceta.aspx.cs" Inherits="nutritionApp.src.aspx.frmInsertaReceta" %>
+﻿<%@ Page Title="Insertar Receta" Language="C#" MasterPageFile="~/src/aspx/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="frmInsertaReceta.aspx.cs" Inherits="nutritionApp.src.aspx.frmInsertaReceta" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/Login.css" type="text/css" />
@@ -40,11 +40,21 @@
             <br />
 
             <table>
+                <!-- Tiempo -->
+                <tr>
+                    <td>Nombre:</td>
+                    <td>
+                        <asp:TextBox ID="txtNombre" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td">
+                        <asp:RequiredFieldValidator ID="rqvTxtNombre" class="form-control" runat="server" ControlToValidate="txtNombre" ErrorMessage="Debe ingresar el nombre" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
                 <!-- Foto de receta -->
                 <tr>
                     <td>Imagen:</td>
                     <td>
-                        <asp:FileUpload ID="fotoReceta" class="form-control" runat="server" Width="250px"></asp:FileUpload>
+                        <asp:FileUpload ID="fotoReceta" class="form-control" runat="server" Width="250px" accept=".jpg"></asp:FileUpload>
                     </td> 
                 </tr>
 
@@ -53,7 +63,7 @@
                     <td>Dificultad:</td>
                     <td>
                         <asp:DropDownList ID="ddlDificultad" runat="server" Height="37px" Width="258px" Enabled="True">
-                            <asp:ListItem Value="F">Facil</asp:ListItem>
+                            <asp:ListItem Value="F">Fácil</asp:ListItem>
                             <asp:ListItem Value="M">Media</asp:ListItem>
                             <asp:ListItem Value="D">Dificil</asp:ListItem>
                         </asp:DropDownList>
@@ -147,7 +157,7 @@
                     </td>
                 </tr></table>
             <br><br>
-            <asp:Button ID="btnCrearReceta" class="btn btn-primary" runat="server" Text="Crear receta" />
+            <asp:Button ID="btnCrearReceta" class="btn btn-primary" runat="server" Text="Crear receta" OnClick="btnCrearReceta_Click"/>
             <br><br>
 
                 <div class="card-header">
@@ -160,33 +170,73 @@
                 <tr>
                     <td>Ingredientes:</td>
                     <td>
-                        <asp:DropDownList ID='ddlIngredientes' runat='server' Height='37px' Width='258px' Enabled='True'>
+                        <asp:DropDownList ID='ddlIngredientes' runat='server' Height='37px' Width='258px' Enabled="false">
                             <asp:ListItem Value="" Selected="True">Seleccione los ingredientes de su receta</asp:ListItem>
                          </asp:DropDownList> 
                     </td>
                     <td>
-                        <asp:Button ID="btnAgregarIngrediente" class="btn btn-primary" runat="server" Text="Agregar ingrediente" OnClick="btnAgregarIngrediente_Click" />
+                        <asp:Button ID="btnAgregarIngrediente" class="btn btn-primary" runat="server" Text="Agregar ingrediente a la receta" OnClick="btnAgregarIngrediente_Click" />
                     </td>
+                    <td>
+                        <asp:Button ID="btnRegistrarIngrediente" class="btn btn-info" runat="server" Text="Registrar un nuevo ingrediente" OnClick="btnRegistrarIngrediente_Click" />
+                    </td>
+                </tr>
+
+                <!-- Cantidad -->
+                <tr>
+                    <td>Cantidad:</td>
+                    <td>
+                        <asp:TextBox ID="txtCantidad" class="form-control" runat="server" Width="250px" Enabled="false" Text="1"></asp:TextBox>
+                    </td> 
+                    <%--<td>
+                        <asp:RequiredFieldValidator ID="rqvTxtCantidad" class="form-control" runat="server" ControlToValidate="txtCantidad" ErrorMessage="Debe ingresar la cantidad" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>--%>
+                </tr>
+
+                <!-- Medida -->
+                <tr>
+                    <td>Medida:</td>
+                    <td>
+                        <asp:TextBox ID="txtMedida" class="form-control" runat="server" Width="250px" Enabled="false" Text="1 porción"></asp:TextBox>
+                    </td> 
+                    <%--<td>
+                        <asp:RequiredFieldValidator ID="rqvTxtMedida" class="form-control" runat="server" ControlToValidate="txtMedida" ErrorMessage="Debe ingresar la medida" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>--%>
+                </tr>
+
+                <!-- Observaciones -->
+                <tr>
+                    <td>Observaciones:</td>
+                    <td>
+                        <asp:TextBox ID="txtObservaciones" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine" Enabled="false" Text=""></asp:TextBox>
+                    </td> 
                 </tr>
 
                 <!-- Muestra Ingredientes -->
                 <tr>
                     <td>Ingredientes de la receta:</td>
                     <td>
-                        
+                        <asp:Label ID="lblListaIngredientesReceta" runat="server" Enabled="false"></asp:Label>
                     </td>
                     <td></td>
-                </tr>
+                </tr></table>
+            <br><br>
+
+                <div class="card-header">
+				<h2>Paso 3: Instrucciones</h2>
+			    </div>
+            <br>
                   
                 <!-- Pasos -->
+            <table>
                 <tr>
                     <td>Pasos:</td>
                     <td>
-                        <asp:TextBox ID="txtPasos" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtPasos" class="form-control" runat="server" Width="500px" Height="100px" TextMode="MultiLine" ></asp:TextBox>
                     </td> 
-                    <td>
+                    <%--<td>
                         <asp:RequiredFieldValidator ID="rqvTxtPasos" class="form-control" runat="server" ControlToValidate="txtPasos" ErrorMessage="Debe ingresar los pasos" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
+                    </td>--%>
                 </tr>
 
             </table>
@@ -195,12 +245,47 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <asp:Button ID="btnRegistrar" class="btn btn-primary" runat="server" Text="" />
+            <asp:Button ID="btnInsertarPasos" class="btn btn-primary" runat="server" Text="Registrar instrucciones" OnClick="btnInsertarPasos_Click" />
         </div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+
+<!-- Modal -->
+    <div id="ModalInformacionIMC" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" align="center">Agregar ingrediente</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    
+                    <p>“Bajo peso”, “normal”, “sobrepeso” y “obesidad” son términos para referirse a los distintos
+                        rangos de peso corporal. La obesidad y el sobrepeso caracterizan a los rangos de peso que
+                        exceden lo que se considera saludable para una determinada estatura, el bajo peso describe al
+                        peso corporal inferior a lo que se considera saludable. Si su IMC está fuera del rango “normal”
+                        o peso saludable, se recomienda que hable con su médico o proveedor de atención médica sobre
+                        cómo puede llegar a un peso corporal más saludable. Se ha demostrado que la obesidad y el
+                        sobrepeso aumentan la probabilidad de padecer ciertas enfermedades y otros problemas de salud.
+                    </p>
+                    <p>A nivel individual, el IMC puede usarse como un método de detección, pero no sirve para
+                        diagnosticar la grasa corporal ni la salud de las personas. Un proveedor de atención médica con
+                        experiencia es quien debe realizar las evaluaciones médicas adecuadas para estimar el estado de
+                        salud y los riesgos de las personas.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 </asp:Content>
