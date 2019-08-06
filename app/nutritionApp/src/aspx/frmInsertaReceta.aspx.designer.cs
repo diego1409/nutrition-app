@@ -22,24 +22,6 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.HtmlControls.HtmlButton btnRegresar;
         
         /// <summary>
-        /// txtNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
-        
-        /// <summary>
-        /// rqvTxtNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtNombre;
-        
-        /// <summary>
         /// fotoReceta control.
         /// </summary>
         /// <remarks>
