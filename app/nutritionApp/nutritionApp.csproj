@@ -198,6 +198,7 @@
     <Content Include="src\aspx\frmCrearPlan.aspx" />
     <Content Include="src\css\frmCrearPlan.css" />
     <Content Include="src\css\frmDarDeBajaUsuario.css" />
+    <Content Include="src\css\frmDashboardAdministrador.css" />
     <Content Include="src\css\frmDashboardCliente.css" />
     <Content Include="src\css\frmEditarPerfil.css" />
     <Content Include="src\css\frmInsertaAdmin.css" />
@@ -228,7 +229,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\ingrediente.cs" />
-    <Compile Include="Clases\ManejoDatos.cs" />
+    <Compile Include="App_Start\ManejoDatos.cs" />
     <Compile Include="Clases\planNutricional.cs" />
     <Compile Include="Clases\medicion.cs" />
     <Compile Include="Clases\ingrediente_receta.cs" />

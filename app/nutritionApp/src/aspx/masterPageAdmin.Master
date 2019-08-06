@@ -37,7 +37,7 @@
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="frmDashboardAdmin.aspx">
+                                    <a class="nav-link js-scroll-trigger" href="frmDashboardAdministrador.aspx">
                                         Inicio
                                     </a>
                                 </li>
