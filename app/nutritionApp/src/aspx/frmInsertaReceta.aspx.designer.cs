@@ -22,7 +22,25 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.HtmlControls.HtmlButton btnRegresar;
         
         /// <summary>
-        /// Control fotoReceta.
+        /// txtNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        
+        /// <summary>
+        /// rqvTxtNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtNombre;
+        
+        /// <summary>
+        /// fotoReceta control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -211,7 +229,52 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredientes;
         
         /// <summary>
-        /// Control btnAgregarIngrediente.
+        /// txtNuevoIngrediente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNuevoIngrediente;
+        
+        /// <summary>
+        /// btnRegistrarIngrediente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegistrarIngrediente;
+        
+        /// <summary>
+        /// txtCantidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCantidad;
+        
+        /// <summary>
+        /// txtMedida control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMedida;
+        
+        /// <summary>
+        /// txtObservaciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
+        
+        /// <summary>
+        /// btnAgregarIngrediente control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -220,7 +283,16 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.Button btnAgregarIngrediente;
         
         /// <summary>
-        /// Control txtPasos.
+        /// lblListaIngredientesReceta control.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblListaIngredientesReceta;
+        
+        /// <summary>
+        /// txtPasos control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -229,21 +301,12 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.TextBox txtPasos;
         
         /// <summary>
-        /// Control rqvTxtPasos.
+        /// btnInsertarPasos control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtPasos;
-        
-        /// <summary>
-        /// Control btnRegistrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.Button btnInsertarPasos;
     }
 }

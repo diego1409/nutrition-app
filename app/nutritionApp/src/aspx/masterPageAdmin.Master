@@ -57,7 +57,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="drpMedidas">
                                         <a class="dropdown-item" href="frmMedidas.aspx">Actualizar Medidas</a>
-                                        <a class="dropdown-item" href="#">Historial</a>
+                                        <a class="dropdown-item" href="frmHistorialMedidas.aspx">Historial</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">

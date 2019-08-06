@@ -99,7 +99,7 @@ namespace nutritionApp
                 tmp._idReceta = Convert.ToInt32(contenedor["idReceta"]);
                 tmp._Nombre = contenedor["nombre"].ToString();
                 tmp._Tiempo = Convert.ToInt32(contenedor["tiempo"]);
-                tmp._TiempoComida = Convert.ToChar(contenedor["tiempoComida"]);
+                tmp._TiempoComida = contenedor["tiempoComida"].ToString();
                 lista.Add(tmp);
             }
             return lista;
@@ -273,18 +273,60 @@ namespace nutritionApp
             conect_local.inicializa();
             String consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "EXEC InsertaReceta ?,?,?,?,?,?,?,?,?,?";
+            consulta = "EXEC InsertaReceta ?,?,?,?,?,?,?,?,?,?,?";
             conect_local.annadir_consulta(consulta);
             conect_local.annadir_parametro(insertar_receta._Foto, 2);
+            conect_local.annadir_parametro(insertar_receta._Nombre, 2);
             conect_local.annadir_parametro(insertar_receta._Dificultad, 2);
-            conect_local.annadir_parametro(insertar_receta._Tiempo, 4);
+            conect_local.annadir_parametro(insertar_receta._Tiempo, 1);
             conect_local.annadir_parametro(insertar_receta._TiempoComida, 2);
-            conect_local.annadir_parametro(insertar_receta._Carbos, 2);
-            conect_local.annadir_parametro(insertar_receta._Proteinas, 2);
-            conect_local.annadir_parametro(insertar_receta._Grasas, 2);
-            conect_local.annadir_parametro(insertar_receta._Azucares, 2);
+            conect_local.annadir_parametro(insertar_receta._Carbos, 3);
+            conect_local.annadir_parametro(insertar_receta._Proteinas, 3);
+            conect_local.annadir_parametro(insertar_receta._Grasas, 3);
+            conect_local.annadir_parametro(insertar_receta._Azucares, 3);
             conect_local.annadir_parametro(insertar_receta._Calorias, 1);
-            conect_local.annadir_parametro(insertar_receta._Pasos, 3);
+            conect_local.annadir_parametro("", 2);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
+        }
+
+        public bool insertar_ingrediente_receta(ingrediente_receta insertar_ingrediente_receta)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC InsertaIngredienteReceta ?,?,?,?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(insertar_ingrediente_receta._IdIngrediente, 1);
+            conect_local.annadir_parametro(insertar_ingrediente_receta._Cantidad, 3);
+            conect_local.annadir_parametro(insertar_ingrediente_receta._Medida, 2);
+            conect_local.annadir_parametro(insertar_ingrediente_receta._Observaciones, 2);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
+        }
+
+        public bool insertar_ingrediente(string ingrediente)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC InsertaIngrediente ?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(ingrediente, 2);
 
             contenedor = conect_local.busca();
             while (contenedor.Read())
@@ -327,6 +369,25 @@ namespace nutritionApp
             return true;
         }
 
+        public bool inserta_pasos_receta(string pasos)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC InsertaPasosReceta ?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(pasos, 2);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
+        }
+
         /* == Funcion para retornar todos los ingredientes == */
         public OleDbDataReader RetornaIngrediente()
         {
@@ -338,7 +399,7 @@ namespace nutritionApp
             System.Data.OleDb.OleDbDataReader contenedor;
 
             //Se crea la consulta
-            consulta = "EXEC RetornaIngrediente";
+            consulta = "EXEC RetornaIngredientes";
             conect_local.annadir_consulta(consulta);
 
             //Se procede a buscar
@@ -423,6 +484,61 @@ namespace nutritionApp
                 medicionDevolver.Add(tmp);
             }
             return medicionDevolver;
+        }
+
+        public List<Medicion> HistorialMedidas(int idUsuario)
+        {
+            List<Medicion> medicionDevolver = new List<Medicion>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "select * from medicion where idUsuario="+ idUsuario + " order by idMedicion desc";
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                Medicion tmp = new Medicion();
+
+                tmp._Peso = Convert.ToDecimal(contenedor["peso"]);
+                tmp._Grasa = Convert.ToDecimal(contenedor["grasa"]);
+                tmp._Musculo = Convert.ToDecimal(contenedor["musculo"]);
+                tmp._Agua = Convert.ToDecimal(contenedor["agua"]);
+                tmp._Hueso = Convert.ToDecimal(contenedor["hueso"]);
+                tmp._Observaciones = contenedor["observaciones"].ToString();
+                tmp._Imc = Convert.ToDecimal(contenedor["imc"]);
+                tmp._Fecha = Convert.ToDateTime(contenedor["fecha"]);
+
+                medicionDevolver.Add(tmp);
+            }
+            return medicionDevolver;
+        }
+
+        public int RetornaUltimaReceta()
+        {
+            //Declaracion de variables
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            int ultimaReceta = 0;
+
+            //Se crea la consulta
+            consulta = "Select max(idReceta) as ultimaReceta from receta";
+            conect_local.annadir_consulta(consulta);
+
+            //Se procede a buscar
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+                ultimaReceta = Convert.ToInt32(contenedor["ultimaReceta"].ToString());
+            }
+            contenedor.Close();
+
+            //Se retorna el idUsuario para buscarlo y obtener los datos de usuario
+            return ultimaReceta;
         }
 
         public bool insertar_medicion(Medicion medicion)

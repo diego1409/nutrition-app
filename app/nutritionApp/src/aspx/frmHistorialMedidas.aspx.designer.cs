@@ -10,16 +10,16 @@
 namespace nutritionApp.src.aspx {
     
     
-    public partial class frmListaRecetas {
+    public partial class frmHistorialMedidas {
         
         /// <summary>
-        /// recetas control.
+        /// medidas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label recetas;
+        protected global::System.Web.UI.WebControls.Label medidas;
         
         /// <summary>
         /// hplRegresar control.
@@ -29,14 +29,5 @@ namespace nutritionApp.src.aspx {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplRegresar;
-        
-        /// <summary>
-        /// btnAgregar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
     }
 }

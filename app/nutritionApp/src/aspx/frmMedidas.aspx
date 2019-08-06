@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Actualizar Medidas" Language="C#" MasterPageFile="~/src/aspx/masterPage.Master" AutoEventWireup="true" CodeBehind="frmMedidas.aspx.cs" Inherits="nutritionApp.src.aspx.frmMedidas" %>
+﻿<%@ Page Title="Actualizar Medidas" Language="C#" MasterPageFile="~/src/aspx/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="frmMedidas.aspx.cs" Inherits="nutritionApp.src.aspx.frmMedidas" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/frmMedidas.css" type="text/css" />

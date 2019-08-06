@@ -40,11 +40,21 @@
             <br />
 
             <table>
+                <!-- Tiempo -->
+                <tr>
+                    <td>Nombre:</td>
+                    <td>
+                        <asp:TextBox ID="txtNombre" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                    </td> 
+                    <td">
+                        <asp:RequiredFieldValidator ID="rqvTxtNombre" class="form-control" runat="server" ControlToValidate="txtNombre" ErrorMessage="Debe ingresar el nombre" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
                 <!-- Foto de receta -->
                 <tr>
                     <td>Imagen:</td>
                     <td>
-                        <asp:FileUpload ID="fotoReceta" class="form-control" runat="server" Width="250px"></asp:FileUpload>
+                        <asp:FileUpload ID="fotoReceta" class="form-control" runat="server" Width="250px" accept=".jpg"></asp:FileUpload>
                     </td> 
                 </tr>
 
@@ -64,7 +74,7 @@
                     <td>Dificultad:</td>
                     <td>
                         <asp:DropDownList ID="ddlDificultad" runat="server" Height="37px" Width="258px" Enabled="True">
-                            <asp:ListItem Value="F">Facil</asp:ListItem>
+                            <asp:ListItem Value="F">Fácil</asp:ListItem>
                             <asp:ListItem Value="M">Media</asp:ListItem>
                             <asp:ListItem Value="D">Dificil</asp:ListItem>
                         </asp:DropDownList>
@@ -158,7 +168,7 @@
                     </td>
                 </tr></table>
             <br><br>
-            <asp:Button ID="btnCrearReceta" class="btn btn-primary" runat="server" Text="Crear receta" OnClick="btnCrearReceta_Click" />
+            <asp:Button ID="btnCrearReceta" class="btn btn-primary" runat="server" Text="Crear receta" OnClick="btnCrearReceta_Click"/>
             <br><br>
 
                 <div class="card-header">
@@ -171,12 +181,56 @@
                 <tr>
                     <td>Ingredientes:</td>
                     <td>
-                        <asp:DropDownList ID='ddlIngredientes' runat='server' Height='37px' Width='258px' Enabled='True'>
+                        <asp:DropDownList ID='ddlIngredientes' runat='server' Height='37px' Width='258px' Enabled="false">
                             <asp:ListItem Value="" Selected="True">Seleccione los ingredientes de su receta</asp:ListItem>
                          </asp:DropDownList> 
                     </td>
+                </tr>
+
+                <tr>
                     <td>
-                        <asp:Button ID="btnAgregarIngrediente" class="btn btn-primary" runat="server" Text="Agregar ingrediente" OnClick="btnAgregarIngrediente_Click" />
+                        <asp:TextBox ID="txtNuevoIngrediente" class="form-control" runat="server" Width="250px" Enabled="false" Text=""></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:Button ID="btnRegistrarIngrediente" class="btn btn-info" runat="server" Text="Registrar un nuevo ingrediente" Enabled="false" OnClick="btnRegistrarIngrediente_Click" />
+                    </td>
+                </tr>
+                <tr></br></tr>
+
+                <!-- Cantidad -->
+                <tr>
+                    <td>Cantidad:</td>
+                    <td>
+                        <asp:TextBox ID="txtCantidad" class="form-control" runat="server" Width="250px" Enabled="false" Text="1"></asp:TextBox>
+                    </td> 
+                    <%--<td>
+                        <asp:RequiredFieldValidator ID="rqvTxtCantidad" class="form-control" runat="server" ControlToValidate="txtCantidad" ErrorMessage="Debe ingresar la cantidad" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>--%>
+                </tr>
+
+                <!-- Medida -->
+                <tr>
+                    <td>Medida:</td>
+                    <td>
+                        <asp:TextBox ID="txtMedida" class="form-control" runat="server" Width="250px" Enabled="false" Text="1 porción"></asp:TextBox>
+                    </td> 
+                    <%--<td>
+                        <asp:RequiredFieldValidator ID="rqvTxtMedida" class="form-control" runat="server" ControlToValidate="txtMedida" ErrorMessage="Debe ingresar la medida" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>--%>
+                </tr>
+
+                <!-- Observaciones -->
+                <tr>
+                    <td>Observaciones:</td>
+                    <td>
+                        <asp:TextBox ID="txtObservaciones" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine" Enabled="false" Text=""></asp:TextBox>
+                    </td> 
+                </tr>
+
+                <!-- Agregar ingrediente -->
+                <tr>
+                    <td>
+                        <asp:Button ID="btnAgregarIngrediente" class="btn btn-primary" runat="server" Text="Agregar ingrediente a la receta" OnClick="btnAgregarIngrediente_Click" />
                     </td>
                 </tr>
 
@@ -184,20 +238,27 @@
                 <tr>
                     <td>Ingredientes de la receta:</td>
                     <td>
-                        
+                        <asp:Label ID="lblListaIngredientesReceta" runat="server" Enabled="false"></asp:Label>
                     </td>
                     <td></td>
-                </tr>
+                </tr></table>
+            <br><br>
+
+                <div class="card-header">
+				<h2>Paso 3: Instrucciones</h2>
+			    </div>
+            <br>
                   
                 <!-- Pasos -->
+            <table>
                 <tr>
                     <td>Pasos:</td>
                     <td>
-                        <asp:TextBox ID="txtPasos" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtPasos" class="form-control" runat="server" Width="500px" Height="100px" TextMode="MultiLine" ></asp:TextBox>
                     </td> 
-                    <td>
+                    <%--<td>
                         <asp:RequiredFieldValidator ID="rqvTxtPasos" class="form-control" runat="server" ControlToValidate="txtPasos" ErrorMessage="Debe ingresar los pasos" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
+                    </td>--%>
                 </tr>
 
             </table>
@@ -206,12 +267,37 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <asp:Button ID="btnRegistrar" class="btn btn-primary" runat="server" Text="" />
+            <asp:Button ID="btnInsertarPasos" class="btn btn-primary" runat="server" Text="Registrar instrucciones" OnClick="btnInsertarPasos_Click" />
         </div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+
+<!-- Modal -->
+    <%--<div id="ModalRegistrarIngrediente" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" align="center">Registrar ingrediente</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body">
+                    
+                    <asp:TextBox ID="txtIngredienteNuevo" class="form-control" runat="server" Width="250px" Enabled="false" Text=""></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rqvTxtIngredienteNuevo" class="form-control" runat="server" ControlToValidate="txtIngredienteNuevo" ErrorMessage="Debe ingresar el ingrediente" ForeColor="Red"></asp:RequiredFieldValidator>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ModalRegistrarIngrediente">Registrar nuevo ingrediente</button>
+                </div>
+            </div>
+
+        </div>
+    </div>--%>
 
 
 </asp:Content>

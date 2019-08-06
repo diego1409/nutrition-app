@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -128,6 +127,7 @@
     <Content Include="src\aspx\frmDashboardAdministrador.aspx" />
     <Content Include="src\aspx\frmDashboardCliente.aspx" />
     <Content Include="src\aspx\frmInsertaReceta.aspx" />
+    <Content Include="src\aspx\frmHistorialMedidas.aspx" />
     <Content Include="src\aspx\frmListaRecetas.aspx" />
     <Content Include="src\aspx\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\frmDarDeBajaUsuario.aspx" />
@@ -231,6 +231,7 @@
     <Compile Include="Clases\ManejoDatos.cs" />
     <Compile Include="Clases\planNutricional.cs" />
     <Compile Include="Clases\medicion.cs" />
+    <Compile Include="Clases\ingrediente_receta.cs" />
     <Compile Include="Clases\receta.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="src\aspx\frmInsertaReceta.aspx.designer.cs">
       <DependentUpon>frmInsertaReceta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmHistorialMedidas.aspx.cs">
+      <DependentUpon>frmHistorialMedidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmHistorialMedidas.aspx.designer.cs">
+      <DependentUpon>frmHistorialMedidas.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmListaRecetas.aspx.cs">
       <DependentUpon>frmListaRecetas.aspx</DependentUpon>
@@ -373,6 +381,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="src\img\recetas\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -462,7 +471,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
