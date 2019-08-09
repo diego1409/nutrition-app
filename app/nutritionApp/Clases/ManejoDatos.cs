@@ -168,6 +168,37 @@ namespace nutritionApp
             return usuarioDevolver;
         }
 
+        public List<receta> RetornaRecetaID(receta Receta)
+        {
+            List<receta> usuarioDevolver = new List<receta>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "Select * from receta where idReceta=" + Receta._idReceta;
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                receta tmp = new receta();
+                tmp._idReceta = Convert.ToInt16(contenedor["idReceta"]);
+                tmp._Nombre = contenedor["nombre"].ToString();
+                tmp._Dificultad = Convert.ToChar(contenedor["dificultad"]);
+                tmp._Tiempo = Convert.ToInt16(contenedor["tiempo"].ToString());
+                tmp._TiempoComida = contenedor["tiempoComida"].ToString();
+                tmp._Carbos = Convert.ToDecimal(contenedor["carbos"]);
+                tmp._Proteinas = Convert.ToDecimal(contenedor["proteinas"]);
+                tmp._Grasas = Convert.ToDecimal(contenedor["grasas"]);
+                tmp._Azucares = Convert.ToDecimal(contenedor["azucares"]);
+                tmp._Calorias = Convert.ToInt16(contenedor["calorias"]);
+                tmp._Pasos= contenedor["pasos"].ToString();
+
+                usuarioDevolver.Add(tmp);
+            }
+            return usuarioDevolver;
+        }
+
         public void DarDeBajaUsuario(Usuario usuario)
         {
             Conexion conec = new Conexion();

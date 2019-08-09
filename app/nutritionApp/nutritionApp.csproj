@@ -132,6 +132,7 @@
     <Content Include="src\aspx\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\frmDarDeBajaUsuario.aspx" />
     <Content Include="src\aspx\frmEditarPerfil.aspx" />
+    <Content Include="src\aspx\frmModificaReceta.aspx" />
     <Content Include="src\aspx\frmRegistro.aspx" />
     <Content Include="src\aspx\frmMedidas.aspx" />
     <Content Include="src\aspx\frmInsertaAdmin.aspx" />
@@ -298,6 +299,13 @@
     </Compile>
     <Compile Include="src\aspx\frmEditarPerfil.aspx.designer.cs">
       <DependentUpon>frmEditarPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmModificaReceta.aspx.cs">
+      <DependentUpon>frmModificaReceta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmModificaReceta.aspx.designer.cs">
+      <DependentUpon>frmModificaReceta.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmRegistro.aspx.cs">
       <DependentUpon>frmRegistro.aspx</DependentUpon>
