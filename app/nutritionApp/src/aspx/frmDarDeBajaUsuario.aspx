@@ -92,6 +92,16 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="form-row">
+                            <div class="col">
+                                <div class="input-group">
+                                    <!-- Origen de la ventana (no se muestra al usuario) -->
+                                    <asp:TextBox ID="txtOrigen" class="form-control" runat="server" Width="250px"
+                                        ReadOnly="true" Enabled="False" Visible="False" Font-Size="0pt"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>

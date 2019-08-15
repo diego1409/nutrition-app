@@ -406,9 +406,15 @@
                     </div>
                 </div>
 
+                <div class="row justify-content-center mb-4">
+                    <div class="col-6">
+                        <!-- En este label se van a cargar los resultados de la tabla -->
+                        <asp:Label ID="lblBtnDarDeBaja" runat="server" Text=""></asp:Label>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-6 align-self-center">
-                        <asp:HyperLink ID="hplRegresar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/frmDashboard.aspx">Regresar</asp:HyperLink>
+                        <asp:HyperLink ID="hplRegresar" class="btn btn-primary btn-block" runat="server" NavigateUrl="~/src/aspx/frmDashboard.aspx">Regresar</asp:HyperLink>
                     </div>
                     <div class="col-6 align-self-center">
                         <asp:Button ID="btnModificar" class="btn btn-success btn-block" runat="server" Text="Guardar Cambios" OnClick="btnModificar_Click"  />

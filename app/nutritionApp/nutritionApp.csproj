@@ -132,6 +132,7 @@
     <Content Include="src\aspx\frmListaUsuarios.aspx" />
     <Content Include="src\aspx\frmDarDeBajaUsuario.aspx" />
     <Content Include="src\aspx\frmEditarPerfil.aspx" />
+    <Content Include="src\aspx\frmLogoff.aspx" />
     <Content Include="src\aspx\frmRegistro.aspx" />
     <Content Include="src\aspx\frmMedidas.aspx" />
     <Content Include="src\aspx\frmInsertaAdmin.aspx" />
@@ -299,6 +300,13 @@
     </Compile>
     <Compile Include="src\aspx\frmEditarPerfil.aspx.designer.cs">
       <DependentUpon>frmEditarPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmLogoff.aspx.cs">
+      <DependentUpon>frmLogoff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmLogoff.aspx.designer.cs">
+      <DependentUpon>frmLogoff.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmRegistro.aspx.cs">
       <DependentUpon>frmRegistro.aspx</DependentUpon>

@@ -61,7 +61,14 @@ namespace nutritionApp.src.aspx
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("frmListaUsuarios.aspx");
+            if (txtOrigen.Text == "listausuarios")
+            {
+                Response.Redirect("frmListaUsuarios.aspx");
+            }
+            else
+            {
+                Response.Redirect("frmEditarPerfil.aspx");
+            }
         }
     }
 }

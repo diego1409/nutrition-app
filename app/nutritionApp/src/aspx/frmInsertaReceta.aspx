@@ -40,16 +40,6 @@
             <br />
 
             <table>
-                <!-- Tiempo -->
-                <tr>
-                    <td>Nombre:</td>
-                    <td>
-                        <asp:TextBox ID="txtNombre" class="form-control" runat="server" Width="250px"></asp:TextBox>
-                    </td> 
-                    <td">
-                        <asp:RequiredFieldValidator ID="rqvTxtNombre" class="form-control" runat="server" ControlToValidate="txtNombre" ErrorMessage="Debe ingresar el nombre" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
                 <!-- Foto de receta -->
                 <tr>
                     <td>Imagen:</td>

@@ -22,7 +22,7 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.HtmlControls.HtmlButton btnRegresar;
         
         /// <summary>
-        /// fotoReceta control.
+        /// Control fotoReceta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -211,52 +211,52 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.DropDownList ddlIngredientes;
         
         /// <summary>
-        /// txtNuevoIngrediente control.
+        /// Control txtNuevoIngrediente.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNuevoIngrediente;
         
         /// <summary>
-        /// btnRegistrarIngrediente control.
+        /// Control btnRegistrarIngrediente.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegistrarIngrediente;
         
         /// <summary>
-        /// txtCantidad control.
+        /// Control txtCantidad.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCantidad;
         
         /// <summary>
-        /// txtMedida control.
+        /// Control txtMedida.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMedida;
         
         /// <summary>
-        /// txtObservaciones control.
+        /// Control txtObservaciones.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
         
         /// <summary>
-        /// btnAgregarIngrediente control.
+        /// Control btnAgregarIngrediente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -265,7 +265,7 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.Button btnAgregarIngrediente;
         
         /// <summary>
-        /// lblListaIngredientesReceta control.
+        /// Control lblListaIngredientesReceta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -274,7 +274,7 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.Label lblListaIngredientesReceta;
         
         /// <summary>
-        /// txtPasos control.
+        /// Control txtPasos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -283,7 +283,7 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.TextBox txtPasos;
         
         /// <summary>
-        /// btnInsertarPasos control.
+        /// Control btnInsertarPasos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

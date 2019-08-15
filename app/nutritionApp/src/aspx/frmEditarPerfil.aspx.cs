@@ -46,8 +46,7 @@ namespace nutritionApp.src.aspx
                     txtContrasena.Text = item._Contrasena;
                     ddlTipoUsuario.SelectedValue = item._TipoUsuario;
                     txtContrasenaNueva.Text = "";
-                    lblBtnDarDeBaja.Text = lblBtnDarDeBaja.Text + "<a class='btn btn-primary' href='frmDarDeBajaUsuario.aspx?cedula=" + cedulaUsuarioModificar + "&origen=editarperfil'>Dar de baja</a>";
-
+                    lblBtnDarDeBaja.Text = lblBtnDarDeBaja.Text + "<a class='btn btn-danger btn-block' href='frmDarDeBajaUsuario.aspx?cedula=" + cedulaUsuarioModificar + "&origen=editarperfil'>Darme de baja</a>";
 
                 }
             }

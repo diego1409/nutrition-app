@@ -74,7 +74,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="drpUsuario">
                                         <a class="dropdown-item" href="frmEditarPerfil.aspx">Editar Perfil</a>
-                                        <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                                        <a class="dropdown-item" href="frmLogoff.aspx">Cerrar Sesión</a>
                                     </div>
                                 </li>
                             </ul>
