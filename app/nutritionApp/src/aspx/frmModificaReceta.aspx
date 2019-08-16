@@ -163,6 +163,64 @@
                             </tbody>
                         </table>
                     </div>
+                        <!-- Selecciona Ingredientes -->
+                <h2>Agregar ingredientes a la receta</h2>
+            <table>
+                <tr>
+                    <td>Ingredientes:</td>
+                    <td>
+                        <asp:DropDownList ID='ddlIngredientes' runat='server' Height='37px' Width='258px' Enabled="true">
+                            <asp:ListItem Value="" Selected="True">Agregue ingredientes a la receta</asp:ListItem>
+                         </asp:DropDownList> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <asp:TextBox ID="txtNuevoIngrediente" class="form-control" runat="server" Width="250px" Enabled="true" Text=""></asp:TextBox>
+                    </td> 
+                    <td>
+                        <asp:Button ID="btnRegistrarIngrediente" class="btn btn-info" runat="server" Text="Registrar un nuevo ingrediente" Enabled="true" OnClick="btnRegistrarIngrediente_Click" />
+                    </td>
+                </tr>
+                <tr></br></tr>
+
+                <!-- Cantidad -->
+                <tr>
+                    <td>Cantidad:</td>
+                    <td>
+                        <asp:TextBox ID="txtCantidad" class="form-control" runat="server" Width="250px" Enabled="true" Text="1"></asp:TextBox>
+                    </td> 
+                    <%--<td>
+                        <asp:RequiredFieldValidator ID="rqvTxtCantidad" class="form-control" runat="server" ControlToValidate="txtCantidad" ErrorMessage="Debe ingresar la cantidad" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>--%>
+                </tr>
+
+                <!-- Medida -->
+                <tr>
+                    <td>Medida:</td>
+                    <td>
+                        <asp:TextBox ID="txtMedida" class="form-control" runat="server" Width="250px" Enabled="true" Text="1 porción"></asp:TextBox>
+                    </td> 
+                    <%--<td>
+                        <asp:RequiredFieldValidator ID="rqvTxtMedida" class="form-control" runat="server" ControlToValidate="txtMedida" ErrorMessage="Debe ingresar la medida" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>--%>
+                </tr>
+
+                <!-- Observaciones -->
+                <tr>
+                    <td>Observaciones:</td>
+                    <td>
+                        <asp:TextBox ID="txtObservaciones" class="form-control" runat="server" Width="250px" Height="71px" TextMode="MultiLine" Enabled="true" Text=""></asp:TextBox>
+                    </td> 
+                </tr>
+
+                <!-- Agregar ingrediente -->
+                <tr>
+                    <td>
+                        <asp:Button ID="btnAgregarIngrediente" class="btn btn-primary" runat="server" Text="Agregar ingrediente a la receta" OnClick="btnAgregarIngrediente_Click" />
+                    </td>
+                </tr></table>
             <br>
 
                 <!-- Selecciona Ingredientes -->

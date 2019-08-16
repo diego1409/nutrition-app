@@ -48,8 +48,13 @@ namespace nutritionApp.src.aspx
 
                     foreach (ingrediente_receta item in md.ListaIngredientesReceta(IdRecetaModificar))
                     {
-                    ingrediente_receta.Text = ingrediente_receta.Text + "<tr><td>" + item._Nombre_ingrediente + "</td><td>" + item._Cantidad + "</td><td>" + item._Medida + "</td><td>" + item._Observaciones + "</td><td> <a class='btn btn-primary btn-block' href='frmModificaReceta.aspx?idReceta=" + item._IdReceta + "'>Modificar</a></td></tr>";
+                    ingrediente_receta.Text = ingrediente_receta.Text + "<tr><td>" + item._Nombre_ingrediente + "</td><td>" + item._Cantidad + "</td><td>" + item._Medida + "</td><td>" + item._Observaciones + "</td><td> <a class='btn btn-primary btn-block' href='frmModificaIngredienteReceta.aspx?idReceta=" + item._IdReceta + "&idIngrediente="+item._IdIngrediente+"'>Modificar</a></td></tr>";
                     }
+
+                foreach (ingrediente item in md.ListaIngredientes())
+                {
+                    ddlIngredientes.Items.Add(new ListItem(item._Nombre, item._IdIngrediente.ToString()));
+                }
             }
         }
 
@@ -78,5 +83,26 @@ namespace nutritionApp.src.aspx
         {
             Response.Redirect("frmListaUsuarios.aspx");
         }
+
+        protected void btnRegistrarIngrediente_Click(object sender, EventArgs e)
+        {
+            md.insertar_ingrediente(txtNuevoIngrediente.Text);
+            ddlIngredientes.Items.Clear();
+            foreach (ingrediente item in md.ListaIngredientes())
+            {
+                ddlIngredientes.Items.Add(new ListItem(item._Nombre, item._IdIngrediente.ToString()));
+            }
+        }
+        protected void btnAgregarIngrediente_Click(object sender, EventArgs e)
+        {
+            ingrediente_receta ingredienteReceta = new ingrediente_receta();
+            ingredienteReceta._IdIngrediente = Convert.ToInt16(ddlIngredientes.SelectedValue);
+            ingredienteReceta._Cantidad = Convert.ToDecimal(txtCantidad.Text);
+            ingredienteReceta._Medida = txtMedida.Text;
+            ingredienteReceta._Observaciones = txtObservaciones.Text;
+            md.insertar_ingrediente_receta(ingredienteReceta);
+            Response.Redirect("frmModificaReceta.aspx?idReceta=" + txtIdReceta.Text);
+        }
+
     }
 }

@@ -123,6 +123,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="src\aspx\frmModificaIngredienteReceta.aspx" />
     <Content Include="src\aspx\frmDashboard.aspx" />
     <Content Include="src\aspx\frmDashboardAdministrador.aspx" />
     <Content Include="src\aspx\frmDashboardCliente.aspx" />
@@ -236,6 +237,13 @@
     <Compile Include="Clases\receta.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmModificaIngredienteReceta.aspx.cs">
+      <DependentUpon>frmModificaIngredienteReceta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmModificaIngredienteReceta.aspx.designer.cs">
+      <DependentUpon>frmModificaIngredienteReceta.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmDashboard.aspx.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
