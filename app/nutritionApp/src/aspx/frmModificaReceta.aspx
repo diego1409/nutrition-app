@@ -12,7 +12,9 @@
                     <div class="col">
                         <h1>Modificar Receta</h1>
                     </div>
+                   
                 </div>
+
                 <div class="row mb-5">
                     <div class="form-group">
             <!-- Hipervínculo Regresar -->
@@ -39,13 +41,6 @@
                     <td">
                         <asp:RequiredFieldValidator ID="rqvTxtNombre" class="form-control" runat="server" ControlToValidate="txtNombre" ErrorMessage="Debe ingresar el nombre" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                </tr>
-                <!-- Foto de receta -->
-                <tr>
-                    <td>Imagen:</td>
-                    <td>
-                        <asp:FileUpload ID="fotoReceta" class="form-control" runat="server" Width="250px" accept=".jpg"></asp:FileUpload>
-                    </td> 
                 </tr>
 
                 <!-- Dificultad -->
@@ -151,6 +146,23 @@
                 <div class="card-header">
 				<h2>Ingredientes de la Receta:</h2>
 			    </div>
+                <div class="col">
+                        <table >
+                            <thead>
+                                <tr>
+                                  <th scope="col">Ingrediente</th>
+                                  <th scope="col">Cantidad</th>
+                                  <th scope="col">Medida</th>
+                                  <th scope="col">Observaciones</th>
+                                  <th scope="col" class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- En este label se van a cargar los resultados de la tabla -->
+                                <asp:Label ID="ingrediente_receta" runat="server" Text=""></asp:Label>
+                            </tbody>
+                        </table>
+                    </div>
             <br>
 
                 <!-- Selecciona Ingredientes -->
@@ -181,7 +193,7 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <asp:Button ID="btnModificarReceta" class="btn btn-primary" runat="server" Text="Modificar Receta" />
+            <asp:Button ID="btnModificarReceta" class="btn btn-primary" runat="server" Text="Modificar Receta" OnClick="btnModificar_Click" />
         </div>
             </div>
         </div>

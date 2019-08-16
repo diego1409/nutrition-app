@@ -82,6 +82,31 @@ namespace nutritionApp
             return lista;
         }
 
+        public List<ingrediente_receta> ListaIngredientesReceta(int idReceta)
+        {
+            List<ingrediente_receta> lista = new List<ingrediente_receta>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "Select ingrediente_receta.*, ingrediente.nombre as nombre_ingrediente from ingrediente_receta inner join ingrediente on ingrediente_receta.idIngrediente = ingrediente.idIngrediente where idReceta=17";
+            conec.annadir_consulta(consulta);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                ingrediente_receta tmp = new ingrediente_receta();
+                tmp._IdReceta = Convert.ToInt16(contenedor["idReceta"]);
+                tmp._IdIngrediente = Convert.ToInt16(contenedor["idIngrediente"]);
+                tmp._Cantidad = Convert.ToDecimal(contenedor["cantidad"].ToString());
+                tmp._Medida = contenedor["medida"].ToString();
+                tmp._Observaciones = contenedor["observaciones"].ToString();
+                tmp._Nombre_ingrediente = contenedor["nombre_ingrediente"].ToString();
+                lista.Add(tmp);
+            }
+            return lista;
+        }
+
         public List<receta> ListaRecetas()
         {
             List<receta> lista = new List<receta>();
@@ -391,6 +416,35 @@ namespace nutritionApp
             conect_local.annadir_parametro(modificar._NomUsuario, 2);
             conect_local.annadir_parametro(modificar._Contrasena, 2);
             conect_local.annadir_parametro(modificar._TipoUsuario, 2);
+
+            contenedor = conect_local.busca();
+            while (contenedor.Read())
+            {
+            }
+            contenedor.Close();
+            return true;
+        }
+
+        public bool modificar_receta(receta modificar)
+        {
+            Conexion conect_local = new Conexion();
+            conect_local.parametro("", "", "", "");
+            conect_local.inicializa();
+            String consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "EXEC ModificaReceta ?,?,?,?,?,?,?,?,?,?,?";
+            conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(modificar._idReceta, 1);
+            conect_local.annadir_parametro(modificar._Nombre, 2);
+            conect_local.annadir_parametro(modificar._Dificultad, 2);
+            conect_local.annadir_parametro(modificar._Tiempo, 1);
+            conect_local.annadir_parametro(modificar._TiempoComida, 2);
+            conect_local.annadir_parametro(modificar._Carbos, 3);
+            conect_local.annadir_parametro(modificar._Proteinas, 3);
+            conect_local.annadir_parametro(modificar._Grasas, 3);
+            conect_local.annadir_parametro(modificar._Azucares, 3);
+            conect_local.annadir_parametro(modificar._Calorias, 1);
+            conect_local.annadir_parametro(modificar._Pasos, 2);
 
             contenedor = conect_local.busca();
             while (contenedor.Read())

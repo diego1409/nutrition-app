@@ -13,6 +13,7 @@ namespace nutritionApp.src.aspx
     public partial class frmModificaReceta : System.Web.UI.Page
     {
         int IdRecetaModificar;
+        ManejoDatos md = new ManejoDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -44,31 +45,33 @@ namespace nutritionApp.src.aspx
                     txtPasos.Text = item._Pasos;
                     
                 }
+
+                    foreach (ingrediente_receta item in md.ListaIngredientesReceta(IdRecetaModificar))
+                    {
+                    ingrediente_receta.Text = ingrediente_receta.Text + "<tr><td>" + item._Nombre_ingrediente + "</td><td>" + item._Cantidad + "</td><td>" + item._Medida + "</td><td>" + item._Observaciones + "</td><td> <a class='btn btn-primary btn-block' href='frmModificaReceta.aspx?idReceta=" + item._IdReceta + "'>Modificar</a></td></tr>";
+                    }
             }
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
             ///Verificar que todas las validaciones hayan sido satisfactorias.
-                //Usuario usuarioModificar = new Usuario();
-                //usuarioModificar._Cedula = txtNumIdentificacion.Text;
-                //usuarioModificar._Genero = ddlGenero.SelectedValue;
-                //usuarioModificar._FechaNac = Convert.ToDateTime(txtFechaNac.Text);
-                //usuarioModificar._Nombre = txtNombre.Text;
-                //usuarioModificar._Apellido1 = txtPrimerApellido.Text;
-                //usuarioModificar._Apellido2 = txtSegundoApellido.Text;
-                //usuarioModificar._Direccion = txtDireccion.Text;
-                //usuarioModificar._Telefono1 = txtTelefono.Text;
-                //usuarioModificar._Estatura = Convert.ToInt32(txtEstatura.Text);
-                //usuarioModificar._Peso = Convert.ToDecimal(txtPeso.Text);
-                //usuarioModificar._Proposito = ddlProposito.SelectedValue;
-                //usuarioModificar._Correo = txtCorreo.Text;
-                //usuarioModificar._NomUsuario = txtNomUsuario.Text;
-                //usuarioModificar._TipoUsuario = ddlTipoUsuario.SelectedValue;
+            receta recetaModificar = new receta();
+            recetaModificar._idReceta = Convert.ToInt32(txtIdReceta.Text);
+            recetaModificar._Nombre = txtNombre.Text;
+            recetaModificar._Dificultad = Convert.ToChar(ddlDificultad.SelectedValue);
+            recetaModificar._Tiempo = Convert.ToInt32(txtTiempo.Text);
+            recetaModificar._TiempoComida = ddlTiempoComida.SelectedValue;
+            recetaModificar._Carbos = Convert.ToDecimal(txtCarbos.Text);
+            recetaModificar._Proteinas = Convert.ToDecimal(txtProteinas.Text);
+            recetaModificar._Grasas = Convert.ToDecimal(txtGrasas.Text);
+            recetaModificar._Azucares = Convert.ToDecimal(txtAzucares.Text);
+            recetaModificar._Calorias = Convert.ToInt32(txtCalorias.Text);
+            recetaModificar._Pasos = txtPasos.Text;
 
-                //ManejoDatos md = new ManejoDatos();
-                //md.modificar_usuario(usuarioModificar);
-                //Response.Redirect("frmListausuarios.aspx");
+            ManejoDatos md = new ManejoDatos();
+            md.modificar_receta(recetaModificar);
+            Response.Redirect("frmListaRecetas.aspx");
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)

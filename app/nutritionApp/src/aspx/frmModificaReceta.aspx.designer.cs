@@ -49,15 +49,6 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtNombre;
         
         /// <summary>
-        /// fotoReceta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fotoReceta;
-        
-        /// <summary>
         /// ddlDificultad control.
         /// </summary>
         /// <remarks>
@@ -200,6 +191,15 @@ namespace nutritionApp.src.aspx {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtCalorias;
+        
+        /// <summary>
+        /// ingrediente_receta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ingrediente_receta;
         
         /// <summary>
         /// txtPasos control.
