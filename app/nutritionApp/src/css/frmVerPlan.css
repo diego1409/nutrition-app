@@ -1,0 +1,11 @@
+﻿h1 {
+    font-size: 9rem;
+    text-align: center;
+}
+
+#divVerPlan {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
