@@ -200,7 +200,7 @@
                 <tr>
                     <td>Medida:</td>
                     <td>
-                        <asp:TextBox ID="txtMedida" class="form-control" runat="server" Width="250px" Enabled="true" Text="1 porción"></asp:TextBox>
+                        <asp:TextBox ID="txtMedida" class="form-control" runat="server" Width="250px" Enabled="true" Text="porción"></asp:TextBox>
                     </td> 
                     <%--<td>
                         <asp:RequiredFieldValidator ID="rqvTxtMedida" class="form-control" runat="server" ControlToValidate="txtMedida" ErrorMessage="Debe ingresar la medida" ForeColor="Red"></asp:RequiredFieldValidator>
