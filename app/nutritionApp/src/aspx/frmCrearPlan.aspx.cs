@@ -18,6 +18,7 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
         public ManejoDatos retorna = new ManejoDatos();
         public OleDbDataReader lista;
         public int idUsuario;
+        public int idPlan;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,10 +28,11 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
             //en el boton de guardar
             if (!this.IsPostBack)
             {
+                //Se obtiene el id de usuario en formato int
+                idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
                 CargaIngredientes();
-                this.Session.Add("idUsuario", 2);
-                CalcularCalc();
-                ObtenerProposito();
+                //this.Session.Add("idUsuario", 2);
+                ObtenerCalcProposito();
             }
 
             
@@ -43,7 +45,6 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
         {
             //Variables a utilizar
             ListItem item;
-            idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
 
             //Cargar la lista de ingredientes
             lista = retorna.RetornaIngrediente();
@@ -73,7 +74,7 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
         /// <summary>
         /// Metodo para calcular calorias necesarias para el plan nutricional
         /// </summary>
-        void CalcularCalc()
+        void ObtenerCalcProposito()
         {
             //Variables a utilizar
             int calorias = 0; //Resultado a mostrar
@@ -85,7 +86,6 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
             decimal caloriasMantenerPeso = 0;
 
             //Se obtiene el peso de la persona
-            idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
             lista = retorna.RetornaUsuario(idUsuario);
             Usuario user = new Usuario();
             user = retorna.almacenarDatosUsuario(lista, user);
@@ -112,16 +112,9 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
             }
 
             //Mostrar el resultado en el form
-            lblCalorias.Text = calorias.ToString();
-        }
+            this.lblCalorias.Text = calorias.ToString();
 
-        void ObtenerProposito()
-        {
-            //Se obtiene el proposito de la persona
-            idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
-            lista = retorna.RetornaUsuario(idUsuario);
-            Usuario user = new Usuario();
-            user = retorna.almacenarDatosUsuario(lista, user);
+            //Obtener el proposito de la persona
             this.ddlProposito.SelectedValue = user._Proposito;
             cambiarOpciones();
         }
@@ -176,12 +169,116 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
 
         protected void btnCrearPlan_Click(object sender, EventArgs e)
         {
-            idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
+            //Se actualizan la lista de alergias de la persona
+            ActualizarAlergias();
+
+            //Se crea el plan nutricional
             planNutricional plan = new planNutricional(idUsuario, this.ddlCarbos.SelectedValue, 
                                         this.ddlProteinas.SelectedValue, this.ddlGrasas.SelectedValue, 
                                         this.ddlAzucares.SelectedValue, Convert.ToInt32(this.lblCalorias.Text));
 
             retorna.InsertaPlanNutricional(plan);
+
+            //Se genera el resto del plan nutricional: comidas recomendadas
+            if (SeleccionarComidas())
+            {
+                Response.Redirect("frmVerPlan.aspx?idPlan=" + idPlan.ToString());
+            }
+            else
+            {
+                Response.Write("<script>window.alert('Problemas al crear el plan nutricional. Intente de nuevo más tarde.');</script>");
+            }
         }
+
+        void ActualizarAlergias()
+        {
+            foreach (ListItem ingrediente in chkAlergias.Items)
+            {
+                if (ingrediente.Selected)
+                {
+                    retorna.InsertaAlergia(idUsuario, Convert.ToInt32(ingrediente.Value));
+                }
+                else
+                {
+                    retorna.EliminaAlergia(idUsuario, Convert.ToInt32(ingrediente.Value));
+                }
+            }
+        }
+
+        bool SeleccionarComidas()
+        {
+            //Variables a utilizar
+            idPlan = retorna.RetornaUltimoPlan();
+            int carbos = 0;
+            int azucares = 0;
+            double proteinas = 0;
+            double grasas = 0;
+            double caloriasComida = 0;
+            planNutricional plan = new planNutricional();
+            plan = retorna.RetornaPlanNutricional(idPlan);
+
+            //Datos por comida
+
+            //Carbohidratos
+            switch (plan.carbos)
+            {
+                case "N":
+                    carbos = 0;
+                    break;
+
+                case "B":
+                    carbos = 25;
+                    break;
+
+                case "M":
+                    carbos = 36;
+                    break;
+
+                case "A":
+                    carbos = 999;
+                    break;
+
+                default:
+                    break;
+
+            }
+
+            //Azucares
+            switch (plan.azucares)
+            {
+                case "N":
+                    azucares = 0;
+                    break;
+
+                case "B":
+                    azucares = 5;
+                    break;
+
+                case "M":
+                    azucares = 10;
+                    break;
+
+                case "A":
+                    azucares = 999;
+                    break;
+
+                default:
+                    break;
+
+            }
+
+            //Proteinas
+            proteinas = ((plan.calorias * 0.2) / 4) / 5;
+
+            //Grasas
+            grasas = ((plan.calorias * 0.3) / 9) / 5;
+
+            //Calorias a consumir por comida
+            caloriasComida = plan.calorias / 5;
+
+            //Se llama el procedimiento para insertar las comidas
+            return retorna.InsertaComidasPlan(idPlan, caloriasComida, carbos, proteinas, grasas, azucares);
+        }
+            
     }
 }

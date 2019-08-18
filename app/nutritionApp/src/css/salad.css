@@ -90,3 +90,7 @@ h5 {
 p {
     font-family: hkGroteskMedium;
 }
+
+.scroll-y {
+    overflow-y: scroll;
+}

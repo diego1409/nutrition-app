@@ -139,6 +139,7 @@
     <Content Include="src\aspx\frmMedidas.aspx" />
     <Content Include="src\aspx\frmInsertaAdmin.aspx" />
     <Content Include="src\aspx\frmModificaUsuario.aspx" />
+    <Content Include="src\aspx\frmVerPlan.aspx" />
     <Content Include="src\aspx\Index.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -232,7 +233,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\ingrediente.cs" />
-    <Compile Include="App_Start\ManejoDatos.cs" />
+    <Compile Include="Clases\ManejoDatos.cs" />
     <Compile Include="Clases\planNutricional.cs" />
     <Compile Include="Clases\medicion.cs" />
     <Compile Include="Clases\ingrediente_receta.cs" />
@@ -330,6 +331,13 @@
     </Compile>
     <Compile Include="src\aspx\frmRegistro.aspx.designer.cs">
       <DependentUpon>frmRegistro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmVerPlan.aspx.cs">
+      <DependentUpon>frmVerPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmVerPlan.aspx.designer.cs">
+      <DependentUpon>frmVerPlan.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

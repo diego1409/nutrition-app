@@ -9,39 +9,143 @@
                 <h1>Plan Nutricional</h1>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-3">
             <div class="col">
-                <!-- Card Narrower -->
-                <div class="card card-cascade narrower">
-
-                    <!-- Card image -->
-                    <div class="view view-cascade overlay">
-                        <img class="card-img-top"
-                            src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
-                            alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
+                <h5 class="text-center">Este plan nutricional contiene los siguientes datos:</h5>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">        
+            <h2 class="text-center">Tiempos de Comida</h2>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <%= cardsComida %>
+            <!--
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <img class="card-img-top" src="../img/testimonioImg1.jpg" height="300" alt="Desayuno">
+                    <div class="card-body">
+                      <h2 class="card-title text-center">Receta</h2>
+                      <h6 class="card-subtitle mb-2 text-center">Desayuno</h6>
+                      <p class="card-text text-center">
+                          Ingredientes de la receta
+                      </p>
+                      <p class="text-center">
+                          <a href="" class="btn btn-primary">Ver Receta</a>
+                          <a href="" class="btn btn-warning">Editar Receta</a>
+                      </p>
+                  
                     </div>
-
-                    <!-- Card content -->
-                    <div class="card-body card-body-cascade">
-
-                        <!-- Label -->
-                        <h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
-                        <!-- Title -->
-                        <h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
-                        <!-- Text -->
-                        <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                            suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-                        <!-- Button -->
-                        <a class="btn btn-unique">Button</a>
-
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Merienda Manana">
+                    <div class="card-body">
+                      <h2 class="card-title text-center">Merienda Manana</h2>
+                      <p class="card-text text-center">
+                          Ingredientes de la receta
+                      </p>
+                      <p class="text-center">
+                          <a href="" class="btn btn-primary">Ver Receta</a>
+                      </p>
+                  
                     </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Almuerzo">
+                    <div class="card-body">
+                      <h2 class="card-title text-center">Almuerzo</h2>
+                      <p class="card-text text-center">
+                          Ingredientes de la receta
+                      </p>
+                      <p class="text-center">
+                          <a href="" class="btn btn-primary">Ver Receta</a>
+                      </p>
+                  
+                    </div>
+              </div>
+            </div>
 
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Desayuno">
+                    <div class="card-body">
+                      <h2 class="card-title text-center">Desayuno</h2>
+                      <p class="card-text text-center">
+                          Ingredientes de la receta
+                      </p>
+                      <p class="text-center">
+                          <a href="" class="btn btn-primary">Ver Receta</a>
+                      </p>
+                  
+                    </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Merienda Manana">
+                    <div class="card-body">
+                      <h2 class="card-title text-center">Merienda Manana</h2>
+                      <p class="card-text text-center">
+                          Ingredientes de la receta
+                      </p>
+                      <p class="text-center">
+                          <a href="" class="btn btn-primary">Ver Receta</a>
+                      </p>
+                  
+                    </div>
+              </div>
+            </div>
+            -->
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="row justify-content-center mb-3">        
+                    <h2 class="text-center">Hidratación</h2>
                 </div>
-                <!-- Card Narrower -->
 
+                <div class="row justify-content-center mb-3">   
+                    <div class="col-8">
+                        <div class="card">
+                            <img class="card-img-top" src="..." alt="Hidratación Diaria">
+                            <div class="card-body">
+                     
+                              <p class="card-text text-center">
+                                  De acuerdo con sus medidas actuales, tienes que consumir (en litros):
+                              </p>
+                              <h3 class="text-center">
+                                  <asp:Label ID="lblLitros" runat="server" Font-Size="50pt" Text="2.5"></asp:Label> l
+                              </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="row justify-content-center mb-3">        
+                    <h2 class="text-center">Consumo Calórico</h2>
+                </div>
+
+                <div class="row justify-content-center mb-3">   
+                    <div class="col-8">
+                        <div class="card">
+                            <img class="card-img-top" src="..." alt="Consumo Calórico">
+                            <div class="card-body">
+                            
+                              <p class="card-text text-center">
+                                  De acuerdo con sus medidas actuales, debes consumir en 5 comidas: 
+                              </p>
+                              <h3 class="text-center">
+                                  <asp:Label ID="lblCalorias" runat="server" Font-Size="50pt" Text="1800"></asp:Label> kcal
+                              </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
