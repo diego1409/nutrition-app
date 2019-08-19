@@ -75,13 +75,13 @@
                                         <asp:Button ID="btnIngresar" runat="server" Text="Iniciar Sesión" class="btn btn-success btn-block" OnClick="btnIngresar_onClick" Height="50px" />
                                     </div>
                                 </div>
-                                <div class="form-row justify-content-center">
+                                <%--<div class="form-row justify-content-center">
                                     <div class="col align-self-center">
                                         <p class="text-center">
                                             <a href="#">¿Olvidaste tu contraseña?</a>
                                         </p>
                                     </div>
-                                </div>
+                                </div>--%>
 
                             </div>
                         </div>

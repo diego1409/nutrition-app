@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <img class="card-img-top" src="../img/recetas/<%= receta._idReceta %>.jpg" height="50%" alt="<%= receta._TiempoComida %>">
+                    <img class="card-img-top" src="../img/recetas/<%= receta._idReceta %>.jpg" alt="<%= receta._TiempoComida %>">
                     <div class="card-body">
                       <h2 class="card-title text-center"><%= receta._Nombre %></h2>
                       <h6 class="card-subtitle mb-2 text-center"><%= receta._TiempoComida %></h6>
