@@ -8,7 +8,7 @@
     <div id="divListaRecetas" class="container-fluid">
         <div class="row">
             <div class="col">
-                <h1>Historial de medidas</h1>
+                <h1>Historial de Medidas</h1>
             </div>
         </div>
         <div id="divTabla" class="row">
@@ -35,7 +35,11 @@
         </div>
         <div id="btnTabla" class="row">
             <div class="col-6 align-self-center">
-                <asp:Hyperlink ID="hplRegresar" class="btn btn-danger btn-block" runat="server" Text="Volver" NavigateUrl="frmMedidas.aspx"  />
+                <asp:Hyperlink ID="hplRegresar" class="btn btn-danger btn-block" runat="server" Text="Volver" NavigateUrl="frmDashboard.aspx"  />
+            </div>
+
+            <div class="col-6 align-self-center">
+                <asp:Hyperlink ID="hplActualizar" class="btn btn-success btn-block" runat="server" Text="Actualizar Medidas" NavigateUrl="frmMedidas.aspx"  />
             </div>
         </div>
   </div>

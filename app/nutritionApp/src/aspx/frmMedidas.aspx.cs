@@ -44,32 +44,32 @@ namespace nutritionApp.src.aspx
                 foreach (Medicion item in md.RetornaUltimaMedicion(medicion))
                 {
                     //Rellenar campos
-                    txtPeso.Text = item._Peso.ToString();
-                    txtGrasa.Text = item._Grasa.ToString();
-                    txtHueso.Text = item._Hueso.ToString();
-                    txtAgua.Text = item._Agua.ToString();
+                    txtPeso.Text = ((int)item._Peso).ToString();
+                    txtGrasa.Text = ((int)item._Grasa).ToString();
+                    txtHueso.Text = ((int)item._Hueso).ToString();
+                    txtAgua.Text = ((int)item._Agua).ToString();
                     txtObservaciones.Text = item._Observaciones;
-                    txtMusculo.Text = item._Musculo.ToString();
+                    txtMusculo.Text = ((int)item._Musculo).ToString();
                     txtEstatura.Text = item._Estatura.ToString();
-                    
+                    lblIMC.Text = ((int)item._Imc).ToString();
 
                     //Rellenar IMC
                     if (item._Imc < (185 / 10)) {
-                        lblIMC.Text = lblIMC.Text + "<h2>" + item._Imc + "</h2><br><p>IMC</p><br><p>Bajo Peso</p>";
+                        lblIMCSub.Text = "Bajo Peso";
                     }
                     else
                     {
                         if (item._Imc < (250 / 10))
                         {
-                            lblIMC.Text = lblIMC.Text + "<h2>" + item._Imc + "</h2><br><p>IMC</p><br><p>Peso saludable</p>";
+                            lblIMCSub.Text = "Peso Saludable";
                         }
                         else {
                             if (item._Imc < (300 / 10))
                             {
-                                lblIMC.Text = lblIMC.Text + "<h2>" + item._Imc + "</h2><br><p>IMC</p><br><p>Sobrepeso</p>";
+                                lblIMCSub.Text = "Sobrepeso";
                             }
                             else {
-                                lblIMC.Text = lblIMC.Text + "<h2>" + item._Imc + "</h2><br><p>IMC</p><br><p>Obesidad</p>";
+                                lblIMCSub.Text = "Obesidad";
                             }
                         }
                     }
@@ -133,7 +133,42 @@ namespace nutritionApp.src.aspx
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("frmfrmDashboardCliente.aspx");
+            Response.Redirect("frmDashboard.aspx");
+        }
+
+        protected void btnCalcularIMC_Click(object sender, EventArgs e)
+        {
+            decimal imc, peso;
+            int estatura;
+            peso = Convert.ToDecimal(txtPeso.Text);
+            estatura = Convert.ToInt32(txtEstatura.Text);
+            estatura *= estatura;
+            imc = (peso / (estatura / 10000));
+
+            //Rellenar IMC
+            lblIMC.Text = ((int)imc).ToString();
+            if (imc < (185 / 10))
+            {
+                lblIMCSub.Text = "Bajo Peso";
+            }
+            else
+            {
+                if (imc < (250 / 10))
+                {
+                    lblIMCSub.Text = "Peso Saludable";
+                }
+                else
+                {
+                    if (imc < (300 / 10))
+                    {
+                        lblIMCSub.Text = "Sobrepeso";
+                    }
+                    else
+                    {
+                        lblIMCSub.Text = "Obesidad";
+                    }
+                }
+            }
         }
     }
 }

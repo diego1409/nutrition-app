@@ -51,12 +51,10 @@ nav.navbar-light .navbar-nav .nav-link {
 #divFooter {
     padding-left: 10%;
     padding-right: 10%;
-}
 
-#footerLogo {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    float: left;
+    /*margin-top: 50px;*/
+    margin-bottom: 50px;
+    /*float: left;*/
 }
 
 #footerMenu {

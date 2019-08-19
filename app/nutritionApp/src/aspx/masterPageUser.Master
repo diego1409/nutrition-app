@@ -56,14 +56,17 @@
                                         Mis Medidas
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="drpMedidas">
-                                        <a class="dropdown-item" href="#">Actualizar Medidas</a>
-                                        <a class="dropdown-item" href="#">Historial</a>
+                                        <a class="dropdown-item" href="frmMedidas.aspx">Actualizar Medidas</a>
+                                        <a class="dropdown-item" href="frmHistorialMedidas.aspx">Historial</a>
                                     </div>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="#">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="drpRecetas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Recetas
                                     </a>
+                                    <div class="dropdown-menu" aria-labelledby="drpUsuarios">
+                                        <a class="dropdown-item" href="frmListaRecetas.aspx">Ver Lista de Recetas</a>
+                                    </div>
                                 </li>
                             </ul>
 
@@ -113,11 +116,13 @@
         
             <footer>
                 <div id="divFooter">
-                    <div id="footerLogo">
-                        <img src="../img/Salad-Web.png" width="100" height="150" />
+                    <div class="row justify-content-center">
+                        <div id="footerLogo col">
+                            <img src="../img/Salad-Web.png" width="100" height="150" />
+                        </div>
                     </div>
 
-                    <div id="footerMenu">
+                    <%--<div id="footerMenu">
                         <h3>Menú Interno</h3>
                         <ul class="list-unstyled">
                             <li>Inicio</li>
@@ -127,7 +132,7 @@
                             <li>Soporte</li>
                             <li>Login</li>
                         </ul>
-                    </div>
+                    </div>--%>
                 </div>
             </footer>
 

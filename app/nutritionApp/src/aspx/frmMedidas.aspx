@@ -55,7 +55,7 @@
                                 <div class="form-group">
                                     <label for="txtGrasa">Grasa (%)*</label>
                                     <!-- Grasa -->
-                                    <asp:TextBox ID="txtGrasa" class="form-control" runat="server" Width="120px" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox ID="txtGrasa" class="form-control" runat="server" Width="120px"></asp:TextBox>
                                 </div>
                                 <p class="text-center mb-3">
                                     <asp:RequiredFieldValidator ID="rqvTxtGrasa" class="form-control" runat="server"
@@ -135,14 +135,23 @@
                                 <h2>Índice de Masa Corporal (IMC)</h2>
                             </div>
                         </div>
-                        <div class="row mb-5">
+                        <div class="row mb-3">
                             <div class="col">
-                                <h3>
+                                <h4>
                                     De acuerdo con sus medidas actuales, este es su IMC:
-                                </h3>
-                                <h3 class="text-center">
+                                </h4>
+                                <h2 class="text-center">
                                     <asp:Label ID="lblIMC" runat="server" Font-Size="50pt"></asp:Label>
-                                </h3>
+                                </h2>
+                                <p class="text-center">
+                                    <asp:Label ID="lblIMCSub" runat="server" Font-Size="20pt"></asp:Label>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col text-center">
+                                <asp:Button ID="btnCalcularIMC" class="btn btn-success" runat="server" Text="Calcular IMC" OnClick="btnCalcularIMC_Click" />
                             </div>
                         </div>
 
@@ -153,7 +162,7 @@
                         </div>
                         <div class="row">
                             <div class="col-6 align-self-center">
-                                <asp:Button ID="btnVolver" class="btn btn-danger btn-block" runat="server" Text="Volver" OnClick="btnVolver_Click"></asp:Button>
+                                <asp:Hyperlink ID="hplRegresar" class="btn btn-danger btn-block" runat="server" Text="Volver" NavigateUrl="frmHistorialMedidas.aspx" />
                             </div>
                             <div class="col-6 align-self-center">
                                 <asp:Button ID="btnActualizar" class="btn btn-success btn-block" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />

@@ -89,55 +89,23 @@
         
             <footer>
                 <div id="divFooter">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div id="footerLogo">
-                                    <img src="../img/Salad-Web.png" width="100" height="150" />
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div id="footerMenu">
-                                    <h3>Menú Interno</h3>
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="Index.aspx#divBienvenida">
-                                                Inicio
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="Index.aspx#divCaracteristicas">
-                                                Características
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="Index.aspx#divTestimonios">
-                                                Testimonios
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="Index.aspx#divNosotros">
-                                                Nosotros
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="Index.aspx#divSoporte">
-                                                Soporte
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="frmLogin.aspx">
-                                                Login
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <div class="row justify-content-center">
+                        <div id="footerLogo col">
+                            <img src="../img/Salad-Web.png" width="100" height="150" />
                         </div>
                     </div>
-                    
 
-                    
+                    <%--<div id="footerMenu">
+                        <h3>Menú Interno</h3>
+                        <ul class="list-unstyled">
+                            <li>Inicio</li>
+                            <li>Características</li>
+                            <li>Testimonios</li>
+                            <li>Nosotros</li>
+                            <li>Soporte</li>
+                            <li>Login</li>
+                        </ul>
+                    </div>--%>
                 </div>
             </footer>
 

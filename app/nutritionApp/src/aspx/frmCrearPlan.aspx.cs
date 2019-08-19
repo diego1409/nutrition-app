@@ -256,7 +256,7 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
         bool SeleccionarComidas()
         {
             //Variables a utilizar
-            idPlan = retorna.RetornaUltimoPlan();
+            idPlan = retorna.RetornaUltimoPlan(idUsuario);
             int carbos = 0;
             int azucares = 0;
             double proteinas = 0;

@@ -13,6 +13,7 @@ namespace nutritionApp.src.aspx
     public partial class masterPageAdmin : System.Web.UI.MasterPage
     {
         ManejoDatos md = new ManejoDatos();
+        public int idUsuario;
         public int idPlan = 0;
         public string linkPlan;
 
@@ -22,8 +23,9 @@ namespace nutritionApp.src.aspx
             bool logged = Convert.ToBoolean(Session["UsuarioLogueado"]);
             if (logged)
             {
+                idUsuario = Convert.ToInt32(Session["idUsuario"]);
                 lblNombreCompleto.Text = Session["Nombre"].ToString() + " " + Session["Apellido1"].ToString() + " " + Session["Apellido2"].ToString();
-                idPlan = md.RetornaUltimoPlan();
+                idPlan = md.RetornaUltimoPlan(idUsuario);
 
                 if (idPlan != 0)
                 {

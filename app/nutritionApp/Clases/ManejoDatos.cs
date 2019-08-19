@@ -707,7 +707,7 @@ namespace nutritionApp
         }
 
         /* == Funcion para retornar el ultimo plan nutricional creado == */
-        public int RetornaUltimoPlan()
+        public int RetornaUltimoPlan(int idUsuario)
         {
             //Declaracion de variables
             Conexion conect_local = new Conexion();
@@ -718,7 +718,7 @@ namespace nutritionApp
             int ultimoPlan = 0;
 
             //Se crea la consulta
-            consulta = "Select max(idPlan) as ultimoPlan from planNutricional";
+            consulta = "Select max(idPlan) as ultimoPlan from planNutricional where idUsuario = " + idUsuario.ToString();
             conect_local.annadir_consulta(consulta);
 
             //Se procede a buscar
@@ -919,8 +919,16 @@ namespace nutritionApp
             conect_local.inicializa();
             String consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "EXEC InsertaMedicion "+ medicion._IdUsuario + "," + medicion._Peso + "," + medicion._Grasa + "," + medicion._Musculo + "," + medicion._Agua + "," + medicion._Hueso + ",'" + medicion._Observaciones + "'";
+            consulta = "EXEC InsertaMedicion ?, ?, ?, ?, ?, ?, ?";
             conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(medicion._IdUsuario, 1);
+            conect_local.annadir_parametro(medicion._Peso, 3);
+            conect_local.annadir_parametro(medicion._Grasa, 3);
+            conect_local.annadir_parametro(medicion._Musculo, 3);
+            conect_local.annadir_parametro(medicion._Agua, 3);
+            conect_local.annadir_parametro(medicion._Hueso, 3);
+            conect_local.annadir_parametro(medicion._Observaciones, 2);
+
             //conect_local.annadir_parametro(medicion._IdUsuario, 1);
             //conect_local.annadir_parametro(medicion._Peso, 3);
             //conect_local.annadir_parametro(medicion._Grasa, 3);
