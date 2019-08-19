@@ -52,6 +52,8 @@ namespace nutritionApp.src.aspx
                 ManejoDatos md = new ManejoDatos();
                 md.insertar_usuario(nuevo_usuario);
 
+                fupAgregarFoto.SaveAs(Server.MapPath("../img/usuarios/" + nuevo_usuario._Cedula + ".jpg"));
+
                 //Se crean variables de sesion para el usuario
                 int idUsuario = md.RetornaUsuarioPass(nuevo_usuario);
                 this.Session.Add("UsuarioLogueado", true);
@@ -94,7 +96,7 @@ namespace nutritionApp.src.aspx
                 nombreArchivo = Path.GetFileNameWithoutExtension(fupAgregarFoto.FileName);
                 extensionArchivo = Path.GetExtension(fupAgregarFoto.FileName);
 
-                imgPerfil.ImageUrl = rutaArchivo;
+                //imgPerfil.ImageUrl = rutaArchivo;
             }
         }
     }

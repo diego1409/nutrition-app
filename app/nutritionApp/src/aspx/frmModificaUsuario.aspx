@@ -184,22 +184,22 @@
                                         <p class="text">
                                             Foto de Perfil
                                         </p>
-                                        <div class="text-center">
+                                        <%--<div class="text-center">
                                             <asp:Image ID="imgPerfil" runat="server" Height="240px" Width="240px" ImageUrl="~/src/img/male-fill-circle-512.png" />
                                         </div>
-                                        
+                                        --%>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col">
-                                        <asp:FileUpload ID="fupAgregarFoto" runat="server" Width="100%" accept="image/*" />
+                                        <asp:FileUpload ID="fupAgregarFoto" runat="server" Width="100%" accept=".jpg" />
                                     </div>
                                 </div>
-                                <div class="row">
+                                <%--<div class="row">
                                     <div class="col">
-                                        <asp:LinkButton ID="hplCargarFoto" runat="server" class="btn btn-success btn-block">Cargar Foto</asp:LinkButton>
+                                        <asp:LinkButton ID="hplCargarFoto" runat="server" class="btn btn-success btn-block" OnClick="hplCargarFoto_Click">Cargar Foto</asp:LinkButton>
                                     </div>
-                                </div>
+                                </div>--%>
                             </div>
                         </div>
                     </div>

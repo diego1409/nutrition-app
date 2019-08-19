@@ -78,6 +78,12 @@ namespace nutritionApp.src.aspx
 
                 ManejoDatos md = new ManejoDatos();
                 md.modificar_usuario(usuarioModificar);
+
+                if (fupAgregarFoto.FileName != "")
+                {
+                    fupAgregarFoto.SaveAs(Server.MapPath("../img/usuarios/" + usuarioModificar._Cedula + ".jpg"));
+                }
+
                 Response.Redirect("frmListausuarios.aspx");
         }
 

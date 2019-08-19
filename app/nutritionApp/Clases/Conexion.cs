@@ -12,11 +12,11 @@ namespace nutritionApp
     {
         public OleDbConnection conexion;
         public OleDbCommand comando;
-        String strcomando;
+        //String strcomando;
         public String strconexion;
         OleDbTransaction transaccion;
-        bool conecta;
-        String xconecta;
+        //bool conecta;
+        //String xconecta;
 
         public void parametro(String bd, String ip, String nom_usuario, String clave)
         {
@@ -34,8 +34,9 @@ namespace nutritionApp
                 conexion.Open();
                 return true;
             }
-            catch (Exception e)
+            catch (OleDbException e)
             {
+                Console.WriteLine(e.ErrorCode);
                 return false;
             }
 
@@ -47,8 +48,7 @@ namespace nutritionApp
             busca_int = comando.ExecuteReader();
             comando.CommandTimeout = 0;
             return busca_int;
-            conexion.Close();
-            conexion.Dispose();
+            
 
         }
         public bool annadir_consulta(String _Consulta)
@@ -101,8 +101,9 @@ namespace nutritionApp
                 transaccion.Commit();
                 return true;
             }
-            catch (Exception e)
+            catch (OleDbException e)
             {
+                Console.WriteLine(e.ErrorCode);
                 transaccion.Rollback();
                 return false;
 

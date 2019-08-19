@@ -48,6 +48,9 @@ namespace nutritionApp.src.aspx
 
                 ManejoDatos InsertaUsuario = new ManejoDatos();
                 InsertaUsuario.insertar_usuario(nuevo_usuario);
+
+                fupAgregarFoto.SaveAs(Server.MapPath("../img/usuarios/" + nuevo_usuario._Cedula + ".jpg"));
+
                 Response.Redirect("frmListaUsuarios.aspx");
             }
             else

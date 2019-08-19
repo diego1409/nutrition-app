@@ -40,7 +40,7 @@
                                 <div class="form-group">
                                     <label for="ddlCarbos">Carbohidratos*</label>
                                     <!-- Propósito -->
-                                    <asp:DropDownList ID="ddlCarbos" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                    <asp:DropDownList ID="ddlCarbos" CssClass="form-control" runat="server" Width="250px" Enabled="False">
                                         <asp:ListItem Value="" Selected="True">Seleccione cantidad de carbohidratos</asp:ListItem>
                                         <asp:ListItem Value="N">Nula</asp:ListItem>
                                         <asp:ListItem Value="B">Baja</asp:ListItem>
@@ -58,7 +58,7 @@
                                 <div class="form-group">
                                     <label for="ddlProteinas">Proteínas*</label>
                                     <!-- Propósito -->
-                                    <asp:DropDownList ID="ddlProteinas" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                    <asp:DropDownList ID="ddlProteinas" CssClass="form-control" runat="server" Width="250px" Enabled="False">
                                         <asp:ListItem Value="" Selected="True">Seleccione cantidad de proteínas</asp:ListItem>
                                         <asp:ListItem Value="N">Nula</asp:ListItem>
                                         <asp:ListItem Value="B">Baja</asp:ListItem>
@@ -76,7 +76,7 @@
                                 <div class="form-group">
                                     <label for="ddlGrasas">Grasas*</label>
                                     <!-- Propósito -->
-                                    <asp:DropDownList ID="ddlGrasas" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                    <asp:DropDownList ID="ddlGrasas" CssClass="form-control" runat="server" Width="250px" Enabled="False">
                                         <asp:ListItem Value="" Selected="True">Seleccione cantidad de grasas</asp:ListItem>
                                         <asp:ListItem Value="N">Nula</asp:ListItem>
                                         <asp:ListItem Value="B">Baja</asp:ListItem>
@@ -94,7 +94,7 @@
                                 <div class="form-group">
                                     <label for="ddlAzucares">Azúcares*</label>
                                     <!-- Propósito -->
-                                    <asp:DropDownList ID="ddlAzucares" CssClass="form-control" runat="server" Width="250px" Enabled="True">
+                                    <asp:DropDownList ID="ddlAzucares" CssClass="form-control" runat="server" Width="250px" Enabled="False">
                                         <asp:ListItem Value="" Selected="True">Seleccione cantidad de azúcares</asp:ListItem>
                                         <asp:ListItem Value="N">Nula</asp:ListItem>
                                         <asp:ListItem Value="B">Baja</asp:ListItem>
@@ -119,7 +119,7 @@
                                 <label for="chkAlergias">Seleccione los ingredientes a evitar</label>
                                 <div class="form-group">
                                     <!-- Alergias -->
-                                    <asp:CheckBoxList ID="chkAlergias" CssClass="form-control" runat="server" Width="250px" Height="162px">
+                                    <asp:CheckBoxList ID="chkAlergias" CssClass="form-control scroll-y" runat="server" Width="250px" Height="162px" ViewStateMode="Enabled">
                                     </asp:CheckBoxList>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
 
                         <div class="row">
                             <div class="col-6 align-self-center">
-                                <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/Index.aspx">Cancelar</asp:HyperLink>
+                                <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/Dashboard.aspx">Cancelar</asp:HyperLink>
                             </div>
                             <div class="col-6 align-self-center">
                                 <asp:Button ID="btnCrearPlan" class="btn btn-success btn-block" runat="server" Text="Crear Plan" OnClick="btnCrearPlan_Click"  />

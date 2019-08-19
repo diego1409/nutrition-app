@@ -148,15 +148,6 @@ namespace nutritionApp.src.aspx {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvDdlGenero;
         
         /// <summary>
-        /// Control imgPerfil.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPerfil;
-        
-        /// <summary>
         /// Control fupAgregarFoto.
         /// </summary>
         /// <remarks>
@@ -164,15 +155,6 @@ namespace nutritionApp.src.aspx {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fupAgregarFoto;
-        
-        /// <summary>
-        /// Control hplCargarFoto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton hplCargarFoto;
         
         /// <summary>
         /// Control txtEstatura.
