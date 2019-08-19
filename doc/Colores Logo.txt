@@ -1,0 +1,6 @@
+Estos son los colores que conforman el logo:
+
+#9F6828
+#C81124
+#45A834
+#ACACA8

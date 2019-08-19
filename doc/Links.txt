@@ -1,0 +1,10 @@
+Links:
+
+GitHub: https://github.com/diego1409/nutritionApp
+Slack: umcaworkspace.slack.com
+Trello: https://trello.com/b/rOA2X6qR/nutrici%C3%B3n-ing-software
+ZenHub: https://app.zenhub.com/workspaces/salad-5d13efe7cb7ae863bdba1d3f/board?repos=188960973
+StormBoard: https://stormboard.com/invite/786323/twin7952
+
+Project Charter: https://1drv.ms/w/s!ArbCFaFMGH3eh1nGdFcOHBUCpx5W
+Epics e Historias de Usuario: https://1drv.ms/x/s!An5z_19qj-eUgapGCg8zManoM5QsgA
