@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Modificar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="frmModificaReceta.aspx.cs" Inherits="nutritionApp.src.aspx.frmModificaReceta" %>
+﻿<%@ Page Title="Modificar Usuario" Language="C#" MasterPageFile="~/src/aspx/masterPageAdmin.Master" AutoEventWireup="true" CodeBehind="frmModificaReceta.aspx.cs" Inherits="nutritionApp.src.aspx.frmModificaReceta" Debug="true" %>
 
 <asp:Content ID="head" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../css/frmModificaUsuario.css" type="text/css" />
@@ -91,7 +91,7 @@
                 <tr>
                     <td>Carbohidratos:</td>
                     <td>
-                        <asp:TextBox ID="txtCarbos" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                        <asp:TextBox ID="txtCarbos" class="form-control" runat="server" Width="250px" MaxLength="3"></asp:TextBox>
                     </td> 
                     <td>
                         <asp:RequiredFieldValidator ID="rqvTxtCarbos" class="form-control" runat="server" ControlToValidate="txtCarbos" ErrorMessage="Debe ingresar los carbohidratos" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -102,7 +102,7 @@
                 <tr>
                     <td>Proteínas:</td>
                     <td>
-                        <asp:TextBox ID="txtProteinas" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                        <asp:TextBox ID="txtProteinas" class="form-control" runat="server" Width="250px" MaxLength="3"></asp:TextBox>
                     </td> 
                     <td>
                         <asp:RequiredFieldValidator ID="rqvTxtProteinas" class="form-control" runat="server" ControlToValidate="txtProteinas" ErrorMessage="Debe ingresar las proteínas" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -113,7 +113,7 @@
                 <tr>
                     <td>Grasas:</td>
                     <td>
-                        <asp:TextBox ID="txtGrasas" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                        <asp:TextBox ID="txtGrasas" class="form-control" runat="server" Width="250px" MaxLength="3"></asp:TextBox>
                     </td> 
                     <td>
                         <asp:RequiredFieldValidator ID="rqvTxtGrasas" class="form-control" runat="server" ControlToValidate="txtGrasas" ErrorMessage="Debe ingresar las grasas" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -124,7 +124,7 @@
                 <tr>
                     <td>Azúcares:</td>
                     <td>
-                        <asp:TextBox ID="txtAzucares" class="form-control" runat="server" Width="250px"></asp:TextBox>
+                        <asp:TextBox ID="txtAzucares" class="form-control" runat="server" Width="250px" MaxLength="3"></asp:TextBox>
                     </td> 
                     <td>
                         <asp:RequiredFieldValidator ID="rqvTxtAzucares" class="form-control" runat="server" ControlToValidate="txtAzucares" ErrorMessage="Debe ingresar los azúcares" ForeColor="Red"></asp:RequiredFieldValidator>

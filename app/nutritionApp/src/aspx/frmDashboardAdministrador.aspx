@@ -11,11 +11,11 @@
                 <h1>¡Bienvenido, <%= Session["Nombre"].ToString() %>!</h1>
                 </div>
             </div>
-            <div class="row mb-1">
+            <div class="row mb-5">
                 <div class="col">
                     <div class="card-deck">
                         <div class="card">
-                            <img class="card-img-top" src="..." alt="Planes Nutricionales">
+                            <img class="card-img-top height-50" src="../img/plan_nutricional.jpg" alt="Planes Nutricionales">
                             <div class="card-body">
                                 <h2 class="card-title text-center">Planes Nutricionales</h2>
                                 <p class="card-text text-center">
@@ -23,13 +23,13 @@
 
                                 </p>
                                 <p class="text-center">
-                                    <a href="" class="btn btn-primary">Ir a Planes Nutricionales</a>
+                                    <a href="frmListaPlanes.aspx" class="btn btn-primary">Ir a Planes Nutricionales</a>
                                 </p>
                   
                             </div>
                         </div>
                         <div class="card">
-                            <img class="card-img-top" src="..." alt="Medidas">
+                            <img class="card-img-top height-50" src="../img/medidas.jpg" alt="Medidas">
                             <div class="card-body">
                                 <h2 class="card-title text-center">Medidas</h2>
                                 <p class="card-text text-center">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="card">
-                            <img class="card-img-top" src="..." alt="Recetas">
+                            <img class="card-img-top height-50" src="../img/recetas.jpg" alt="Recetas">
                             <div class="card-body">
                                 <h2 class="card-title text-center">Recetas</h2>
                                 <p class="card-text text-center">
@@ -49,7 +49,7 @@
                                     para complementar tu plan nutricional actual.
                                 </p>
                                 <p class="text-center">
-                                    <a href="" class="btn btn-primary">Ir a Recetas</a>
+                                    <a href="frmListaRecetas.aspx" class="btn btn-primary">Ir a Recetas</a>
                                 </p>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                 <div class="col-lg-4 col-sm">
                 <div class="card-deck">
                     <div class="card">
-                        <img class="card-img-top" src="..." alt="Usuarios">
+                        <img class="card-img-top height-50" src="../img/usuarios.jpg" alt="Usuarios">
                         <div class="card-body">
                             <h2 class="card-title text-center">Usuarios</h2>
                             <p class="card-text text-center">

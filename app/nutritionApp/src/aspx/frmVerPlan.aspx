@@ -11,7 +11,7 @@
         </div>
         <div class="row justify-content-center mb-3">
             <div class="col">
-                <h5 class="text-center">Este plan nutricional contiene los siguientes datos:</h5>
+                <h5 class="text-center">¡Hola, <%= Session["Nombre"].ToString() %>!. Este plan nutricional contiene los siguientes datos:</h5>
             </div>
         </div>
         <div class="row justify-content-center mb-3">        
@@ -110,7 +110,7 @@
                 <div class="row justify-content-center mb-3">   
                     <div class="col-8">
                         <div class="card">
-                            <img class="card-img-top" src="..." alt="Hidratación Diaria">
+                            <img class="card-img-top" src="../img/hidratacion.jpg" height="300" alt="Hidratación Diaria">
                             <div class="card-body">
                      
                               <p class="card-text text-center">
@@ -133,7 +133,7 @@
                 <div class="row justify-content-center mb-3">   
                     <div class="col-8">
                         <div class="card">
-                            <img class="card-img-top" src="..." alt="Consumo Calórico">
+                            <img class="card-img-top" src="../img/calorias.jpg" height="300" alt="Consumo Calórico">
                             <div class="card-body">
                             
                               <p class="card-text text-center">

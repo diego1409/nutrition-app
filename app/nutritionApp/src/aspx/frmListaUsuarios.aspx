@@ -20,6 +20,7 @@
                           <th scope="col">Nombre Completo</th>
                           <th scope="col">Teléfono</th>
                           <th scope="col">Correo</th>
+                          <th scope="col">Foto de Perfil</th>
                           <th scope="col" colspan="2" class="text-center">Acciones</th>
                         </tr>
                     </thead>

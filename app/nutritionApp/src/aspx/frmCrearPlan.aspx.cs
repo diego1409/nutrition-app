@@ -20,22 +20,70 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
         public int idUsuario;
         public int idPlan;
 
+        //Variable para determinar tipo usuario y si usuario esta logueado
+        public string tipoUsuario;
+        public bool logged;
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            setMasterPage();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Se obtiene el id de usuario en formato int
+            idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
+
             //se pregunta si no es una recarga de pagina...
             //validar si es la primera vez que carga la pagina
             //para que no cargue las listas cuando se da click
             //en el boton de guardar
             if (!this.IsPostBack)
             {
-                //Se obtiene el id de usuario en formato int
-                idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
                 CargaIngredientes();
                 //this.Session.Add("idUsuario", 2);
                 ObtenerCalcProposito();
             }
 
             
+        }
+
+        /// <summary>
+        /// Metodo para validar el tipo de usuario en cada pagina
+        /// </summary>
+        void setMasterPage()
+        {
+            logged = Convert.ToBoolean(this.Session["UsuarioLogueado"]);
+
+            //Verificar si el user esta logueado
+            if (logged)
+            {
+                string tipoUsuario = Session["tipoUsuario"].ToString();
+
+                //Validar que el valor sea correcto
+                if (tipoUsuario != null)
+                {
+                    //Se usa trim para quitar espacios en blanco
+                    tipoUsuario = tipoUsuario.Trim();
+
+                    if (tipoUsuario == "C")
+                    {
+                        Page.MasterPageFile = "~/src/aspx/masterPageUser.Master";
+                    }
+                    else if (tipoUsuario == "A")
+                    {
+                        Page.MasterPageFile = "~/src/aspx/masterPageAdmin.Master";
+                    }
+                }
+                else
+                {
+                    Response.Redirect("frmLogin.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("frmLogin.aspx");
+            }
         }
 
         /// <summary>
@@ -277,7 +325,7 @@ namespace nutritionApp.src.aspx.Plan_Nutricional
             caloriasComida = plan.calorias / 5;
 
             //Se llama el procedimiento para insertar las comidas
-            return retorna.InsertaComidasPlan(idPlan, caloriasComida, carbos, proteinas, grasas, azucares);
+            return retorna.InsertaComidasPlan(idUsuario, idPlan, caloriasComida, carbos, proteinas, grasas, azucares);
         }
             
     }

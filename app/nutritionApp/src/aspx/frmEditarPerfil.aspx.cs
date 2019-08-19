@@ -13,9 +13,18 @@ namespace nutritionApp.src.aspx
     public partial class frmEditarPerfil : System.Web.UI.Page
     {
         string cedulaUsuarioModificar;
+
+        //Variable para determinar tipo usuario y si usuario esta logueado
+        public string tipoUsuario;
+        public bool logged;
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            setMasterPage();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!this.IsPostBack)
             {
                 cedulaUsuarioModificar = Session["Cedula"].ToString();
@@ -48,7 +57,52 @@ namespace nutritionApp.src.aspx
                     txtContrasenaNueva.Text = "";
                     lblBtnDarDeBaja.Text = lblBtnDarDeBaja.Text + "<a class='btn btn-danger btn-block' href='frmDarDeBajaUsuario.aspx?cedula=" + cedulaUsuarioModificar + "&origen=editarperfil'>Darme de baja</a>";
 
+                    //Se deshabilita el campo de tipo usuario si es cliente
+                    tipoUsuario = Session["tipoUsuario"].ToString();
+                    if (tipoUsuario == "C")
+                    {
+                        ddlTipoUsuario.Enabled = false;
+                    }
+
                 }
+            }
+        }
+
+        /// <summary>
+        /// Metodo para validar el tipo de usuario en cada pagina
+        /// </summary>
+        void setMasterPage()
+        {
+            logged = Convert.ToBoolean(this.Session["UsuarioLogueado"]);
+
+            //Verificar si el user esta logueado
+            if (logged)
+            {
+                tipoUsuario = Session["tipoUsuario"].ToString();
+
+                //Validar que el valor sea correcto
+                if (tipoUsuario != null)
+                {
+                    //Se usa trim para quitar espacios en blanco
+                    tipoUsuario = tipoUsuario.Trim();
+
+                    if (tipoUsuario == "C")
+                    {
+                        Page.MasterPageFile = "~/src/aspx/masterPageUser.Master";
+                    }
+                    else if (tipoUsuario == "A")
+                    {
+                        Page.MasterPageFile = "~/src/aspx/masterPageAdmin.Master";
+                    }
+                }
+                else
+                {
+                    Response.Redirect("frmLogin.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("frmLogin.aspx");
             }
         }
 
@@ -81,7 +135,20 @@ namespace nutritionApp.src.aspx
                         usuarioModificar._Contrasena = txtContrasenaNueva.Text;
                         ManejoDatos md = new ManejoDatos();
                         md.modificar_usuario(usuarioModificar);
-                        Response.Redirect("frmEditarPerfil.aspx?cedula="+ usuarioModificar._Cedula);
+
+                        if (fupAgregarFoto.FileName != "")
+                        {
+                            fupAgregarFoto.SaveAs(Server.MapPath("../img/usuarios/" + usuarioModificar._Cedula + ".jpg"));
+                        }
+
+                        //Se agregar variables de sesion con los datos principales
+                        this.Session.Add("Nombre", usuarioModificar._Nombre);
+                        this.Session.Add("Apellido1", usuarioModificar._Apellido1);
+                        this.Session.Add("Apellido2", usuarioModificar._Apellido2);
+                        this.Session.Add("Cedula", usuarioModificar._Cedula);
+                        this.Session.Add("tipoUsuario", usuarioModificar._TipoUsuario);
+
+                        Response.Redirect("frmDashboard.aspx");
                     }
                     else
                     {
@@ -95,7 +162,19 @@ namespace nutritionApp.src.aspx
                     ManejoDatos md = new ManejoDatos();
                     md.modificar_usuario(usuarioModificar);
 
-                    Response.Redirect("frmEditarPerfil.aspx?cedula=" + usuarioModificar._Cedula);
+                    if (fupAgregarFoto.FileName != "")
+                    {
+                        fupAgregarFoto.SaveAs(Server.MapPath("../img/usuarios/" + usuarioModificar._Cedula + ".jpg"));
+                    }
+
+                    //Se agregar variables de sesion con los datos principales
+                    this.Session.Add("Nombre", usuarioModificar._Nombre);
+                    this.Session.Add("Apellido1", usuarioModificar._Apellido1);
+                    this.Session.Add("Apellido2", usuarioModificar._Apellido2);
+                    this.Session.Add("Cedula", usuarioModificar._Cedula);
+                    this.Session.Add("tipoUsuario", usuarioModificar._TipoUsuario);
+
+                    Response.Redirect("frmDashboard.aspx");
                 }
             }
             else {

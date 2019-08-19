@@ -10,6 +10,6 @@
 namespace nutritionApp.src.aspx {
     
     
-    public partial class frmDashboardAdministrador {
+    public partial class frmVerReceta {
     }
 }

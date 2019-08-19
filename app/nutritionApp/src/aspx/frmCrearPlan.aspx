@@ -142,7 +142,7 @@
 
                         <div class="row">
                             <div class="col-6 align-self-center">
-                                <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/Index.aspx">Cancelar</asp:HyperLink>
+                                <asp:HyperLink ID="hplCancelar" class="btn btn-danger btn-block" runat="server" NavigateUrl="~/src/aspx/Dashboard.aspx">Cancelar</asp:HyperLink>
                             </div>
                             <div class="col-6 align-self-center">
                                 <asp:Button ID="btnCrearPlan" class="btn btn-success btn-block" runat="server" Text="Crear Plan" OnClick="btnCrearPlan_Click"  />

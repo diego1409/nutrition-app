@@ -47,8 +47,6 @@ namespace nutritionApp
             comando.Prepare();
             busca_int = comando.ExecuteReader();
             comando.CommandTimeout = 0;
-            conexion.Close();
-            conexion.Dispose();
             return busca_int;
             
 

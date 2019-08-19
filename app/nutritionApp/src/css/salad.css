@@ -72,10 +72,6 @@ nav.navbar-light .navbar-nav .nav-link {
     background-color: rgba(255, 255, 255,.8);
 }
 
-.float-right {
-    float: right;
-}
-
 h1 {
     font-family: navyBallad;
 }
@@ -87,10 +83,22 @@ h5 {
     font-family: hkGroteskSemiBold !important;
 }
 
+a{
+    cursor: pointer;
+}
+
 p {
     font-family: hkGroteskMedium;
 }
 
+.float-right {
+    float: right;
+}
+
 .scroll-y {
     overflow-y: scroll;
+}
+
+.height-50 {
+    height: 50%;
 }

@@ -27,7 +27,7 @@ namespace nutritionApp
             }
         }
 
-        public List<Usuario> ListaUsuarios()
+        public List<Usuario> ListaUsuarios(int idUsuario)
         {
             List<Usuario> lista = new List<Usuario>();
             Conexion conec = new Conexion();
@@ -35,8 +35,9 @@ namespace nutritionApp
             conec.inicializa();
             string consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "EXEC ListaUsuarios";
+            consulta = "EXEC ListaUsuarios ?";
             conec.annadir_consulta(consulta);
+            conec.annadir_parametro(idUsuario, 1);
             contenedor = conec.busca();
             while (contenedor.Read())
             {
@@ -622,6 +623,34 @@ namespace nutritionApp
             return true;
         }
 
+        /* == Funcion para obtener la lista de planes == */
+        public List<planNutricional> ListaPlanes(int idUsuario)
+        {
+            List<planNutricional> lista = new List<planNutricional>();
+            Conexion conec = new Conexion();
+            conec.parametro("", "", "", "");
+            conec.inicializa();
+            string consulta;
+            System.Data.OleDb.OleDbDataReader contenedor;
+            consulta = "exec ListaPlanes ?";
+            conec.annadir_consulta(consulta);
+            conec.annadir_parametro(idUsuario, 1);
+            contenedor = conec.busca();
+            while (contenedor.Read())
+            {
+                planNutricional tmp = new planNutricional();
+                tmp.idPlan = Convert.ToInt32(contenedor["idPlan"]);
+                tmp.fecha = Convert.ToDateTime(contenedor["fecha"]);
+                tmp.carbos = contenedor["carbos"].ToString();
+                tmp.proteinas = contenedor["proteinas"].ToString();
+                tmp.grasas = contenedor["grasas"].ToString();
+                tmp.azucares = contenedor["azucares"].ToString();
+                tmp.calorias = Convert.ToInt32(contenedor["calorias"]);
+                lista.Add(tmp);
+            }
+            return lista;
+        }
+
         /* == Funcion para insertar un plan nutricional == */
         public bool InsertaPlanNutricional(planNutricional plan)
         {
@@ -694,10 +723,17 @@ namespace nutritionApp
 
             //Se procede a buscar
             contenedor = conect_local.busca();
-            while (contenedor.Read())
+            if (contenedor.HasRows)
             {
-                ultimoPlan = Convert.ToInt32(contenedor["ultimoPlan"].ToString());
+                while (contenedor.Read())
+                {
+                    if (!(contenedor["ultimoPlan"] is DBNull))
+                    {
+                        ultimoPlan = Convert.ToInt32(contenedor["ultimoPlan"]);
+                    }
+                }
             }
+            
             contenedor.Close();
 
             //Se retorna el idUsuario para buscarlo y obtener los datos de usuario
@@ -705,15 +741,16 @@ namespace nutritionApp
         }
 
         /* == Funcion para insertar las comidas para el plan == */
-        public bool InsertaComidasPlan(int idPlan, double caloriasComida, int carbos, double proteinas, double grasas, int azucares)
+        public bool InsertaComidasPlan(int idUsuario, int idPlan, double caloriasComida, int carbos, double proteinas, double grasas, int azucares)
         {
             Conexion conect_local = new Conexion();
             conect_local.parametro("", "", "", "");
             conect_local.inicializa();
             String consulta;
             System.Data.OleDb.OleDbDataReader contenedor;
-            consulta = "EXEC InsertaComidasPlan ?, ?, ?, ?, ?, ?";
+            consulta = "EXEC InsertaComidasPlan ?, ?, ?, ?, ?, ?, ?";
             conect_local.annadir_consulta(consulta);
+            conect_local.annadir_parametro(idUsuario, 1);
             conect_local.annadir_parametro(idPlan, 1);
             conect_local.annadir_parametro(caloriasComida, 3);
             conect_local.annadir_parametro(carbos, 1);
@@ -795,23 +832,28 @@ namespace nutritionApp
             consulta = "select top 1 *,usuario.estatura as estatura from medicion inner join usuario on medicion.idUsuario = usuario.idUsuario where medicion.idUsuario =" + medicion._IdUsuario + "order by idMedicion desc";
             conec.annadir_consulta(consulta);
             contenedor = conec.busca();
-            while (contenedor.Read())
+
+            if (contenedor.HasRows)
             {
-                Medicion tmp = new Medicion();
+                while (contenedor.Read())
+                {
+                    Medicion tmp = new Medicion();
 
-                tmp._IdUsuario = Convert.ToInt16(contenedor["IdUsuario"]);
-                tmp._Peso = Convert.ToDecimal(contenedor["peso"]);
-                tmp._Grasa = Convert.ToDecimal(contenedor["grasa"]);
-                tmp._Musculo = Convert.ToDecimal(contenedor["musculo"]);
-                tmp._Agua = Convert.ToDecimal(contenedor["agua"]);
-                tmp._Hueso = Convert.ToDecimal(contenedor["hueso"]);
-                tmp._Observaciones = contenedor["observaciones"].ToString();
-                tmp._Imc = Convert.ToDecimal(contenedor["imc"]);
-                tmp._Fecha = Convert.ToDateTime(contenedor["fecha"]);
-                tmp._Estatura = Convert.ToInt16(contenedor["estatura"]);
+                    tmp._IdUsuario = Convert.ToInt16(contenedor["IdUsuario"]);
+                    tmp._Peso = Convert.ToDecimal(contenedor["peso"]);
+                    tmp._Grasa = Convert.ToDecimal(contenedor["grasa"]);
+                    tmp._Musculo = Convert.ToDecimal(contenedor["musculo"]);
+                    tmp._Agua = Convert.ToDecimal(contenedor["agua"]);
+                    tmp._Hueso = Convert.ToDecimal(contenedor["hueso"]);
+                    tmp._Observaciones = contenedor["observaciones"].ToString();
+                    tmp._Imc = Convert.ToDecimal(contenedor["imc"]);
+                    tmp._Fecha = Convert.ToDateTime(contenedor["fecha"]);
+                    tmp._Estatura = Convert.ToInt16(contenedor["estatura"]);
 
-                medicionDevolver.Add(tmp);
+                    medicionDevolver.Add(tmp);
+                }
             }
+            
             return medicionDevolver;
         }
 

@@ -123,6 +123,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="src\aspx\frmListaPlanes.aspx" />
     <Content Include="src\aspx\frmModificaIngredienteReceta.aspx" />
     <Content Include="src\aspx\frmDashboard.aspx" />
     <Content Include="src\aspx\frmDashboardAdministrador.aspx" />
@@ -140,6 +141,7 @@
     <Content Include="src\aspx\frmInsertaAdmin.aspx" />
     <Content Include="src\aspx\frmModificaUsuario.aspx" />
     <Content Include="src\aspx\frmVerPlan.aspx" />
+    <Content Include="src\aspx\frmVerReceta.aspx" />
     <Content Include="src\aspx\Index.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -206,23 +208,32 @@
     <Content Include="src\css\frmDashboardCliente.css" />
     <Content Include="src\css\frmEditarPerfil.css" />
     <Content Include="src\css\frmInsertaAdmin.css" />
+    <Content Include="src\css\frmListaPlanes.css" />
     <Content Include="src\css\frmListaRecetas.css" />
     <Content Include="src\css\frmListaUsuarios.css" />
     <Content Include="src\css\frmMedidas.css" />
     <Content Include="src\css\frmModificaUsuario.css" />
     <Content Include="src\css\frmRegistro.css" />
+    <Content Include="src\css\frmVerPlan.css" />
+    <Content Include="src\css\frmVerReceta.css" />
     <Content Include="src\css\Index.css" />
     <Content Include="src\css\Login.css" />
     <Content Include="src\css\salad.css" />
+    <Content Include="src\img\calorias.jpg" />
     <Content Include="src\img\divBienvenida.jpg" />
+    <Content Include="src\img\hidratacion.jpg" />
     <Content Include="src\img\imcIcon.jpg" />
     <Content Include="src\img\male-fill-circle-512.png" />
     <Content Include="src\img\medicionesIcon.jpg" />
+    <Content Include="src\img\medidas.jpg" />
     <Content Include="src\img\planIcon.jpg" />
+    <Content Include="src\img\plan_nutricional.jpg" />
+    <Content Include="src\img\recetas.jpg" />
     <Content Include="src\img\Salad-%28sin-letra%29.png" />
     <Content Include="src\img\Salad-Web.png" />
     <Content Include="src\img\testimonioImg1.jpg" />
     <Content Include="src\img\testimonioImg2.jpg" />
+    <Content Include="src\img\usuarios.jpg" />
     <Content Include="src\vid\welcomeSalad.mp4" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -240,6 +251,13 @@
     <Compile Include="Clases\receta.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="src\aspx\frmListaPlanes.aspx.cs">
+      <DependentUpon>frmListaPlanes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmListaPlanes.aspx.designer.cs">
+      <DependentUpon>frmListaPlanes.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\aspx\frmModificaIngredienteReceta.aspx.cs">
       <DependentUpon>frmModificaIngredienteReceta.aspx</DependentUpon>
@@ -339,6 +357,13 @@
     <Compile Include="src\aspx\frmVerPlan.aspx.designer.cs">
       <DependentUpon>frmVerPlan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="src\aspx\frmVerReceta.aspx.cs">
+      <DependentUpon>frmVerReceta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\aspx\frmVerReceta.aspx.designer.cs">
+      <DependentUpon>frmVerReceta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="src\aspx\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -415,6 +440,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="src\img\recetas\" />
+    <Folder Include="src\img\usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

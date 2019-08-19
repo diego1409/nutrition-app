@@ -10,10 +10,12 @@ using nutritionApp.Clases;
 
 namespace nutritionApp.src.aspx
 {
-    public partial class frmHistorialMedidas : System.Web.UI.Page
+    
+
+    public partial class frmListaPlanes : System.Web.UI.Page
     {
-        int idUsuario;
         ManejoDatos md = new ManejoDatos();
+        public int idUsuario;
 
         //Variable para determinar tipo usuario y si usuario esta logueado
         public string tipoUsuario;
@@ -28,10 +30,13 @@ namespace nutritionApp.src.aspx
         {
             if (!IsPostBack)
             {
-                idUsuario = Convert.ToInt32(Session["IdUsuario"]);
-                foreach (Medicion item in md.HistorialMedidas(idUsuario))
+                //Se obtiene el id de la persona
+                idUsuario = Convert.ToInt32(this.Session["idUsuario"]);
+
+                foreach (planNutricional item in md.ListaPlanes(idUsuario))
                 {
-                    medidas.Text = medidas.Text + "<tr><td>" + item._Fecha + "</td><td>" + item._Peso + "</td><td>" + item._Grasa + "</td><td>" + item._Musculo + "</td><td>" + item._Agua + "</td><td>" + item._Hueso + "</td><td>" + item._Imc + "</td><td>" + item._Observaciones + "</td></tr>";
+                    planes.Text = planes.Text + "<tr><td>" + item.fecha.ToString("MM/dd/yyyy") + " </td><td>" + item.carbos + "</td><td>" + item.proteinas + "</td><td>" + item.grasas + "</td><td>" + item.azucares + "</td><td>" + item.calorias.ToString() + "</td><td> <a class='btn btn-success btn-block' href='frmVerPlan.aspx?idPlan=" + item.idPlan.ToString() + "'>Ver Plan</a></td></tr>";
+
                 }
             }
         }
@@ -72,6 +77,11 @@ namespace nutritionApp.src.aspx
             {
                 Response.Redirect("frmLogin.aspx");
             }
+        }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmCrearPlan.aspx");
         }
     }
 }
