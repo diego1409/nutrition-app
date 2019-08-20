@@ -7,8 +7,10 @@ GO
  
 CREATE OR ALTER PROCEDURE [dbo].[RetornaAlergias]
     @idUsuario int
-as
-SELECT 
-    *
-FROM [dbo].[alergia]
-WHERE [idUsuario] = @idUsuario
+AS
+BEGIN
+    SELECT 
+        *
+    FROM [dbo].[alergia]
+    WHERE [idUsuario] = @idUsuario
+END

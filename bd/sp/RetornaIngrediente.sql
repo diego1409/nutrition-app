@@ -6,7 +6,9 @@ SET QUOTED_IDENTIFIER ON
 GO
  
 CREATE OR ALTER PROCEDURE [dbo].[RetornaIngredientes]
-as
-SELECT 
-    *
-FROM [dbo].[ingrediente]
+AS
+BEGIN
+    SELECT 
+        *
+    FROM [dbo].[ingrediente]
+END
