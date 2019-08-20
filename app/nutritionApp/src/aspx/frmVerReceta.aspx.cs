@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 //Clases de conexion
 using nutritionApp.Clases;
+using System.IO;
 
 using System.Data.OleDb;
 
@@ -19,6 +20,7 @@ namespace nutritionApp.src.aspx
         public OleDbDataReader lista;
         public int idReceta;
         public receta receta;
+        public string imgReceta;
         public string dificultad;
         public string ingredientesReceta;
 
@@ -41,12 +43,20 @@ namespace nutritionApp.src.aspx
             {
                 //Se obtiene el id de la receta
                 idReceta = Convert.ToInt32(this.Request.QueryString["idReceta"]);
+                imgReceta = "";
                 receta = new receta();
                 receta._idReceta = idReceta;
 
                 //Obtener datos de receta
                 foreach (receta item in retorna.RetornaRecetaID(receta))
                 {
+                    //Ver si imagen existe
+                    string imagen = "../img/recetas/" + item._idReceta + ".jpg";
+                    if (File.Exists(Server.MapPath(imagen)))
+                    {
+                        imgReceta = "<img class=\"card-img-top\" src=\"" + imagen + "\" alt=\"" + item._TiempoComida + "\">";
+                    }
+
                     //Seteando cada valor para mostrarlo en la ventana
                     receta._Nombre = item._Nombre;
 

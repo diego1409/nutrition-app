@@ -20,7 +20,7 @@
                           <th scope="col">Tiempo (en min.)</th>
                           <th scope="col">Tiempo de Comida</th>
                           <th scope="col">Muestra de consumo</th>
-                          <th scope="col" class="text-center">Acciones</th>
+                          <th scope="col" colspan="2" class="text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>

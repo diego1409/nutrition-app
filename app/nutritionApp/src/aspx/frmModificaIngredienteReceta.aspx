@@ -126,13 +126,16 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row justified-content-center mb-3">
                     <div class="col-6 align-self-center">
                         <asp:Button ID="btnRegresar" class="btn btn-danger btn-block" runat="server" Text="Regresar" OnClick="btnRegresar_Click" />
                     </div>
                     <div class="col-6 align-self-center">
                         <asp:Button ID="btnModificar" class="btn btn-success btn-block" runat="server" Text="Modificar" OnClick="btnModificar_Click"/>
                     </div>
+                </div>
+
+                <div class="row justified-content-center mb-3">
                     <div class="col-6 align-self-center">
                         <asp:Button ID="btnEliminar" class="btn btn-danger btn-block" runat="server" Text="Eliminar de la receta" OnClick="btnEliminar_Click"/>
                     </div>

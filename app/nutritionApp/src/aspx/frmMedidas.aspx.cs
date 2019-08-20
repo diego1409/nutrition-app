@@ -128,7 +128,7 @@ namespace nutritionApp.src.aspx
 
             ManejoDatos md = new ManejoDatos();
             md.insertar_medicion(nueva_medicion);
-            Response.Redirect("frmMedidas.aspx?idUsuario="+ nueva_medicion._IdUsuario);
+            Response.Redirect("frmHistorialMedidas.aspx");
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

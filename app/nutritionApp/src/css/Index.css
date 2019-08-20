@@ -32,9 +32,10 @@
 }
 
 #divCaracteristicas,
+#divRecetas,
 #divTestimonios,
 #divNosotros,
-#divSoporte{
+#divSoporte {
     width: 100%;
     height: 30%;
     padding-top: 100px;
@@ -42,15 +43,17 @@
 }
 
 #divCaracteristicas h1,
+#divRecetas h1,
 #divTestimonios h1,
 #divNosotros h1,
-#divSoporte h1{
+#divSoporte h1 {
     font-size: 160px !important;
     text-align: center;
 }
 
 #caracteristicasCards,
-#nosotrosCards {
+#nosotrosCards,
+#recetasCards {
     padding-left: 15%;
     padding-right:15%;
     margin-top: 60px;
@@ -82,7 +85,8 @@
     font-size: 25px !important;
 }
 
-#nosotrosDescripcion {
+#nosotrosDescripcion,
+#recetasDescripcion {
     margin-left: 19%;
     margin-right: 19%;
     font-size: 35px !important;

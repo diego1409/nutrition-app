@@ -126,7 +126,7 @@ namespace nutritionApp.src.aspx
                 usuarioModificar._Correo = txtCorreo.Text;
                 usuarioModificar._NomUsuario = txtNomUsuario.Text;
                 usuarioModificar._TipoUsuario = ddlTipoUsuario.SelectedValue;
-                usuarioModificar._Contrasena = txtContrasena.Text;
+                usuarioModificar._Contrasena = txtContrasenaAntigua.Text;
 
                 if (txtContrasenaNueva.Text != "")
                 {

@@ -18,6 +18,7 @@ namespace nutritionApp.src.aspx
 
         //Variable para determinar tipo usuario y si usuario esta logueado
         public string tipoUsuario;
+        public string btnModifica;
         public bool logged;
 
         protected void Page_PreInit(object sender, EventArgs e)
@@ -27,18 +28,29 @@ namespace nutritionApp.src.aspx
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            tipoUsuario = Session["tipoUsuario"].ToString();
+
             if (!IsPostBack)
             {
                 foreach (receta item in md.ListaRecetas())
                 {
-                    string imagen = "../img/recetas/"+ item._idReceta + ".jpg";
-                    if (File.Exists(Server.MapPath(imagen)))
+                    if (tipoUsuario == "A")
                     {
-                        recetas.Text = recetas.Text + "<tr><td>" + item._Nombre + "</td><td>" + item._Tiempo + "</td><td>" + item._TiempoComida + "</td><td><img src='../img/recetas/" + item._idReceta + ".jpg' alt='" + item._Nombre + "' height='100' width='120'></td><td> <a class='btn btn-primary btn-block' href='frmModificaReceta.aspx?idReceta=" + item._idReceta + "'>Modificar</a></td></tr>";
+                        btnModifica = "<td> <a class='btn btn-success btn-block' href='frmVerReceta.aspx?idReceta=" + item._idReceta + "'>Ver Receta</a></td><td> <a class='btn btn-primary btn-block' href='frmModificaReceta.aspx?idReceta=" + item._idReceta + "'>Modificar</a></td>";
                     }
                     else
                     {
-                        recetas.Text = recetas.Text + "<tr><td>" + item._Nombre + "</td><td>" + item._Tiempo + "</td><td>" + item._TiempoComida + "</td><td>No hay muestra</td><td> <a class='btn btn-primary btn-block' href='frmModificaReceta.aspx?idReceta=" + item._idReceta + "'>Modificar</a></td></tr>";
+                        btnModifica = "<td> <a class='btn btn-success btn-block' href='frmVerReceta.aspx?idReceta=" + item._idReceta + "'>Ver Receta</a></td>";
+                    }
+
+                    string imagen = "../img/recetas/"+ item._idReceta + ".jpg";
+                    if (File.Exists(Server.MapPath(imagen)))
+                    {
+                        recetas.Text = recetas.Text + "<tr><td>" + item._Nombre + "</td><td>" + item._Tiempo + "</td><td>" + item._TiempoComida + "</td><td><img src='../img/recetas/" + item._idReceta + ".jpg' alt='" + item._Nombre + "' height='100' width='120'></td>" + btnModifica + "</tr>";
+                    }
+                    else
+                    {
+                        recetas.Text = recetas.Text + "<tr><td>" + item._Nombre + "</td><td>" + item._Tiempo + "</td><td>" + item._TiempoComida + "</td><td>No hay muestra</td>" + btnModifica + "</tr>";
                     }
                     
                 }

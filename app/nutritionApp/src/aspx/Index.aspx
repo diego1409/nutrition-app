@@ -85,6 +85,87 @@
 
         <div class="row">
             <div class="col">
+                <div id="divRecetas">
+                    <h1>Nuestras Recetas</h1>
+
+                    <div id="recetasDescripcion">
+                        <p class="text-center">
+                            Nuestras recetas provienen de las siguientes fuentes.
+                        </p>
+                    </div>
+        
+                    <div id="recetasCards" class="container-fluid">
+                        <div class="row">
+			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					            <div class="card border border-secondary rounded text-center"> 
+                                    <div class="card-body">
+                                        <img src="../img/jk.jpg" width="135" height="135" class="round-img" />
+                                        <br />
+                                        <h3 class="card-title">
+                                            <a href="https://www.facebook.com/jkcostaricapasteleria/" target="_blank">
+                                                JK Reposteria Costa Rica
+                                            </a>
+                                        </h3>
+                                        <div class="card-text">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Por Kimberly Berrocal.</li>
+                                                <li class="list-group-item">Recetas orientadas a meriendas.</li>
+                                                <li class="list-group-item">Baja en carbohidratos</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+				            </div>	 
+				
+				             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                 <div class="card border border-secondary rounded text-center"> 
+                                    <div class="card-body">
+                                        <img src="../img/bendita.jpg" width="135" height="135" class="round-img" />
+                                        <br />
+                                        <h3 class="card-title">
+                                            <a href="https://www.instagram.com/benditadieta.cr/" target="_blank">
+                                                Bendita Dieta
+                                            </a>
+                                        </h3>
+                                        <div class="card-text">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Por Allison Castro.</li>
+                                                <li class="list-group-item">Recetas, tips y consejos para una vida saludable.</li>
+                                                <li class="list-group-item">benditadieta.cr@gmail.com</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                 </div>
+				            </div>	 
+				
+				             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                 <div class="card border border-secondary rounded text-center"> 
+                                    <div class="card-body">
+                                        <img src="../img/estoessaludable.jpg" width="135" height="135" class="round-img" />
+                                        <br />
+                                        <h3 class="card-title">
+                                            <a href="https://estoessaludable.com/" target="_blank">
+                                                ¿Esto es Saludable?
+                                            </a>
+                                        </h3>
+                                        <div class="card-text">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Por Valeria Torres.</li>
+                                                <li class="list-group-item">Cocina ricas y deliciosas recetas.</li>
+                                                <li class="list-group-item">Recetas para cualquier hora del dia.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                 </div>
+				            </div>	 
+		                </div>
+		            </div>  
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
                 <div id="divTestimonios">
                     <h1>Testimonios</h1>
         
@@ -137,7 +218,7 @@
 			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					            <div class="card border border-secondary rounded text-center"> 
                                     <div class="card-body">
-                                        <img src="../img/male-fill-circle-512.png" width="135" height="135" />
+                                        <img src="../img/leo.jpg" width="135" height="135" class="round-img" />
                                         <br />
                                         <h3 class="card-title">Leonardo Aguilar</h3>
                                         <div class="card-text">
@@ -154,7 +235,7 @@
 				             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                  <div class="card border border-secondary rounded text-center"> 
                                     <div class="card-body">
-                                        <img src="../img/male-fill-circle-512.png" width="135" height="135" />
+                                        <img src="../img/diego.jpg" width="135" height="135" class="round-img" />
                                         <br />
                                         <h3 class="card-title">Diego Chaves</h3>
                                         <div class="card-text">
@@ -171,7 +252,7 @@
 				             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                  <div class="card border border-secondary rounded text-center"> 
                                     <div class="card-body">
-                                        <img src="../img/male-fill-circle-512.png" width="135" height="135" />
+                                        <img src="../img/jafet.jpg" width="135" height="135" class="round-img" />
                                         <br />
                                         <h3 class="card-title">Jafet Solano</h3>
                                         <div class="card-text">

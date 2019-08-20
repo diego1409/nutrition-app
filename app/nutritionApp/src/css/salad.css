@@ -100,3 +100,7 @@ p {
 .height-50 {
     height: 50%;
 }
+
+.round-img {
+    border-radius: 50%;
+}
