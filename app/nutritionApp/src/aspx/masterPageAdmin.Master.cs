@@ -14,6 +14,7 @@ namespace nutritionApp.src.aspx
     {
         ManejoDatos md = new ManejoDatos();
         public int idUsuario;
+        public string tipoUsuario;
         public int idPlan = 0;
         public string linkPlan;
 
@@ -25,15 +26,37 @@ namespace nutritionApp.src.aspx
             {
                 idUsuario = Convert.ToInt32(Session["idUsuario"]);
                 lblNombreCompleto.Text = Session["Nombre"].ToString() + " " + Session["Apellido1"].ToString() + " " + Session["Apellido2"].ToString();
-                idPlan = md.RetornaUltimoPlan(idUsuario);
+                tipoUsuario = Session["tipoUsuario"].ToString();
 
-                if (idPlan != 0)
+                //Validar que el valor sea correcto
+                if (tipoUsuario != null)
                 {
-                    linkPlan = "href=\"frmVerPlan.aspx?idPlan=" + idPlan.ToString() + "\"";
+                    //Se usa trim para quitar espacios en blanco
+                    tipoUsuario = tipoUsuario.Trim();
+
+                    if (tipoUsuario == "A")
+                    {
+                        idPlan = md.RetornaUltimoPlan(idUsuario);
+
+                        if (idPlan != 0)
+                        {
+                            linkPlan = "href=\"frmVerPlan.aspx?idPlan=" + idPlan.ToString() + "\"";
+                        }
+                        else
+                        {
+                            linkPlan = "data-toggle=\"modal\" data-target=\"#noPlanModal\"";
+                        }
+                    }
+                    else
+                    {
+                        //Se redirecciona a login
+                        this.Response.Redirect("~/src/aspx/frmLogin.aspx");
+                    }
                 }
                 else
                 {
-                    linkPlan = "data-toggle=\"modal\" data-target=\"#noPlanModal\"";
+                    //Se redirecciona a login
+                    this.Response.Redirect("~/src/aspx/frmLogin.aspx");
                 }
             }
             else

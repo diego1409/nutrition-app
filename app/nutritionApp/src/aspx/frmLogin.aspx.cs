@@ -14,16 +14,33 @@ namespace nutritionApp.src.aspx
     public partial class frmLogin : System.Web.UI.Page
     {
         public string resultado;
+        public int idUsuario;
+        public string tipoUsuario;
+        public int idPlan = 0;
+        public string linkPlan;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            Conexion test = new Conexion();
-            test.parametro("", "", "", "");
-            if (test.inicializa())
+            //Se valida si el ususario esta loguado
+            bool logged = Convert.ToBoolean(Session["UsuarioLogueado"]);
+            if (logged)
             {
-                resultado = "Conexion Exitosa";
+                idUsuario = Convert.ToInt32(Session["idUsuario"]);
+                tipoUsuario = Session["tipoUsuario"].ToString();
+
+                //Validar que el valor sea correcto
+                if (tipoUsuario != null)
+                {
+                    //Se usa trim para quitar espacios en blanco
+                    tipoUsuario = tipoUsuario.Trim();
+
+                    if (tipoUsuario == "A" || tipoUsuario == "C")
+                    {
+                        //Se redirecciona a login
+                        this.Response.Redirect("~/src/aspx/frmDashboard.aspx");
+                    }
+                }
             }
-            */
         }
 
         protected void btnIngresar_onClick(object sender, EventArgs e)
